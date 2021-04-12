@@ -1,0 +1,30 @@
+{
+  "name": "jakepauls.dev",
+  "version": "2.0.0",
+  "description": "I'm still here",
+  "author": "Jake Pauls",
+  "repository": {
+    "url": "https://github.com/jacob-pauls/jakepauls.dev",
+    "type": "git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.1.0",
+    "@snowpack/plugin-react-refresh": "^2.4.2",
+    "@snowpack/plugin-sass": "^1.4.0",
+    "@snowpack/plugin-typescript": "^1.2.1",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "snowpack": "^3.2.2",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "node-sass": "^5.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
