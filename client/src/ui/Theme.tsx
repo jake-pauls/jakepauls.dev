@@ -5,24 +5,24 @@ import { dark, light } from "./Mode";
 
 export const chakraDark = extendTheme({
     colors: {
-        brand: {
-            100: dark.primary,
-            200: dark.text,
-            300: dark.background,
-            400: dark.grey,
+        base: {
+            primary: dark.primary,
+            text: dark.text,
+            background: dark.background,
+            grey: dark.grey,
         }
-    }
+    },
 });
 
 export const chakraLight = extendTheme({
     colors: {
-        brand: {
-            100: light.primary,
-            200: light.text,
-            300: light.background,
-            400: light.grey,
+        base: {
+            primary: light.primary,
+            text: light.text,
+            background: light.background,
+            grey: light.grey,
         }
-    }
+    },
 });
 
 export const getChakraTheme = (mode: Mode) => {

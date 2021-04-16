@@ -10,8 +10,6 @@ import { getChakraTheme } from "./ui/Theme";
 const App: React.FC = () => {
   const { mode } = useContext(ModeContext);
   const chakraTheme = getChakraTheme(mode);
-  console.log(mode);
-  console.log(getChakraTheme(mode));
 
   return (
     <ChakraProvider theme={chakraTheme}>

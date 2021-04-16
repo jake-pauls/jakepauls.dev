@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <ModeToggle />
-            <Heading color="brand.100">Home</Heading>
+            <Heading color="base.text">Home</Heading>
         </div>
     );
 };
