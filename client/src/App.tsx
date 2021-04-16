@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+
+import ModeToggle from "./components/ModeToggle";
 import { ModeContext } from "./contexts/ModeContext";
-import { Mode } from "./ui/mode";
+import { Mode } from "./types/mode";
 
 interface CardProps {
   mode: Mode;
@@ -15,22 +17,6 @@ const Card = styled.div<CardProps>`
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   margin: 30px auto;
 `;
-
-const ModeToggle = () => {
-  const { mode, toggleMode } = useContext(ModeContext);
-  console.log("useContext: " + mode.type);
-
-  const getCurrentMode = (): string => {
-    return mode.type === "light" ? "dark" : "light";
-  }
-
-  return (
-    <div>
-      <p>Switch to { getCurrentMode() } mode</p>
-      <button onClick={toggleMode}>Click me!</button> 
-    </div>
-  );
-}
 
 const App: React.FC = () => {
   const { mode } = useContext(ModeContext);

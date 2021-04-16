@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Mode } from "../ui/mode";
+import { Mode } from "../types/mode";
 import { dark, light } from "../ui/Mode";
 
 type ModeContext = { mode: Mode; toggleMode: () => void };

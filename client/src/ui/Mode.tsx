@@ -1,4 +1,4 @@
-import { Mode } from "./mode";
+import { Mode } from "../types/mode";
 
 const lightning = "#F8BD00";
 const white = "#EDEDED";
