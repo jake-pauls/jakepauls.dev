@@ -1,8 +1,10 @@
 import React from "react";
 
+import { Heading } from "@chakra-ui/layout";
+
 const About = () => {
     return (
-        <h1>About</h1>
+        <Heading color="brand.100">About</Heading>
     );
 };
 
