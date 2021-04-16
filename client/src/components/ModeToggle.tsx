@@ -6,13 +6,13 @@ const ModeToggle = () => {
     const { mode, toggleMode } = useContext(ModeContext);
     console.log("useContext: " + mode.type);
 
+    // TODO: Implement UI Tooltip
     const getCurrentMode = (): string => {
         return mode.type === "light" ? "dark" : "light";
     };
 
     return (
         <div>
-            <p>Switch to { getCurrentMode() } mode</p>
             <button onClick={toggleMode}>Click me!</button> 
         </div>
     );

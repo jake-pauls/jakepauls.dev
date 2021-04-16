@@ -1,33 +1,26 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import ModeToggle from "./components/ModeToggle";
-import { ModeContext } from "./contexts/ModeContext";
-import { Mode } from "./types/mode";
-
-interface CardProps {
-  mode: Mode;
-}
-
-const Card = styled.div<CardProps>`
-  max-width: 350px; 
-  border: 1px solid ${({ mode }) => mode.text};
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  margin: 30px auto;
-`;
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 const App: React.FC = () => {
-  const { mode } = useContext(ModeContext);
-
   return (
-    <div>
-      <Card mode={mode}>
-        <h1>Hello, World</h1>
-        <ModeToggle />
-      </Card>
-    </div>
+    <Router>
+      <div className="App">
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+
+        <Switch>
+          <Route path={"/about"}>
+              <About />
+          </Route>
+          <Route path={"/"}>
+              <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
