@@ -22,7 +22,8 @@ const ModeToggle = () => {
                 aria-label="mode-tooltip" 
                 label={getCurrentMode()} 
                 closeOnClick={false}
-                background="base.text">
+                background="base.text"
+                textColor="base.background">
                 <IconButton
                     aria-label="mode-icon" 
                     onClick={toggleMode} 
