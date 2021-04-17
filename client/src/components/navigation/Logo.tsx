@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 import { BsLightningFill } from "react-icons/bs";
 
@@ -20,10 +21,9 @@ const Logo = () => {
         <Flex
             flex={{ base: 1 }}
             justify={{ base: "start", md: "start" }}>
-                <LogoText 
-                    color="base.text">
-                        JP
-                </LogoText> 
+                <Link to="/" color="base.text">
+                    <LogoText color="base.text">JP</LogoText> 
+                </Link>
                 <LogoLightningIcon as={BsLightningFill} />
         </Flex>
     );

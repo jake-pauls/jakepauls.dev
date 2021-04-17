@@ -1,7 +1,6 @@
 import React from "react";
 import { Flex, Stack } from "@chakra-ui/react";
 
-import ModeToggle from "../ModeToggle";
 import { DesktopNavItem, MobileNavItem } from "./NavItem";
 
 export const NavigationStack = () => {
@@ -17,7 +16,6 @@ export const NavigationStack = () => {
                 spacing={20}>
                 <DesktopNavItem route="/" text="home" />
                 <DesktopNavItem route="/about" text="about" />
-                {/* <ModeToggle /> */}
             </Stack>
         </Flex>
     );
