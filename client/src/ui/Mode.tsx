@@ -1,9 +1,6 @@
 import { Mode } from "../types/mode";
 
-const lightning = "#F8BD00";
-const white = "#EDEDED";
-const black = "#151515";
-const grey = "#A1A1A1";
+import { lightning, white, black, grey } from "./Styles";
 
 export const dark: Mode = {
     type: "dark",

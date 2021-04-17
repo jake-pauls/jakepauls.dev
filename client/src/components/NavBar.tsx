@@ -6,16 +6,37 @@ import NavToggle from "./NavToggle";
 import ModeToggle from "./ModeToggle";
 import Logo from "./Logo";
 
-const NavItem = ({ route = "/", text = "" }) => {
+import { InconsolataText } from "../ui/Styles";
+
+type NavItemProps = {
+    route: string;
+    text: string;
+}
+
+const NavItem = ({ route = "/", text = "" }: NavItemProps) => {
     return (
         <Link as={RouteLink} to={route} color="base.text">
-            <Text display="block">
+            <InconsolataText fontSize="25px" display="block">
                 {text}
-            </Text>
+            </InconsolataText>
         </Link>
     );
 };
 
+const NavigationStack = () => {
+    return(
+        <Stack
+            flex={{ base: 1, md: 1 }}
+            justify={"flex-end"}
+            align={"center"}
+            direction={"row"}
+            spacing={10}>
+                <NavItem route="/" text="home" />
+                <NavItem route="/about" text="about" />
+                <ModeToggle />
+        </Stack>
+    );
+};
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -36,17 +57,7 @@ const NavBar = () => {
                 {/* <NavToggle toggleNav={toggleNavBar} isNavOpen={isOpen} /> */}
 
                 <Logo />
-
-                <Stack
-                    flex={{ base: 1, md: 1 }}
-                    justify={"flex-end"}
-                    align={"center"}
-                    direction={"row"}
-                    spacing={10}>
-                    <NavItem route="/" text="Home" />
-                    <NavItem route="/about" text="About" />
-                    <ModeToggle />
-                </Stack>
+                <NavigationStack />
             </Flex>
         </Box>
     );
