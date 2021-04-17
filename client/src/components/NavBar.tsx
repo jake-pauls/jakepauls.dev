@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link as RouteLink } from "react-router-dom";
-import { Box, Flex, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, Stack } from "@chakra-ui/react";
 
 import NavToggle from "./NavToggle";
 import ModeToggle from "./ModeToggle";
@@ -16,7 +16,7 @@ type NavItemProps = {
 const NavItem = ({ route = "/", text = "" }: NavItemProps) => {
     return (
         <Link as={RouteLink} to={route} color="base.text">
-            <InconsolataText fontSize="25px" display="block">
+            <InconsolataText fontSize="42px" display="block">
                 {text}
             </InconsolataText>
         </Link>
@@ -30,7 +30,7 @@ const NavigationStack = () => {
             justify={"flex-end"}
             align={"center"}
             direction={"row"}
-            spacing={10}>
+            spacing={20}>
                 <NavItem route="/" text="home" />
                 <NavItem route="/about" text="about" />
                 <ModeToggle />

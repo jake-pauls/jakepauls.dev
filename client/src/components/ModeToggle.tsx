@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Tooltip, IconButton } from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { RiMoonClearFill } from "react-icons/ri";
+import { WiDaySunny } from "react-icons/wi";
 
 import { ModeContext } from "../contexts/ModeContext";
 
@@ -12,7 +13,7 @@ const ModeToggle = () => {
     }
 
     const getModeIcon = () => {
-        return mode.type === "light" ? <MoonIcon /> : <SunIcon />;
+        return mode.type === "light" ? <RiMoonClearFill size={28} /> : <WiDaySunny size={28} />;
     };
 
     return (

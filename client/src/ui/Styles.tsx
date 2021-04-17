@@ -19,6 +19,7 @@ export const InconsolataText = styled(Text)`
     font-weight: bold;
     font-family: Inconsolata;
     font-size: 16px;
+    letter-spacing: -1.5px;
 `;
 
 export const LightningIcon = styled(Icon)`

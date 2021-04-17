@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { VscMenu, VscClose } from "react-icons/vsc";
 
 type NavToggleProps = {
     toggleNav: () => void;
@@ -10,7 +10,7 @@ type NavToggleProps = {
 const NavToggle = ({ toggleNav, isNavOpen }: NavToggleProps) => {
     return (
         <Box display={{ base: "block", md: "none" }} onClick={toggleNav}>
-            { isNavOpen ? <CloseIcon /> : <HamburgerIcon /> } 
+            { isNavOpen ? <VscClose /> : <VscMenu /> } 
         </Box>
     );
 };
