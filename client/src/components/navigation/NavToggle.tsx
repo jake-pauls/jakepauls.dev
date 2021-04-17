@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex } from "@chakra-ui/react";
-import { VscMenu, VscClose } from "react-icons/vsc";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 type NavToggleProps = {
     toggleNav: () => void;
@@ -14,7 +14,7 @@ const NavToggle = ({ toggleNav, isNavOpen }: NavToggleProps) => {
             ml={{ base: 0 }}
             display={{ base: "flex", md: "none" }}
             onClick={toggleNav}>
-            { isNavOpen ? <VscClose size={28}/> : <VscMenu size={28}/> } 
+            { isNavOpen ? <CloseIcon color="base.text" size={28}/> : <HamburgerIcon color="base.text" size={28}/> } 
         </Flex>
     );
 };

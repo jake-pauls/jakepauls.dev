@@ -18,6 +18,7 @@ const styles = {
 // Override accessibility shadows and focus elements provided by Chakra UI
 const shadows = {
     outline: "0 !important",
+    toggle: '0 0 0 3px rgba(248,189,0,1)' // Primary Color
 }
 
 export const chakraDark = extendTheme({

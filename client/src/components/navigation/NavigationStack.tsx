@@ -17,7 +17,7 @@ export const NavigationStack = () => {
                 spacing={20}>
                 <DesktopNavItem route="/" text="home" />
                 <DesktopNavItem route="/about" text="about" />
-                <ModeToggle />
+                {/* <ModeToggle /> */}
             </Stack>
         </Flex>
     );

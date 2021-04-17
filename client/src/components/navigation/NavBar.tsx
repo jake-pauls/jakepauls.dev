@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Flex, Collapse } from "@chakra-ui/react";
 
 import NavToggle from "./NavToggle";
+import ModeToggle from "../ModeToggle";
 import Logo from "./Logo";
 import { NavigationStack, MobileNavigationStack } from "./NavigationStack";
 
@@ -22,6 +23,7 @@ const NavBar = () => {
             <Collapse in={isOpen} animateOpacity>
                 <MobileNavigationStack />
             </Collapse>
+            <ModeToggle />
         </Box>
     );
 };

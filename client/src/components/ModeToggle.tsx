@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Tooltip, IconButton } from "@chakra-ui/react";
+import { Tooltip, IconButton, Box } from "@chakra-ui/react";
 import { RiMoonClearFill } from "react-icons/ri";
 import { WiDaySunny } from "react-icons/wi";
 
@@ -17,7 +17,10 @@ const ModeToggle = () => {
     };
 
     return (
-        <div>
+        <Box
+            position="fixed"
+            bottom="4em"
+            right="4em">
             <Tooltip 
                 aria-label="mode-tooltip" 
                 label={getCurrentMode()} 
@@ -31,10 +34,12 @@ const ModeToggle = () => {
                     isRound={true} 
                     color="base.primary" 
                     bg="base.text"
+                    size="lg"
                     _hover={{ bg: "base.text" }}
-                    _focus={{ boxShadow: "base.text" }} />
+                    _focus={{ boxShadow: "base.text" }}
+                    boxShadow="toggle" />
             </Tooltip>
-        </div>
+        </Box>
     );
 };
 
