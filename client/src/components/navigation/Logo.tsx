@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Flex } from "@chakra-ui/react";
 import { BsLightningFill } from "react-icons/bs";
 
-import { MorganiteText, LightningIcon } from "../ui/Styles";
+import { MorganiteText, LightningIcon } from "../../ui/Styles";
 
 const LogoText = styled(MorganiteText)`
     font-size: 100px;
@@ -20,11 +20,11 @@ const Logo = () => {
         <Flex
             flex={{ base: 1 }}
             justify={{ base: "start", md: "start" }}>
-            <LogoText 
-                color="base.text">
-                    JP
-            </LogoText> 
-            <LogoLightningIcon as={BsLightningFill} />
+                <LogoText 
+                    color="base.text">
+                        JP
+                </LogoText> 
+                <LogoLightningIcon as={BsLightningFill} />
         </Flex>
     );
 };

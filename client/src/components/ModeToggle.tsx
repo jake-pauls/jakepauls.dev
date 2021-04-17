@@ -22,7 +22,7 @@ const ModeToggle = () => {
                 aria-label="mode-tooltip" 
                 label={getCurrentMode()} 
                 closeOnClick={false}
-                background="base.text"
+                bg="base.text"
                 textColor="base.background">
                 <IconButton
                     aria-label="mode-icon" 
@@ -30,7 +30,7 @@ const ModeToggle = () => {
                     icon={getModeIcon()} 
                     isRound={true} 
                     color="base.primary" 
-                    background="base.text"
+                    bg="base.text"
                     _hover={{ bg: "base.text" }}
                     _focus={{ boxShadow: "base.text" }} />
             </Tooltip>

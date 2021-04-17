@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navigation/NavBar";
 import { ModeContext } from "./contexts/ModeContext";
 import { getChakraTheme } from "./ui/Theme";
 
