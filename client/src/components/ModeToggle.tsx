@@ -6,11 +6,10 @@ import { ModeContext } from "../contexts/ModeContext";
 
 const ModeToggle = () => {
     const { mode, toggleMode } = useContext(ModeContext);
-    console.log("useContext: " + mode.type);
 
     const getCurrentMode = (): string => {
         return mode.type === "light" ? "Dark Mode" : "Light Mode";
-    };
+    }
 
     const getModeIcon = () => {
         return mode.type === "light" ? <MoonIcon /> : <SunIcon />;
