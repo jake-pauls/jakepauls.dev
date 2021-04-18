@@ -15,7 +15,7 @@ export const NavigationStack = () => {
                 justify={"flex-end"}
                 align={"center"}
                 direction={"row"}
-                spacing={9}>
+                spacing={4}>
                 <DesktopNavItem route="/" text="home" />
                 <DividerLightningIcon as={BsLightningFill} />
                 <DesktopNavItem route="/about" text="about" />

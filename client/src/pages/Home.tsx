@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Flex, Stack } from "@chakra-ui/react";
 import { BsLightningFill } from "react-icons/bs";
 
+import SocialIcons from "../components/SocialIcons";
 import { LightningIcon, MorganiteText, RobotoText } from "../ui/Styles";
 
 const TitleLightningIcon = styled(LightningIcon)`
@@ -50,10 +51,10 @@ const Home = () => {
                 minH={{ base: "55vh", md: "72vh" }}
                 px={8}
                 mb={10}>
-                    <Stack 
-                        align="center">
+                    <Stack align="center">
                         <Title />
                         <Subtitle />
+                        <SocialIcons color="base.primary"/>
                     </Stack>
                 </Flex>
         </Container>

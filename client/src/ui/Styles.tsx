@@ -3,7 +3,7 @@ import { Icon, Text } from "@chakra-ui/react";
 
 /* Colors */
 export const lightning = "#F8BD00";
-export const white = "#EDEDED";
+export const white = "#E8E8E8";
 export const black = "#151515";
 export const grey = "#A1A1A1";
 
