@@ -27,7 +27,6 @@ export const NavigationStack = () => {
 export const MobileNavigationStack = () => {
     return (
         <Stack
-            p={3}
             m={3}
             display={{ md: 'none' }}
             borderBottomWidth="1px"

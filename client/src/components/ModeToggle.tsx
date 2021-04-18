@@ -26,7 +26,8 @@ const ModeToggle = () => {
                 label={getCurrentMode()} 
                 closeOnClick={false}
                 bg="base.text"
-                textColor="base.background">
+                textColor="base.background"
+                fontFamily="Inconsolata">
                 <IconButton
                     aria-label="mode-icon" 
                     onClick={toggleMode} 

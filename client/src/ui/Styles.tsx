@@ -22,6 +22,11 @@ export const InconsolataText = styled(Text)`
     letter-spacing: -1.5px;
 `;
 
+export const RobotoText = styled(Text)`
+    font-family: Roboto;
+    font-size: 16px;
+`;
+
 /* Icon */
 export const LightningIcon = styled(Icon)`
     color: ${ lightning };

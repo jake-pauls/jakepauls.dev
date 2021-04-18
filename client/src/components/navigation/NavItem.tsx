@@ -25,13 +25,12 @@ export const DesktopNavItem = ({ route = "/", text = "" }: NavItem) => {
 export const MobileNavItem = ({ route = "/", text = "" }: NavItem) => {
     return (
         <Flex
-            px={24}
             py={3}
             justify={"space-between"}
             align={"center"}>
             <DividerLightningIcon as={BsLightningFill} />
             <Link as={RouteLink} to={route} color="base.text">
-                <InconsolataText fontSize="42px" display="block">
+                <InconsolataText fontSize="38px" display="block">
                     {text}
                 </InconsolataText>
             </Link>
