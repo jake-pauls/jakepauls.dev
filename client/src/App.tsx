@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NavBar from "./components/navigation/NavBar";
+import Footer from "./components/Footer";
 import { ModeContext } from "./contexts/ModeContext";
 import { getChakraTheme } from "./ui/Theme";
 
@@ -32,6 +33,7 @@ const App = () => {
             </Route>
           </Switch>
         </PageContainer>
+        <Footer showIcons={false} />
       </Router>
     </ChakraProvider>
   );

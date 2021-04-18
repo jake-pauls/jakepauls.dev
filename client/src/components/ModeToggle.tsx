@@ -18,16 +18,14 @@ const ModeToggle = () => {
 
     return (
         <Box
+            zIndex="1"
             position="fixed"
-            bottom="4em"
+            bottom="2em"
             right="4em">
             <Tooltip 
                 aria-label="mode-tooltip" 
                 label={getCurrentMode()} 
-                closeOnClick={false}
-                bg="base.text"
-                textColor="base.background"
-                fontFamily="Inconsolata">
+                closeOnClick={false}>
                 <IconButton
                     aria-label="mode-icon" 
                     onClick={toggleMode} 

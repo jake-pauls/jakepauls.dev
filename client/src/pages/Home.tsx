@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Flex, Stack } from "@chakra-ui/react";
+import { Flex, Stack } from "@chakra-ui/react";
 import { BsLightningFill } from "react-icons/bs";
 
 import SocialIcons from "../components/SocialIcons";
@@ -8,7 +8,7 @@ import { LightningIcon, MorganiteText, RobotoText } from "../ui/Styles";
 
 const TitleLightningIcon = styled(LightningIcon)`
     font-size: 32px;
-    float: right;
+    margin-left: 100%;
 `;
 
 const SubtitleText = styled(RobotoText)`
@@ -17,22 +17,26 @@ const SubtitleText = styled(RobotoText)`
 
 const Title = () => {
     return (
-        <MorganiteText
-            fontWeight="600"
-            fontSize={{ base: "6em", md: "8em" }}
-            color="base.text"
-            lineHeight={{ base: "20%", md: "0%" }}>
-                Jake Pauls
-                <TitleLightningIcon as={BsLightningFill} />
-        </MorganiteText>
+        <Flex
+            display="flex"
+            alignItems="center"
+            flexWrap="wrap">
+            <MorganiteText
+                fontWeight="600"
+                fontSize={{ base: "6em", md: "8em" }}
+                color="base.text"
+                lineHeight={{ base: "0%", md: "0%" }}>
+                    Jake Pauls
+                    <TitleLightningIcon as={BsLightningFill} />
+            </MorganiteText>
+        </Flex>
     );
 }
 
 const Subtitle = () => {
     return (
         <SubtitleText
-            py="-2em"
-            fontSize={{ base: "1.45em", md: "2em"}}
+            fontSize={{ base: "1.3em", md: "2em"}}
             color="base.text">
                 Software Developer
         </SubtitleText>
@@ -41,23 +45,19 @@ const Subtitle = () => {
 
 const Home = () => {
     return (
-        <Container maxW="3xl" centerContent>
-            <Flex
-                position="fixed"
-                zIndex="-1"
-                align="center"
-                justify={{ base: "center", md: "center", xl: "space-between" }}
-                direction={{ base: "column-reverse", md: "row" }}
-                minH={{ base: "55vh", md: "72vh" }}
-                px={8}
-                mb={10}>
-                    <Stack align="center">
-                        <Title />
-                        <Subtitle />
-                        <SocialIcons color="base.primary"/>
-                    </Stack>
-                </Flex>
-        </Container>
+        <Flex
+            align="center"
+            justify="center"
+            direction={{ base: "column-reverse", md: "row" }}
+            minH={{ base: "55vh", md: "72vh" }}
+            px={10}
+            mb={10}>
+            <Stack align="center">
+                <Title />
+                <Subtitle />
+                <SocialIcons color="base.primary"/>
+            </Stack>
+        </Flex>
     );
 };
 

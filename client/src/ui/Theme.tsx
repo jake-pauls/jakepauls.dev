@@ -15,6 +15,21 @@ const styles = {
     },
 }
 
+const components = {
+    Link: {
+        baseStyle: {
+            color: "base.primary",
+        },
+    },
+    Tooltip: {
+        baseStyle: {
+            background: "base.text",
+            textColor: "base.background",
+            fontFamily: "Inconsolata",
+        },
+    },
+}
+
 // Override accessibility shadows and focus elements provided by Chakra UI
 const shadows = {
     outline: "0 !important",
@@ -30,6 +45,7 @@ export const chakraDark = extendTheme({
             grey: dark.grey,
         }
     },
+    components,
     shadows,
     styles,
 });
@@ -43,6 +59,7 @@ export const chakraLight = extendTheme({
             grey: light.grey,
         }
     },
+    components,
     shadows,
     styles,
 });
