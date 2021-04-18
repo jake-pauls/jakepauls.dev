@@ -22,6 +22,12 @@ export const InconsolataText = styled(Text)`
     letter-spacing: -1.5px;
 `;
 
+/* Icon */
 export const LightningIcon = styled(Icon)`
     color: ${ lightning };
+`;
+
+export const DividerLightningIcon = styled(LightningIcon)`
+    padding-top: 10px;
+    font-size: 32px;
 `;

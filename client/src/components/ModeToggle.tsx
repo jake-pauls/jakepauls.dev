@@ -13,7 +13,7 @@ const ModeToggle = () => {
     }
 
     const getModeIcon = () => {
-        return mode.type === "light" ? <RiMoonClearFill size={28} /> : <WiDaySunny size={28} />;
+        return mode.type === "light" ? <RiMoonClearFill size={28} /> : <WiDaySunny size={36} />;
     };
 
     return (

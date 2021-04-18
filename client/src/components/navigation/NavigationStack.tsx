@@ -1,7 +1,9 @@
 import React from "react";
 import { Flex, Stack } from "@chakra-ui/react";
+import { BsLightningFill } from "react-icons/bs";
 
 import { DesktopNavItem, MobileNavItem } from "./NavItem";
+import { DividerLightningIcon } from "../../ui/Styles";
 
 export const NavigationStack = () => {
     return(
@@ -13,8 +15,9 @@ export const NavigationStack = () => {
                 justify={"flex-end"}
                 align={"center"}
                 direction={"row"}
-                spacing={20}>
+                spacing={9}>
                 <DesktopNavItem route="/" text="home" />
+                <DividerLightningIcon as={BsLightningFill} />
                 <DesktopNavItem route="/about" text="about" />
             </Stack>
         </Flex>
