@@ -1,0 +1,12 @@
+# Git
+.git
+.github
+.gitignore
+
+# Docker
+*Dockerfile*
+*docker-compose*
+
+# Misc.
+build
+README.md

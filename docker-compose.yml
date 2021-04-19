@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+    # Golang Server
+    gopher:
+        build: ./server
+        container_name: gopher
+        restart: always
+        ports: 
+            - 4040:4040
+        volumes:
+            - ./server:/server/src
