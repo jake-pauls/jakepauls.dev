@@ -25,7 +25,7 @@ const Title = () => {
                 fontWeight="600"
                 fontSize={{ base: "6em", md: "8em" }}
                 color="base.text"
-                lineHeight={{ base: "0%", md: "0%" }}>
+                lineHeight="0%">
                     Jake Pauls
                     <TitleLightningIcon as={BsLightningFill} />
             </MorganiteText>
@@ -49,7 +49,7 @@ const Home = () => {
             align="center"
             justify="center"
             direction={{ base: "column-reverse", md: "row" }}
-            minH={{ base: "55vh", md: "72vh" }}
+            minH={{ base: "55vh", md: "68vh" }}
             px={10}
             mb={10}>
             <Stack align="center">

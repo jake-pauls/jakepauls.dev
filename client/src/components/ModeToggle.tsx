@@ -36,7 +36,7 @@ const ModeToggle = () => {
                     size="lg"
                     _hover={{ bg: "base.text" }}
                     _focus={{ boxShadow: "base.text" }}
-                    boxShadow="toggle" />
+                    boxShadow="primary" />
             </Tooltip>
         </Box>
     );

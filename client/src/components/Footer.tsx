@@ -37,13 +37,16 @@ const getGitHubRepoLink = () => {
 
 const Footer = ({ showIcons }: FooterProps) => {
     return (
-        <Box as="footer" role="contentinfo" px={{ base: '4', md: '8' }}>
-            <Stack direction="column" align="center" bottom="0">
+        <Box 
+            as="footer" 
+            bottom="0" 
+            width="100%" 
+            px={{ base: '4', md: '8' }}>
+            <Stack direction="column" align="center">
                 <Text 
                     fontSize="sm" 
                     align="center" 
-                    color="base.text"
-                    mt={{ base: "-9%", md: "-2%" }}>
+                    color="base.text">
                    Powered by {getReactIconLink()} and {getGolangIconLink()} | Source on {getGitHubRepoLink()} <br />
                    Made with 💛 in { new Date().getFullYear() } | Jake Pauls
                 </Text>
