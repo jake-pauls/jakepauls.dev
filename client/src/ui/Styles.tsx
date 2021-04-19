@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Icon, Text, TextProps } from "@chakra-ui/react";
+import { Icon, Text } from "@chakra-ui/react";
 
 /* Colors */
 export const lightning = "#F8BD00";

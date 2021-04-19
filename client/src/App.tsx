@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
+import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
-import styled from "styled-components";
 
 import Home from "./pages/Home";
 import About from "./pages/About";

@@ -22,7 +22,7 @@ const getReactIconLink = () => {
 const getGolangIconLink = () => {
     return (
         <Tooltip label="Go" aria-label="go-tooltip">
-            <Link href={Links.GOLANG} title="React" isExternal>
+            <Link href={Links.GOLANG} title="Go" isExternal>
                 <Icon color="base.text" as={Golang} />
             </Link>
         </Tooltip>
