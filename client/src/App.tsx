@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
 import NavBar from "./components/navigation/NavBar";
 import Footer from "./components/Footer";
 import { ModeContext } from "./contexts/ModeContext";
@@ -25,6 +26,9 @@ const App = () => {
           <NavBar />
 
           <Switch>
+            <Route path={"/portfolio"}>
+                <Portfolio />
+            </Route>
             <Route path={"/about"}>
                 <About />
             </Route>

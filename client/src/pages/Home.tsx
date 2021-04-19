@@ -4,18 +4,13 @@ import { Flex, Stack } from "@chakra-ui/react";
 import { BsLightningFill } from "react-icons/bs";
 
 import SocialIcons from "../components/SocialIcons";
-import { LightningIcon, MorganiteText, RobotoText } from "../ui/Styles";
-
-const TitleLightningIcon = styled(LightningIcon)`
-    font-size: 32px;
-    margin-left: 100%;
-`;
+import { TitleLightningIcon, MorganiteText, RobotoText } from "../ui/Styles";
 
 const SubtitleText = styled(RobotoText)`
     font-weight: 300;
 `;
 
-const Title = () => {
+const HomeTitle = () => {
     return (
         <Flex
             display="flex"
@@ -49,11 +44,10 @@ const Home = () => {
             align="center"
             justify="center"
             direction={{ base: "column-reverse", md: "row" }}
-            minH={{ base: "55vh", md: "68vh" }}
-            px={10}
-            mb={10}>
+            minH={{ base: "55vh", md: "70vh" }}
+            px={10}>
             <Stack align="center">
-                <Title />
+                <HomeTitle />
                 <Subtitle />
                 <SocialIcons color="base.primary"/>
             </Stack>

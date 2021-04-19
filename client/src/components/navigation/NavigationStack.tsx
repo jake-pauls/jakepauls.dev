@@ -19,6 +19,8 @@ export const NavigationStack = () => {
                 <DesktopNavItem route="/" text="home" />
                 <DividerLightningIcon as={BsLightningFill} />
                 <DesktopNavItem route="/about" text="about" />
+                <DividerLightningIcon as={BsLightningFill} />
+                <DesktopNavItem route="/portfolio" text="portfolio" />
             </Stack>
         </Flex>
     );
@@ -35,6 +37,7 @@ export const MobileNavigationStack = () => {
             borderTopColor="base.grey">
             <MobileNavItem route="/" text="home" />
             <MobileNavItem route="/about" text="about" />
+            <MobileNavItem route="/portfolio" text="portfolio" />
         </Stack>
     );
 };

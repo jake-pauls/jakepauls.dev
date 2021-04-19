@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Icon, Text } from "@chakra-ui/react";
+import { Icon, Text, TextProps } from "@chakra-ui/react";
 
 /* Colors */
 export const lightning = "#F8BD00";
@@ -35,4 +35,9 @@ export const LightningIcon = styled(Icon)`
 export const DividerLightningIcon = styled(LightningIcon)`
     padding-top: 10px;
     font-size: 32px;
+`;
+
+export const TitleLightningIcon = styled(LightningIcon)`
+    font-size: 32px;
+    margin-left: 100%;
 `;

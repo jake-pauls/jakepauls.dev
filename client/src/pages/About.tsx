@@ -1,16 +1,20 @@
 import React from "react";
 import { Flex, Image, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { BsLightningFill } from "react-icons/bs";
 
-import { MorganiteText } from "../ui/Styles";
+import { TitleLightningIcon, MorganiteText } from "../ui/Styles";
 
 const AboutTitle = () => {
     return (
         <MorganiteText 
-            px={2} 
             color="base.text"
             fontSize={{ base: "6em", md: "8em" }} 
-            alignSelf="flex-start">
+            alignSelf="flex-start"
+            lineHeight="0%"
+            mb={10}
+            mt={20}>
                 About
+                <TitleLightningIcon as={BsLightningFill} />
         </MorganiteText>
     );
 };
