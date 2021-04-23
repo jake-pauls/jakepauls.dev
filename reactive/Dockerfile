@@ -1,8 +1,9 @@
-FROM node:15.12.0-alpine3.10
+FROM node:15.14.0-buster-slim
 WORKDIR /client
 
 COPY package.json .
 
+RUN npm rebuild node-sass
 RUN yarn install
 
 COPY . .

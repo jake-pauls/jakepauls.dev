@@ -9,6 +9,7 @@
 
 # Deps
 node_modules
+npm-debug.log
 
 # Misc.
 build

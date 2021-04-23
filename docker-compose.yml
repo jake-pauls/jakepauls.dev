@@ -7,10 +7,10 @@ services:
         container_name: nginx
         restart: always
         links:
-            - react
+            - reactive
             - gopher
         depends_on: 
-            - react
+            - reactive
             - gopher
         ports: 
             - "8000:80"
@@ -18,7 +18,7 @@ services:
             - ./nginx:/etc/nginx/conf.d
 
     # React Client
-    react:
+    reactive:
         build: ./reactive
         container_name: reactive
         restart: always
