@@ -1,12 +1,22 @@
 version: "3.8"
 
 services:
+    # React Client
+    react:
+        build: ./reactive
+        container_name: reactive
+        restart: always
+        ports: 
+            - 8080:8080
+        volumes:
+            - ./reactive:/client
+
     # Golang Server
     gopher:
-        build: ./server
+        build: ./gopher
         container_name: gopher
         restart: always
         ports: 
             - 4040:4040
         volumes:
-            - ./server:/server/src
+            - ./gopher:/server/src
