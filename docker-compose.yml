@@ -1,6 +1,22 @@
 version: "3.8"
 
 services:
+    # NGINX
+    nginx:
+        build: ./nginx
+        container_name: nginx
+        restart: always
+        links:
+            - react
+            - gopher
+        depends_on: 
+            - react
+            - gopher
+        ports: 
+            - "8000:80"
+        volumes:
+            - ./nginx:/etc/nginx/conf.d
+
     # React Client
     react:
         build: ./reactive
