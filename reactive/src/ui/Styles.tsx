@@ -9,7 +9,6 @@ export const grey = "#A1A1A1";
 
 /* Typography */
 export const MorganiteText = styled(Text)`
-    font-weight: bold;
     font-family: Morganite;
     font-style: Italic;
     font-size: 16px;

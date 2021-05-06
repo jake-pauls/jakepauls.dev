@@ -17,7 +17,6 @@ const HomeTitle = () => {
             alignItems="center"
             flexWrap="wrap">
             <MorganiteText
-                fontWeight="600"
                 fontSize={{ base: "6em", md: "8em" }}
                 color="base.text"
                 lineHeight="0%">
