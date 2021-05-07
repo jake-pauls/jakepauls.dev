@@ -3,16 +3,29 @@ package main
 import (
     "fmt"
     "net/http"
-    "log"
 
     "github.com/gin-gonic/gin"
+    "go.uber.org/zap"
 
+    "jakepauls.dev/gopher/utils"
     "jakepauls.dev/gopher/setup"
+    "jakepauls.dev/gopher/setup/logs"
     "jakepauls.dev/gopher/routes"
 )
 
+func init() {
+    // Load the environment
+    utils.LoadEnv()
+
+    // Load server setup
+    setup.ServerSetup()
+
+    // Replace "log" with zap
+    logs.ReplaceGlobalLogger()
+}
+
 func main() {
-    var serverSetup = setup.ServerSetup()
+    serverSetup := setup.ServerSetting
     gin.SetMode(serverSetup.RunMode)
 
     router := routes.InitRouter()
@@ -23,7 +36,7 @@ func main() {
         Handler:       router,
     }
 
-    log.Printf("[info] 🚀 http server started on port %s", port)
+    zap.S().Infof("http server started on port %s", port)
 
     server.ListenAndServe()
 }
