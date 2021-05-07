@@ -11,11 +11,9 @@ type Server struct {
 
 var ServerSetting = &Server{}
 
+// Server Defaults
+// Note: NGINX Load Balances from :4040 -> :8000
 func ServerSetup() {
-    /*
-       Server Defaults
-       Note: NGINX Load Balances from :4040 -> :8000
-    */
     ServerSetting.RunMode = os.Getenv("MODE")
     ServerSetting.Port    = 4040
 }

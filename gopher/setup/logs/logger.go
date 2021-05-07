@@ -30,9 +30,8 @@ func InitLogger() *zap.Logger {
     return zapLogger
 }
 
-/*
-    Replaces global logger with zap logger
-*/
+
+// Replaces global logger with zap logger
 func ReplaceGlobalLogger() {
     zapLogger := InitLogger()
     zap.ReplaceGlobals(zapLogger)
