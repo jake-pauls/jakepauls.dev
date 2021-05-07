@@ -1,25 +1,29 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+    "fmt"
+    "net/http"
+    "log"
 
-	"github.com/gin-gonic/gin"
+    "github.com/gin-gonic/gin"
+
+    "jakepauls.dev/gopher/setup"
+    "jakepauls.dev/gopher/routes"
 )
 
 func main() {
-	fmt.Println("🚀 Server running on https://localhost:8000")
-	app := gin.Default()
+    var serverSetup = setup.ServerSetup()
+    gin.SetMode(serverSetup.RunMode)
 
-	api := app.Group("/api")
-	{
-		api.GET("/ping", func(c *gin.Context) {
-			c.Header("Content-Type", "application/json")
-			c.JSON(http.StatusOK, gin.H{
-				"ping": "pong",
-			})
-		})
-	}
+    router := routes.InitRouter()
+    port := fmt.Sprintf(":%d", serverSetup.Port)
 
-	app.Run(":4040")
+    server := &http.Server {
+        Addr:            port,
+        Handler:       router,
+    }
+
+    log.Printf("[info] 🚀 http server started on port %s", port)
+
+    server.ListenAndServe()
 }
