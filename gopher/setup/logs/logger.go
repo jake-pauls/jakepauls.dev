@@ -2,30 +2,38 @@ package logs
 
 import (
     "fmt"
-    "log"
+    "os"
 
     "go.uber.org/zap"
+    "go.uber.org/zap/zapcore"
 
     "jakepauls.dev/gopher/utils"
 )
 
 func InitLogger() *zap.Logger {
-    var serverMode string  = utils.GetServerMode()
-    var config zap.Config
+    productionEncoder := zap.NewProductionEncoderConfig()
+    fileEncoder := zapcore.NewJSONEncoder(productionEncoder)
 
-    // Build appropriate logger, if debug, save a log locally
-    if !utils.IsProduction() {
-        config = zap.NewDevelopmentConfig()
-        logName := fmt.Sprintf("%s.%s.log", utils.GetDate(), serverMode)
-        config.OutputPaths= []string{logName}
-    } else {
-        config = zap.NewProductionConfig()
+    // Configure file and console encoding
+    productionEncoder.EncodeTime = zapcore.ISO8601TimeEncoder
+    consoleEncoder := zapcore.NewConsoleEncoder(productionEncoder)
+
+    // Default to debugging logs if gopher is outside of production
+    logLevel := zap.DebugLevel
+    if utils.IsProduction() {
+        logLevel = zap.InfoLevel
     }
 
-    zapLogger, err := config.Build()
-    if err != nil {
-        log.Fatalf("failed to initalize zap logger: %v", err)
-    }
+    logName := fmt.Sprintf("%s.%s.log", utils.GetDate(), logLevel)
+    logFile, _ := os.Create(logName)
+
+    // Routes logs to file and stdout
+    core := zapcore.NewTee(
+        zapcore.NewCore(fileEncoder, zapcore.AddSync(logFile), logLevel),
+        zapcore.NewCore(consoleEncoder, zapcore.AddSync(os.Stdout), logLevel),
+    )
+
+    zapLogger := zap.New(core)
 
     return zapLogger
 }
@@ -36,8 +44,4 @@ func ReplaceGlobalLogger() {
     zapLogger := InitLogger()
     zap.ReplaceGlobals(zapLogger)
     defer zapLogger.Sync()        // Flashes buffer, if necessary
-
-    var serverMode = utils.GetServerMode()
-    sugarLogger := zapLogger.Sugar()
-    sugarLogger.Infof("zap logger initialized in %s mode", serverMode)
 }
