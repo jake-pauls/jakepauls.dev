@@ -1,21 +1,19 @@
 import React from "react";
 import { Flex, Image, SimpleGrid, Stack, Text } from "@chakra-ui/react";
-import { BsLightningFill } from "react-icons/bs";
 
-import { TitleLightningIcon, MorganiteText } from "../ui/Styles";
+import { InconsolataText } from "../ui/Styles";
 
 const AboutTitle = () => {
     return (
-        <MorganiteText 
+        <InconsolataText
             color="base.text"
-            fontSize={{ base: "6em", md: "8em" }} 
+            fontSize={{ base: "3em", md: "4em" }}
             alignSelf="flex-start"
-            lineHeight="0%"
-            mb={10}
-            mt={20}>
+            letterSpacing={-4}
+            mb={1}
+            mt={2}>
                 About
-                <TitleLightningIcon as={BsLightningFill} />
-        </MorganiteText>
+        </InconsolataText>
     );
 };
 
@@ -36,21 +34,21 @@ const AboutImage = () => {
 
 const About = () => {
     return (
-        <Flex 
-            maxW="12xl" 
+        <Flex
+            maxW="12xl"
             minH={{ base: "55vh", md: "70vh" }}
-            py={2} 
+            py={2}
             px={2}>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
                 <Stack>
                     <AboutTitle />
                     <Text color="base.text" fontSize="lg">
-                    I'm baby chartreuse squid taiyaki, coloring book intelligentsia craft beer ugh typewriter chillwave live-edge farm-to-table helvetica cornhole umami. Flannel live-edge schlitz, cliche direct trade snackwave selvage woke cloud bread taiyaki leggings VHS drinking vinegar art party celiac. 
+                    I'm baby chartreuse squid taiyaki, coloring book intelligentsia craft beer ugh typewriter chillwave live-edge farm-to-table helvetica cornhole umami. Flannel live-edge schlitz, cliche direct trade snackwave selvage woke cloud bread taiyaki leggings VHS drinking vinegar art party celiac.
                     <br/> <br />Four dollar toast air plant church-key hoodie put a bird on it street art banjo mixtape cloud bread. Tattooed bitters messenger bag, hoodie poke organic kombucha banjo knausgaard fingerstache chillwave blue bottle cred. Twee forage ugh taxidermy paleo succulents next level snackwave helvetica freegan vinyl master cleanse art party photo booth sustainable.
                     </Text>
                 </Stack>
                 <AboutImage />
-            </SimpleGrid> 
+            </SimpleGrid>
         </Flex>
     );
 };

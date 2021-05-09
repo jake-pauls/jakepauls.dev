@@ -17,7 +17,7 @@ const HomeTitle = () => {
             alignItems="center"
             flexWrap="wrap">
             <MorganiteText
-                fontSize={{ base: "6em", md: "8em" }}
+                fontSize={{ base: "5em", md: "8em" }}
                 color="base.text"
                 lineHeight="0%">
                     Jake Pauls

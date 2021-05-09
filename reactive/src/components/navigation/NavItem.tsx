@@ -6,7 +6,6 @@ import { BsLightningFill } from "react-icons/bs";
 import { InconsolataText } from "../../ui/Styles";
 import { DividerLightningIcon } from "../../ui/Styles";
 
-
 type NavItem = {
     route: string;
     text: string;
@@ -15,7 +14,7 @@ type NavItem = {
 export const DesktopNavItem = ({ route = "/", text = "" }: NavItem) => {
     return (
         <Link as={RouteLink} to={route} color="base.text">
-            <InconsolataText fontSize="42px" display="block">
+            <InconsolataText fontSize="32px" display="block">
                 {text}
             </InconsolataText>
         </Link>
@@ -25,7 +24,7 @@ export const DesktopNavItem = ({ route = "/", text = "" }: NavItem) => {
 export const MobileNavItem = ({ route = "/", text = "" }: NavItem) => {
     return (
         <Flex
-            py={3}
+            py={1}
             justify={"space-between"}
             align={"center"}>
             <DividerLightningIcon as={BsLightningFill} />

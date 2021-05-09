@@ -15,12 +15,14 @@ export const NavigationStack = () => {
                 justify={"flex-end"}
                 align={"center"}
                 direction={"row"}
-                spacing={4}>
-                <DesktopNavItem route="/" text="home" />
-                <DividerLightningIcon as={BsLightningFill} />
+                spacing={2}>
                 <DesktopNavItem route="/about" text="about" />
                 <DividerLightningIcon as={BsLightningFill} />
                 <DesktopNavItem route="/portfolio" text="portfolio" />
+                <DividerLightningIcon as={BsLightningFill} />
+                <DesktopNavItem route="/stats" text="stats" />
+                <DividerLightningIcon as={BsLightningFill} />
+                <DesktopNavItem route="/resume" text="resume" />
             </Stack>
         </Flex>
     );
@@ -35,9 +37,10 @@ export const MobileNavigationStack = () => {
             borderBottomColor="base.grey"
             borderTopWidth="1px"
             borderTopColor="base.grey">
-            <MobileNavItem route="/" text="home" />
             <MobileNavItem route="/about" text="about" />
             <MobileNavItem route="/portfolio" text="portfolio" />
+            <MobileNavItem route="/stats" text="stats" />
+            <MobileNavItem route="/resume" text="resume" />
         </Stack>
     );
 };

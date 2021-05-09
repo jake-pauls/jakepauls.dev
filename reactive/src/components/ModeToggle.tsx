@@ -20,18 +20,18 @@ const ModeToggle = () => {
         <Box
             zIndex="1"
             position="fixed"
-            bottom="2em"
-            right="4em">
-            <Tooltip 
-                aria-label="mode-tooltip" 
-                label={getCurrentMode()} 
+            bottom="1.5em"
+            right="1.5em">
+            <Tooltip
+                aria-label="mode-tooltip"
+                label={getCurrentMode()}
                 closeOnClick={false}>
                 <IconButton
-                    aria-label="mode-icon" 
-                    onClick={toggleMode} 
-                    icon={getModeIcon()} 
-                    isRound={true} 
-                    color="base.primary" 
+                    aria-label="mode-icon"
+                    onClick={toggleMode}
+                    icon={getModeIcon()}
+                    isRound={true}
+                    color="base.primary"
                     bg="base.text"
                     size="lg"
                     _hover={{ bg: "base.text" }}

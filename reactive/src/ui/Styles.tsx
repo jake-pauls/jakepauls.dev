@@ -37,6 +37,6 @@ export const DividerLightningIcon = styled(LightningIcon)`
 `;
 
 export const TitleLightningIcon = styled(LightningIcon)`
-    font-size: 32px;
+    font-size: 28px;
     margin-left: 100%;
 `;

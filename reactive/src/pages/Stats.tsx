@@ -3,7 +3,7 @@ import { Code, Flex, Stack } from "@chakra-ui/react";
 
 import { InconsolataText } from "../ui/Styles";
 
-const Portfolio = () => {
+const Stats = () => {
     return (
         <Flex
             maxW="12xl"
@@ -18,7 +18,7 @@ const Portfolio = () => {
                 letterSpacing={-4}
                 mb={1}
                 mt={2}>
-                    Portfolio
+                   Stats
                 </InconsolataText>
                 <Code bg="base.background" color="base.text">Code goes here!</Code>
             </Stack>
@@ -26,4 +26,4 @@ const Portfolio = () => {
     );
 };
 
-export default Portfolio;
+export default Stats;
