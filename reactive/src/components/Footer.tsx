@@ -40,8 +40,9 @@ const Footer = ({ showIcons }: FooterProps) => {
     return (
         <Box
             as="footer"
-            bottom="0"
+            bottom="5"
             width="100%"
+            position="absolute"
             px={{ base: '4', md: '8' }}>
             <Stack direction="column" align="center">
                 <SocialIcons display={ showIcons ? "default" : "none"} />

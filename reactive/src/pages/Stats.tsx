@@ -7,7 +7,6 @@ const Stats = () => {
     return (
         <Flex
             maxW="12xl"
-            minH={{ base: "55vh", md: "70vh" }}
             py={2}
             px={2}>
             <Stack>

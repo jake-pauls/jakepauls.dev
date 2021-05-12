@@ -20,8 +20,8 @@ const ModeToggle = () => {
         <Box
             zIndex="1"
             position="fixed"
-            bottom="1.5em"
-            right="1.5em">
+            bottom="3em"
+            right="3em">
             <Tooltip
                 aria-label="mode-tooltip"
                 label={getCurrentMode()}

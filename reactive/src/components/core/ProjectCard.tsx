@@ -12,8 +12,9 @@ const ProjectCard = ({ title }: ProjectCardProps) => {
         <Box
             maxW="sm"
             borderWidth="1px"
-            borderRadius="lg">
-            <InconsolataText>{title}</InconsolataText>
+            borderRadius="lg"
+            borderColor="base.text">
+            <InconsolataText p={5} color="base.text">{title}</InconsolataText>
         </Box>
     );
 };

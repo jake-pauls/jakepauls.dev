@@ -24,8 +24,8 @@ const AboutImage = () => {
                 alt="Jake Pauls"
                 borderRadius="full"
                 boxShadow="primary"
-                mt={{ base: 4, md: 0 }}
-                mb={{ base: 12, md: 0 }}/>
+                mt={{ base: 2, md: 0 }}
+                mb={{ base: 20, md: 0 }}/>
         </Flex>
     );
 };
@@ -34,7 +34,6 @@ const About = () => {
     return (
         <Flex
             maxW="12xl"
-            minH={{ base: "55vh", md: "70vh" }}
             py={2}
             px={2}>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
