@@ -8,9 +8,12 @@ const ProjectCards = () => {
     return (
         <Flex justifyContent="center">
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
-                <ProjectCard title="Test Card" />
-                <ProjectCard title="Test Card" />
-                <ProjectCard title="Test Card" />
+                <ProjectCard
+                    title="The Phantom Blade"
+                    description="👹 Proof of concept for a Metroidvania-style game built in Unity... psst... it involves ninjas"
+                    date="March 2021"
+                    category="Game"
+                    language="C#" />
             </SimpleGrid>
         </Flex>
     );

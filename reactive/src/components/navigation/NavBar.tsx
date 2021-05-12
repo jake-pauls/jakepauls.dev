@@ -5,7 +5,7 @@ import { BsLightningFill } from "react-icons/bs";
 import NavToggle from "./NavToggle";
 import { DesktopNavItem, MobileNavItem } from "./NavItem"
 import ModeToggle from "../ModeToggle";
-import Logo from "../Logo";
+import Logo from "../core/Logo";
 import { DividerLightningIcon } from "../../ui/Styles";
 
 const NavBar = () => {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 import { BsLightningFill } from "react-icons/bs";
 
-import { MorganiteText, LightningIcon } from "../ui/Styles";
+import { MorganiteText, LightningIcon } from "../../ui/Styles";
 
 const LogoText = styled(MorganiteText)`
     font-size: 100px;

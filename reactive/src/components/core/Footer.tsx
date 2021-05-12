@@ -3,8 +3,8 @@ import { Box, Icon, Link, Stack, Text, Tooltip } from "@chakra-ui/react";
 import { FaReact } from "react-icons/fa";
 import { Golang } from "grommet-icons";
 
-import SocialIcons from "../components/SocialIcons"
-import { Links } from "../Constants";
+import SocialIcons from "../SocialIcons"
+import { Links } from "../../Constants";
 
 type FooterProps = {
     showIcons: Boolean;

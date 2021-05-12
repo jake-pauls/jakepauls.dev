@@ -8,7 +8,7 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Stats from "./pages/Stats"
 import NavBar from "./components/navigation/NavBar";
-import Footer from "./components/Footer";
+import Footer from "./components/core/Footer";
 import { ModeContext } from "./contexts/ModeContext";
 import { getChakraTheme } from "./ui/Theme";
 
