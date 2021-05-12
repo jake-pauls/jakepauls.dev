@@ -1,7 +1,20 @@
 import React from "react";
-import { Code, Flex, Stack } from "@chakra-ui/react";
+import { Flex, Stack, SimpleGrid } from "@chakra-ui/react";
 
+import ProjectCard from "../components/core/ProjectCard"
 import { InconsolataText } from "../ui/Styles";
+
+const ProjectCards = () => {
+    return (
+        <Flex justifyContent="center">
+            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+                <ProjectCard title="Test Card" />
+                <ProjectCard title="Test Card" />
+                <ProjectCard title="Test Card" />
+            </SimpleGrid>
+        </Flex>
+    );
+};
 
 const Portfolio = () => {
     return (
@@ -10,17 +23,14 @@ const Portfolio = () => {
             minH={{ base: "55vh", md: "70vh" }}
             py={2}
             px={2}>
-            <Stack>
+            <Stack width="100%">
                 <InconsolataText
                 color="base.text"
                 fontSize={{ base: "3em", md: "4em" }}
-                alignSelf="flex-start"
-                letterSpacing={-4}
-                mb={1}
-                mt={2}>
+                letterSpacing={-4}>
                     Portfolio
                 </InconsolataText>
-                <Code bg="base.background" color="base.text">Code goes here!</Code>
+                <ProjectCards />
             </Stack>
         </Flex>
     );

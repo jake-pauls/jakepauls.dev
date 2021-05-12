@@ -9,7 +9,7 @@ import { DividerLightningIcon } from "../../ui/Styles";
 type NavItem = {
     route: string;
     text: string;
-};
+    toggleNav?: () => void; };
 
 export const DesktopNavItem = ({ route = "/", text = "" }: NavItem) => {
     return (
@@ -21,14 +21,14 @@ export const DesktopNavItem = ({ route = "/", text = "" }: NavItem) => {
     );
 };
 
-export const MobileNavItem = ({ route = "/", text = "" }: NavItem) => {
+export const MobileNavItem = ({ route = "/", text = "", toggleNav }: NavItem) => {
     return (
         <Flex
             py={1}
             justify={"space-between"}
             align={"center"}>
             <DividerLightningIcon as={BsLightningFill} />
-            <Link as={RouteLink} to={route} color="base.text">
+            <Link as={RouteLink} to={route} color="base.text" onClick={toggleNav}>
                 <InconsolataText fontSize="38px" display="block">
                     {text}
                 </InconsolataText>

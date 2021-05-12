@@ -3,6 +3,7 @@ import { Box, Icon, Link, Stack, Text, Tooltip } from "@chakra-ui/react";
 import { FaReact } from "react-icons/fa";
 import { Golang } from "grommet-icons";
 
+import SocialIcons from "../components/SocialIcons"
 import { Links } from "../Constants";
 
 type FooterProps = {
@@ -37,15 +38,16 @@ const getGitHubRepoLink = () => {
 
 const Footer = ({ showIcons }: FooterProps) => {
     return (
-        <Box 
-            as="footer" 
-            bottom="0" 
-            width="100%" 
+        <Box
+            as="footer"
+            bottom="0"
+            width="100%"
             px={{ base: '4', md: '8' }}>
             <Stack direction="column" align="center">
-                <Text 
-                    fontSize="sm" 
-                    align="center" 
+                <SocialIcons display={ showIcons ? "default" : "none"} />
+                <Text
+                    fontSize="sm"
+                    align="center"
                     color="base.text">
                    Powered by {getReactIconLink()} and {getGolangIconLink()} | Source on {getGitHubRepoLink()} <br />
                    Made with 💛 in { new Date().getFullYear() } | Jake Pauls

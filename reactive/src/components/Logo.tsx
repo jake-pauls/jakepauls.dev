@@ -22,7 +22,7 @@ const Logo = () => {
             flex={{ base: 1 }}
             justify={{ base: "start", md: "start" }}>
                 <Link to="/" color="base.text">
-                    <LogoText color="base.text">JP</LogoText> 
+                    <LogoText color="base.text">JP</LogoText>
                 </Link>
                 <LogoLightningIcon as={BsLightningFill} />
         </Flex>

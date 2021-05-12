@@ -15,9 +15,7 @@ const Stats = () => {
                 color="base.text"
                 fontSize={{ base: "3em", md: "4em" }}
                 alignSelf="flex-start"
-                letterSpacing={-4}
-                mb={1}
-                mt={2}>
+                letterSpacing={-4}>
                    Stats
                 </InconsolataText>
                 <Code bg="base.background" color="base.text">Code goes here!</Code>

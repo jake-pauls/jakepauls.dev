@@ -6,7 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
-import Stats from "./pages/Stats";
+import Stats from "./pages/Stats"
 import NavBar from "./components/navigation/NavBar";
 import Footer from "./components/Footer";
 import { ModeContext } from "./contexts/ModeContext";
