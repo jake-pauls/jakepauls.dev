@@ -40,6 +40,7 @@ const Footer = ({ showIcons }: FooterProps) => {
     return (
         <Box
             as="footer"
+            mt="auto"
             bottom="5"
             width="100%"
             position="absolute"
