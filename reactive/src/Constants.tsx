@@ -10,15 +10,16 @@ export const Links = {
 };
 
 /* Projects */
-export const Projects = [
+export const projects = [
     {
         title: "PunkGauth",
-        description: "Crickets",
+        description: "Hypothesis for enabling artists to democratize their revenues from album and single sales through cryptocurrency authentication based on Ethereum and NFTs",
         date: "April 2021",
         category: "Hackathon",
         tech: ["Vue", "TypeScript", "Python", "Solidity"],
         ghLink: "https://github.com/jacob-pauls/PunkGauth",
         projLink: "",
+        imageUrl: "https://bit.ly/2Z4KKcF",
     },
     {
         title: "The Phantom Blade",
@@ -28,6 +29,7 @@ export const Projects = [
         tech: ["C#", "Unity"],
         ghLink: "https://github.com/jacob-pauls/phantom-blade",
         projLink: "https://tpbstudios.itch.io/the-phantom-blade",
+        imageUrl: "https://img.itch.zone/aW1nLzU0MzAyNjgucG5n/original/5L9%2Bsb.png"
     },
     {
         title: "InterviewBuddy.online",
@@ -37,6 +39,7 @@ export const Projects = [
         tech: ["React", "Python", "Flask", "Google Cloud"],
         ghLink: "https://github.com/siddg97/stormhacks2021",
         projLink: "",
+        imageUrl: "https://bit.ly/2Z4KKcF",
     },
     {
         title: "EduGlobe",
@@ -46,6 +49,7 @@ export const Projects = [
         tech: ["JavaScript", "three.js", "Netlify"],
         ghLink: "https://github.com/jacob-pauls/EduGlobe",
         projLink: "https://eduglobe.space",
+        imageUrl: "https://bit.ly/2Z4KKcF",
     },
     {
         title: "UHDA",
@@ -55,14 +59,16 @@ export const Projects = [
         tech: ["Java", "SpringBoot", "Python"],
         ghLink: "https://github.com/jacob-pauls/Untitled_UHDA_Project",
         projLink: "",
+        imageUrl: "https://bit.ly/2Z4KKcF",
     },
     {
         title: "gasTRAK",
         description: "Android app that tracks user gas data and allows them to create trips to local gas stations",
         date: "December 2019",
         category: "School",
-        tech: ["Java (Android)", "Google Cloud", "AWS", "Firebase", "MySQL"],
+        tech: ["Java", "Google Cloud", "AWS", "Firebase", "MySQL"],
         ghLink: "https://github.com/jacob-pauls/gasTRAK",
         projLink: "",
+        imageUrl: "https://bit.ly/2Z4KKcF",
     },
 ];
