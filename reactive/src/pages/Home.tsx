@@ -5,6 +5,7 @@ import { BsLightningFill } from "react-icons/bs";
 
 import SocialIcons from "../components/SocialIcons";
 import { TitleLightningIcon, MorganiteText, RobotoText } from "../ui/Styles";
+import { FadeIn } from "../ui/Transitions";
 
 const SubtitleText = styled(RobotoText)`
     font-weight: 300;
@@ -39,18 +40,20 @@ const Subtitle = () => {
 
 const Home = () => {
     return (
-        <Flex
-            align="center"
-            justify="center"
-            direction={{ base: "column-reverse", md: "row" }}
-            minH={{ base: "55vh", md: "70vh" }}
-            px={10}>
-            <Stack align="center">
-                <HomeTitle />
-                <Subtitle />
-                <SocialIcons color="base.primary"/>
-            </Stack>
-        </Flex>
+        <FadeIn>
+            <Flex
+                align="center"
+                justify="center"
+                direction={{ base: "column-reverse", md: "row" }}
+                minH={{ base: "55vh", md: "70vh" }}
+                px={10}>
+                <Stack align="center">
+                    <HomeTitle />
+                    <Subtitle />
+                    <SocialIcons color="base.primary"/>
+                </Stack>
+            </Flex>
+        </FadeIn>
     );
 };
 

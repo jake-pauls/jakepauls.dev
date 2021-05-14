@@ -1,5 +1,7 @@
+import React from "react";
 import styled from "styled-components";
 import { Icon, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 /* Colors */
 export const lightning = "#F8BD00";
