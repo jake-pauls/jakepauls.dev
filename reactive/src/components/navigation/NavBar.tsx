@@ -17,12 +17,13 @@ const NavBar = () => {
 
     return (
         <Box>
-            <Flex align={"center"}>
+            <Flex align="center">
                 <Logo />
                     <Flex
                         display={{ base: "none", md: "flex" }}
                         marginLeft={10}>
                         <Stack
+                            mt={5}
                             flex={{ base: 1, md: 1 }}
                             justify={"flex-end"}
                             align={"center"}
@@ -41,12 +42,9 @@ const NavBar = () => {
             </Flex>
             <Collapse in={isOpen} animateOpacity>
              <Stack
-                m={3}
-                display={{ md: 'none' }}
-                borderBottomWidth="1px"
-                borderBottomColor="base.grey"
-                borderTopWidth="1px"
-                borderTopColor="base.grey">
+                mb={3}
+                mt={5}
+                display={{ md: 'none' }}>
                 <MobileNavItem route="/about" text="about" toggleNav={toggleNavBar} />
                 <MobileNavItem route="/portfolio" text="portfolio" toggleNav={toggleNavBar} />
                 <MobileNavItem route="/stats" text="stats" toggleNav={toggleNavBar} />

@@ -40,11 +40,11 @@ const Portfolio = () => {
                             Portfolio
                         </InconsolataText>
                         <RobotoText
-                            mt="-16px"
+                            mt={{ base: "-10px", md: "-16px" }}
                             mb="12px"
                             color="base.grey"
                             fontWeight="semibold"
-                            fontSize={{ base: "12px", md: "24px"}}>
+                            fontSize={{ base: "16px", md: "24px"}}>
                             Games, hackathons, and personal projects
                         </RobotoText>
                     </Box>

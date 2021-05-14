@@ -13,7 +13,7 @@ import { ModeContext } from "./contexts/ModeContext";
 import { getChakraTheme } from "./ui/Theme";
 
 const PageContainer = styled.div`
-  margin: 5px 75px 5px 60px;
+  margin: 3px 50px 3px 50px;
 `;
 
 const App = () => {

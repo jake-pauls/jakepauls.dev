@@ -42,8 +42,8 @@ const Home = () => {
     return (
         <FadeIn>
             <Flex
-                align="center"
-                justify="center"
+                alignItems="center"
+                justifyContent="center"
                 direction={{ base: "column-reverse", md: "row" }}
                 minH={{ base: "55vh", md: "70vh" }}
                 px={10}>
