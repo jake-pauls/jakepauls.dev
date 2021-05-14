@@ -1,3 +1,5 @@
+import tpbImg from "../public/images/project_tpb.png";
+
 /* Links */
 export const Links = {
     GITHUB: "https://github.com/jacob-pauls/",
@@ -19,7 +21,7 @@ export const projects = [
         tech: ["Vue", "TypeScript", "Python", "Solidity"],
         ghLink: "https://github.com/jacob-pauls/PunkGauth",
         projLink: "",
-        imageUrl: "https://bit.ly/2Z4KKcF",
+        image: tpbImg,
     },
     {
         title: "The Phantom Blade",
@@ -29,7 +31,7 @@ export const projects = [
         tech: ["C#", "Unity"],
         ghLink: "https://github.com/jacob-pauls/phantom-blade",
         projLink: "https://tpbstudios.itch.io/the-phantom-blade",
-        imageUrl: "https://img.itch.zone/aW1nLzU0MzAyNjgucG5n/original/5L9%2Bsb.png"
+        image: tpbImg,
     },
     {
         title: "InterviewBuddy.online",
@@ -39,7 +41,7 @@ export const projects = [
         tech: ["React", "Python", "Flask", "Google Cloud"],
         ghLink: "https://github.com/siddg97/stormhacks2021",
         projLink: "",
-        imageUrl: "https://bit.ly/2Z4KKcF",
+        image: tpbImg,
     },
     {
         title: "EduGlobe",
@@ -49,7 +51,7 @@ export const projects = [
         tech: ["JavaScript", "three.js", "Netlify"],
         ghLink: "https://github.com/jacob-pauls/EduGlobe",
         projLink: "https://eduglobe.space",
-        imageUrl: "https://bit.ly/2Z4KKcF",
+        image: tpbImg,
     },
     {
         title: "UHDA",
@@ -59,7 +61,7 @@ export const projects = [
         tech: ["Java", "SpringBoot", "Python"],
         ghLink: "https://github.com/jacob-pauls/Untitled_UHDA_Project",
         projLink: "",
-        imageUrl: "https://bit.ly/2Z4KKcF",
+        image: tpbImg,
     },
     {
         title: "gasTRAK",
@@ -69,6 +71,6 @@ export const projects = [
         tech: ["Java", "Google Cloud", "AWS", "Firebase", "MySQL"],
         ghLink: "https://github.com/jacob-pauls/gasTRAK",
         projLink: "",
-        imageUrl: "https://bit.ly/2Z4KKcF",
+        image: tpbImg,
     },
 ];

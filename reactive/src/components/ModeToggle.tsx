@@ -32,10 +32,10 @@ const ModeToggle = () => {
                     icon={getModeIcon()}
                     isRound={true}
                     color="base.primary"
-                    bg="base.text"
+                    bg="base.black"
                     size="lg"
-                    _hover={{ bg: "base.text" }}
-                    _focus={{ boxShadow: "base.text" }}
+                    _hover={{ bg: "base.black" }}
+                    _focus={{ boxShadow: "base.black" }}
                     boxShadow="primary" />
             </Tooltip>
         </Box>

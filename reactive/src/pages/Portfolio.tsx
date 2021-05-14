@@ -7,8 +7,14 @@ import { InconsolataText, RobotoText } from "../ui/Styles";
 
 const ProjectCards = () => {
     return (
-        <Flex justifyContent="center">
-            <SimpleGrid columns={{ base: 1, sm: 1, md: 2, xl: 3 }} spacingX={8} spacingY={10}>
+        <Flex
+            justifyContent="center"
+            pl={{ base: 1, md: 20 }}
+            pr={{ base: 1, md: 20 }}
+            pb={20}
+            pt={5}
+            m={10}>
+            <SimpleGrid columns={{ sm: 1, lg: 2, xl: 3 }} spacingX={8} spacingY={10}>
                 {projects.map((project) => (
                     <ProjectCard key={ project.title } {...project} />
                 ))}
@@ -32,8 +38,8 @@ const Portfolio = () => {
                         Portfolio
                     </InconsolataText>
                     <RobotoText
-                        mt={{ base: "-6px", md: "-16px" }}
-                        mb={{ base: "4px", md: "12px" }}
+                        mt="-16px"
+                        mb="12px"
                         color="base.grey"
                         fontWeight="semibold"
                         fontSize={{ base: "12px", md: "24px"}}>
