@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Icon, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Icon, IconProps, Text } from "@chakra-ui/react";
+import { BsLightningFill } from "react-icons/bs";
 
 /* Colors */
 export const lightning = "#F8BD00";
@@ -28,17 +28,15 @@ export const RobotoText = styled(Text)`
     font-size: 16px;
 `;
 
-/* Icon */
-export const LightningIcon = styled(Icon)`
-    color: ${ lightning };
-`;
+/* Lightning Icons */
+export const LightningIcon = (props : IconProps) => {
+    return (
+        <Icon color={lightning} as={BsLightningFill} {...props} />
+    );
+};
 
-export const DividerLightningIcon = styled(LightningIcon)`
-    padding-top: 10px;
-    font-size: 32px;
-`;
-
-export const TitleLightningIcon = styled(LightningIcon)`
-    font-size: 28px;
-    margin-left: 100%;
-`;
+export const DividerLightningIcon = () => {
+    return (
+        <LightningIcon pt="10px" fontSize="32px"/>
+    );
+};

@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Flex, Stack } from "@chakra-ui/react";
-import { BsLightningFill } from "react-icons/bs";
 
 import SocialIcons from "../components/SocialIcons";
-import { TitleLightningIcon, MorganiteText, RobotoText } from "../ui/Styles";
+import { LightningIcon, MorganiteText, RobotoText } from "../ui/Styles";
 import { FadeIn } from "../ui/Transitions";
 
 const SubtitleText = styled(RobotoText)`
@@ -21,20 +20,10 @@ const HomeTitle = () => {
                 fontSize={{ base: "5em", md: "8em" }}
                 color="base.text"
                 lineHeight="0%">
-                    Jake Pauls
-                    <TitleLightningIcon as={BsLightningFill} />
+                Jake Pauls
+                <LightningIcon fontSize={{ base: "20px", md: "28px" }} ml="92%"/>
             </MorganiteText>
         </Flex>
-    );
-}
-
-const Subtitle = () => {
-    return (
-        <SubtitleText
-            fontSize={{ base: "1.3em", md: "2em"}}
-            color="base.text">
-                Software Developer
-        </SubtitleText>
     );
 }
 
@@ -49,7 +38,11 @@ const Home = () => {
                 px={10}>
                 <Stack align="center">
                     <HomeTitle />
-                    <Subtitle />
+                    <SubtitleText
+                        fontSize={{ base: "1.3em", md: "2em"}}
+                        color="base.text">
+                        Software Developer
+                    </SubtitleText>
                     <SocialIcons color="base.primary"/>
                 </Stack>
             </Flex>

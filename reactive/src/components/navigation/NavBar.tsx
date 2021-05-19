@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Box, Flex, Collapse, Stack } from "@chakra-ui/react";
-import { BsLightningFill } from "react-icons/bs";
 
 import NavToggle from "./NavToggle";
 import { DesktopNavItem, MobileNavItem } from "./NavItem"
@@ -30,11 +29,11 @@ const NavBar = () => {
                             direction={"row"}
                             spacing={2}>
                             <DesktopNavItem route="/about" text="about" />
-                            <DividerLightningIcon as={BsLightningFill} />
+                            <DividerLightningIcon />
                             <DesktopNavItem route="/portfolio" text="portfolio" />
-                            <DividerLightningIcon as={BsLightningFill} />
+                            <DividerLightningIcon />
                             <DesktopNavItem route="/stats" text="stats" />
-                            <DividerLightningIcon as={BsLightningFill} />
+                            <DividerLightningIcon />
                             <DesktopNavItem route="/resume" text="resume" />
                         </Stack>
                     </Flex>
