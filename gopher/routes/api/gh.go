@@ -37,6 +37,7 @@ type Repository struct {
     IsFork      bool    `json:"fork"`
     OpenIssues  int     `json:"open_issues"`
     License     License
+    Size        int
     URL         string  `json:"html_url"`
     CloneURL    string  `json:"clone_url"`
     CreatedAt   string  `json:"created_at"`
@@ -53,6 +54,7 @@ type OutRepository struct {
     IsFork      bool    `json:"isFork"`
     OpenIssues  int     `json:"openIssues"`
     License     string  `json:"license"`
+    Size        int     `json:"size"`
     Url         string  `json:"url"`
     CloneUrl    string  `json:"cloneUrl"`
     Created     string  `json:"created"`
@@ -143,6 +145,7 @@ func GetRepoJSON() []OutRepository {
             IsFork: o.IsFork,
             OpenIssues: o.OpenIssues,
             License: o.License.Name,
+            Size: o.Size,
             Url: o.URL,
             CloneUrl: o.CloneURL,
             Created: o.CreatedAt,

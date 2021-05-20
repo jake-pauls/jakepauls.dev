@@ -1,8 +1,10 @@
 import React from "react";
-import { Box, Code, Flex, Stack } from "@chakra-ui/react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 
 import { InconsolataText, RobotoText } from "../ui/Styles";
 import { FadeIn } from "../ui/Transitions";
+
+import RepoTable from "../components/data/RepoTable";
 
 const Stats = () => {
     return (
@@ -10,7 +12,7 @@ const Stats = () => {
             <Flex
                 py={2}
                 px={2}>
-                <Stack justifyContent="flex-start">
+                <Stack>
                     <Box>
                         <InconsolataText
                             color="base.text"
@@ -27,9 +29,9 @@ const Stats = () => {
                             Making my statistics instructor proud.
                         </RobotoText>
                     </Box>
-                    <Code bg="base.background" color="base.text">Code goes here!</Code>
                 </Stack>
             </Flex>
+            <RepoTable/>
         </FadeIn>
     );
 };

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import Home from "./pages/Home";
@@ -19,33 +20,36 @@ const PageContainer = styled.div`
 const App = () => {
   const { mode } = useContext(ModeContext);
   const chakraTheme = getChakraTheme(mode);
+  const queryClient = new QueryClient();
 
   return (
-    <ChakraProvider theme={chakraTheme}>
-      <Router>
-        <PageContainer>
-          <NavBar />
+    <QueryClientProvider client={queryClient}>
+        <ChakraProvider theme={chakraTheme}>
+          <Router>
+            <PageContainer>
+              <NavBar />
 
-          <Switch>
-            <Route path={"/resume"}>
-            </Route>
-            <Route path={"/stats"}>
-                <Stats />
-            </Route>
-            <Route path={"/portfolio"}>
-                <Portfolio />
-            </Route>
-            <Route path={"/about"}>
-                <About />
-            </Route>
-            <Route path={"/"}>
-                <Home />
-            </Route>
-          </Switch>
-        </PageContainer>
-        <Footer showIcons={false} />
-      </Router>
-    </ChakraProvider>
+              <Switch>
+                <Route path={"/resume"}>
+                </Route>
+                <Route path={"/stats"}>
+                    <Stats />
+                </Route>
+                <Route path={"/portfolio"}>
+                    <Portfolio />
+                </Route>
+                <Route path={"/about"}>
+                    <About />
+                </Route>
+                <Route path={"/"}>
+                    <Home />
+                </Route>
+              </Switch>
+            </PageContainer>
+            <Footer showIcons={false} />
+          </Router>
+        </ChakraProvider>
+    </QueryClientProvider>
   );
 };
 

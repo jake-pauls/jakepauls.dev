@@ -7,14 +7,12 @@ import { FadeIn } from "../ui/Transitions";
 
 const AboutImage = () => {
     return (
-        <Box ml="auto" mt={{ base: 0, md: 16 }} mr={{ base: 0, md: 10 }}>
+        <Box ml="auto" mt={{ base: 8, md: 16 }} mb={{ base: 28, md: 0 }} mr={{ base: 0, md: 10 }}>
             <Image
                 src="https://avatars.githubusercontent.com/u/48817786?v=4"
                 alt="Jake Pauls"
                 boxShadow="lg"
-                borderRadius="full"
-                mt={{ base: 2, md: 0 }}
-                mb={{ base: 20, md: 0 }}/>
+                borderRadius="full"/>
         </Box>
     );
 };
@@ -25,8 +23,8 @@ const About = () => {
             <Flex
                 py={2}
                 px={2}>
-                <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-                    <Stack justifyContent="flex-start">
+                <SimpleGrid columns={{ base: 1, md: 2 }}>
+                    <Stack spacing={4}>
                         <Box>
                             <InconsolataText
                                color="base.text"
@@ -35,7 +33,6 @@ const About = () => {
                             </InconsolataText>
                             <RobotoText
                                 mt={{ base: "-10px", md: "-16px" }}
-                                mb="12px"
                                 color="base.grey"
                                 fontWeight="semibold"
                                 fontSize={{ base: "16px", md: "24px"}}>
