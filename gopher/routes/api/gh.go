@@ -6,6 +6,8 @@ import (
     "net/http"
     "encoding/json"
 
+    "jakepauls.dev/gopher/utils"
+
     "github.com/gin-gonic/gin"
     "go.uber.org/zap"
 )
@@ -37,6 +39,8 @@ type Repository struct {
     License     License
     URL         string  `json:"html_url"`
     CloneURL    string  `json:"clone_url"`
+    CreatedAt   string  `json:"created_at"`
+    UpdatedAt   string  `json:"updated_at"`
 }
 
 type OutRepository struct {
@@ -47,10 +51,12 @@ type OutRepository struct {
     Language    string  `json:"language"`
     Forks       int     `json:"forks"`
     IsFork      bool    `json:"isFork"`
-    OpenIssues   int    `json:"openIssues"`
+    OpenIssues  int     `json:"openIssues"`
     License     string  `json:"license"`
     Url         string  `json:"url"`
     CloneUrl    string  `json:"cloneUrl"`
+    Created     string  `json:"created"`
+    LastUpdated string  `json:"lastUpdated"`
 }
 
 // Register GitHub routers
@@ -139,7 +145,14 @@ func GetRepoJSON() []OutRepository {
             License: o.License.Name,
             Url: o.URL,
             CloneUrl: o.CloneURL,
+            Created: o.CreatedAt,
+            LastUpdated: o.UpdatedAt,
         }
+
+        // Modify timestamps
+        repo.Created = utils.FormatCustomDate(repo.Created)
+        repo.LastUpdated = utils.FormatCustomDate(repo.LastUpdated)
+
         outRepositories = append(outRepositories, repo)
     }
 

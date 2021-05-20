@@ -7,6 +7,8 @@ import (
     "jakepauls.dev/gopher/setup"
 
     "github.com/joho/godotenv"
+    "github.com/araddon/dateparse"
+    "go.uber.org/zap"
 )
 
 // Sources variables from .env file
@@ -34,8 +36,22 @@ func GetServerMode() string {
     return serverMode
 }
 
-// Returns current date formated "DDMMYYY"
+// Returns current date formatted "DDMMYYY"
 func GetDate() string {
     ct := time.Now()
     return ct.Format("01022006")
+}
+
+// Parses custom date formatted "YYYY-MM-DD"
+func FormatCustomDate(cd string) string {
+    t, err := dateparse.ParseAny(cd)
+
+    if err != nil {
+        zap.S().Warnf("[UTILS] failed to format custom date: %s", err)
+    }
+
+    layout := "2006-01-02"
+    formattedDate := t.Format(layout)
+
+    return formattedDate
 }
