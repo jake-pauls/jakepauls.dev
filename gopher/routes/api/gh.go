@@ -2,6 +2,7 @@ package api
 
 import (
     "io/ioutil"
+    "os"
     "net/http"
     "encoding/json"
 
@@ -38,6 +39,20 @@ type Repository struct {
     CloneURL    string  `json:"clone_url"`
 }
 
+type OutRepository struct {
+    Name        string  `json:"name"`
+    Description string  `json:"description"`
+    Stars       int     `json:"stars"`
+    Watchers    int     `json:"watchers"`
+    Language    string  `json:"language"`
+    Forks       int     `json:"forks"`
+    IsFork      bool    `json:"isFork"`
+    OpenIssues   int    `json:"openIssues"`
+    License     string  `json:"license"`
+    Url         string  `json:"url"`
+    CloneUrl    string  `json:"cloneUrl"`
+}
+
 // Register GitHub routers
 func GitHubRegister(group *gin.RouterGroup) {
     group.GET("/profile", GetProfile)
@@ -52,8 +67,8 @@ func GetProfile(c *gin.Context) {
 }
 
 func GetRepos(c *gin.Context) {
-    repositories := GetRepoJSON()
-    c.JSON(http.StatusOK, repositories)
+    outRepositories := GetRepoJSON()
+    c.JSON(http.StatusOK, outRepositories)
 }
 
 // Derived from a repository's main language
@@ -80,7 +95,6 @@ func GetExtendedStats(c *gin.Context) {
 
     extendedStatsMap := make(map[string]int)
 
-
     for i := 0; i < len(repositories); i++ {
         extendedStatsMap["Watchers"] += repositories[i].Watchers
         extendedStatsMap["Stars"] += repositories[i].Stars
@@ -90,11 +104,7 @@ func GetExtendedStats(c *gin.Context) {
 }
 
 func GetProfileJSON() Profile {
-    resp, err := http.Get(profile_url)
-
-    if err != nil {
-        zap.S().Infof("error retrieving profile data from github: %s", err)
-    }
+    resp := CallGitHubApi(profile_url)
 
     defer resp.Body.Close()
     body, _ := ioutil.ReadAll(resp.Body)
@@ -105,12 +115,8 @@ func GetProfileJSON() Profile {
     return profile
 }
 
-func GetRepoJSON() []Repository {
-    resp, err := http.Get(repos_url)
-
-    if err != nil {
-        zap.S().Infof("error retrieving repos from github: %s", err)
-    }
+func GetRepoJSON() []OutRepository {
+    resp := CallGitHubApi(repos_url)
 
     defer resp.Body.Close()
     body, _ := ioutil.ReadAll(resp.Body)
@@ -118,5 +124,37 @@ func GetRepoJSON() []Repository {
     var repositories []Repository
     json.Unmarshal([]byte(body), &repositories)
 
-    return repositories
+    // Cast outgoing repository JSON
+    var outRepositories []OutRepository
+    for _, o := range repositories {
+        repo := OutRepository{
+            Name: o.Name,
+            Description: o.Description,
+            Stars: o.Stars,
+            Watchers: o.Watchers,
+            Language: o.Language,
+            Forks: o.Forks,
+            IsFork: o.IsFork,
+            OpenIssues: o.OpenIssues,
+            License: o.License.Name,
+            Url: o.URL,
+            CloneUrl: o.CloneURL,
+        }
+        outRepositories = append(outRepositories, repo)
+    }
+
+    return outRepositories
+}
+
+func CallGitHubApi(url string) *http.Response {
+    client := &http.Client{}
+    req, _ := http.NewRequest("GET", url, nil)
+    req.Header.Set("Authorization", os.Getenv("GH_ACCESS_TOKEN"))
+    resp, err := client.Do(req)
+
+    if err != nil {
+        zap.S().Infof("error calling the github api: %s", err)
+    }
+
+    return resp
 }
