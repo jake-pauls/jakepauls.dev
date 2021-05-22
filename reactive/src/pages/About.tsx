@@ -8,11 +8,13 @@ const AboutImage = () => {
     return (
         <Flex
             justifyContent="center"
-            m={{ base: 4, lg: 0 }}
+            alignSelf="center"
+            m={{ base: 4, lg: 0  }}
             pb={{ base: 16, lg: 0 }}>
             <Image
                 src="https://avatars.githubusercontent.com/u/48817786?v=4"
                 alt="Jake Pauls"
+                boxSize={{ base: "xs", lg: "sm" }}
                 boxShadow="lg"
                 borderRadius="full"/>
         </Flex>
@@ -23,7 +25,7 @@ const About = () => {
     return (
         <FadeIn>
             <Flex
-                m={{ base: 0, lg: 24 }}
+                m={{ base: 0, lg: 12 }}
                 py={2}
                 px={2}>
                 <SimpleGrid columns={{ base: 1, lg: 2 }}>

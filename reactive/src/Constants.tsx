@@ -6,6 +6,7 @@ export const Links = {
     LINKEDIN: "https://www.linkedin.com/in/jacobpauls/",
     EMAIL: "mailto:jakepauls99@gmail.com",
     TWITTER: "https://twitter.com/jackjakejacob",
+    RESUME: "https://drive.google.com/file/d/1m_u06Cs8JCTLuxQH7yPvbdiT_zJQEYcf/view?usp=sharing",
     REACT: "https://reactjs.org/",
     GOLANG: "https://golang.org/",
     REPO: "https://github.com/jacob-pauls/jakepauls.dev",

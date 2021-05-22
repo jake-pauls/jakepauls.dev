@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, FlexProps, Spinner, Tag, Table, TableCaption, Tbody, Thead, Th, Tr, Td } from "@chakra-ui/react";
+import { Flex, FlexProps, Spinner, Tag, Table, Tbody, Thead, Th, Tr, Td } from "@chakra-ui/react";
 
 import { Repository } from "../../types/repository";
 import { queryRepositories } from "../../hooks/APIQueries";
@@ -21,6 +21,7 @@ const RepoRow = (repo: Repository) => {
 
 const RepoTable = (props: FlexProps) => {
     const { isLoading: loading, data: repos, status: callStatus } = queryRepositories();
+
     const reposTableData = callStatus === "success" && (
         <Tbody fontSize="sm">
             {repos!.map((repo: Repository) => (

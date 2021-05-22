@@ -5,11 +5,23 @@ import { Flex, Link } from "@chakra-ui/react";
 import { DividerLightningIcon, InconsolataText } from "../../ui/Styles";
 
 type NavItem = {
-    route: string;
     text: string;
-    toggleNav?: () => void; };
+    route?: string;
+    url?: string;
+    toggleNav?: () => void;
+};
 
-export const DesktopNavItem = ({ route = "/", text = "" }: NavItem) => {
+export const DesktopNavItem = ({ route = "/", text = "", url }: NavItem) => {
+    if (url) {
+        return (
+            <Link href={url} color="base.text">
+                <InconsolataText fontSize="32px" display="block">
+                    {text}
+                </InconsolataText>
+            </Link>
+        );
+    }
+
     return (
         <Link as={RouteLink} to={route} color="base.text">
             <InconsolataText fontSize="32px" display="block">
@@ -19,7 +31,23 @@ export const DesktopNavItem = ({ route = "/", text = "" }: NavItem) => {
     );
 };
 
-export const MobileNavItem = ({ route = "/", text = "", toggleNav }: NavItem) => {
+export const MobileNavItem = ({ route = "/", text = "", url, toggleNav }: NavItem) => {
+    if (url) {
+        return (
+             <Flex
+                py={1}
+                justify={"space-between"}
+                align={"center"}>
+                <DividerLightningIcon />
+                <Link href={url} color="base.text" onClick={toggleNav}>
+                    <InconsolataText fontSize="38px" display="block">
+                        {text}
+                    </InconsolataText>
+                </Link>
+            </Flex>
+        );
+    }
+
     return (
         <Flex
             py={1}

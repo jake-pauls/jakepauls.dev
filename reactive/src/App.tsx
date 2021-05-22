@@ -12,6 +12,7 @@ import NavBar from "./components/navigation/NavBar";
 import Footer from "./components/core/Footer";
 import { ModeContext } from "./contexts/ModeContext";
 import { getChakraTheme } from "./ui/Theme";
+import { Links } from "./Constants";
 
 const PageContainer = styled.div`
   margin: 3px 50px 3px 50px;
@@ -30,8 +31,6 @@ const App = () => {
               <NavBar />
 
               <Switch>
-                <Route path={"/resume"}>
-                </Route>
                 <Route path={"/stats"}>
                     <Stats />
                 </Route>

@@ -6,6 +6,7 @@ import { DesktopNavItem, MobileNavItem } from "./NavItem"
 import ModeToggle from "../ModeToggle";
 import Logo from "../core/Logo";
 import { DividerLightningIcon } from "../../ui/Styles";
+import { Links } from "../../Constants";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,7 @@ const NavBar = () => {
                             <DividerLightningIcon />
                             <DesktopNavItem route="/stats" text="stats" />
                             <DividerLightningIcon />
-                            <DesktopNavItem route="/resume" text="resume" />
+                            <DesktopNavItem url={Links.RESUME} text="resume" />
                         </Stack>
                     </Flex>
                 <NavToggle toggleNav={toggleNavBar} isNavOpen={isOpen} />
@@ -47,7 +48,7 @@ const NavBar = () => {
                 <MobileNavItem route="/about" text="about" toggleNav={toggleNavBar} />
                 <MobileNavItem route="/portfolio" text="portfolio" toggleNav={toggleNavBar} />
                 <MobileNavItem route="/stats" text="stats" toggleNav={toggleNavBar} />
-                <MobileNavItem route="/resume" text="resume" toggleNav={toggleNavBar} />
+                <MobileNavItem url={Links.RESUME} text="resume" toggleNav={toggleNavBar} />
              </Stack>
             </Collapse>
             <ModeToggle />
