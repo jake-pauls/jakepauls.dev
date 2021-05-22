@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Icon, IconProps, Text } from "@chakra-ui/react";
+import { Box, Icon, IconProps, Text } from "@chakra-ui/react";
 import { BsLightningFill } from "react-icons/bs";
 
 /* Colors */
@@ -27,6 +27,33 @@ export const RobotoText = styled(Text)`
     font-family: Roboto;
     font-size: 16px;
 `;
+
+/* Heading and Subheading */
+type PageHeaderProps = {
+    heading: string;
+    subheading: string;
+};
+
+export const PageHeader = (props: PageHeaderProps) => {
+    return (
+        <Box>
+            <InconsolataText
+                color="base.text"
+                fontSize={{ base: "3em", md: "4em" }}
+                letterSpacing={-4}>
+                {props.heading}
+            </InconsolataText>
+            <RobotoText
+                mt={{ base: "-10px", md: "-16px" }}
+                mb="12px"
+                color="base.grey"
+                fontWeight="semibold"
+                fontSize={{ base: "16px", md: "24px"}}>
+                {props.subheading}
+            </RobotoText>
+        </Box>
+    );
+};
 
 /* Lightning Icons */
 export const LightningIcon = (props : IconProps) => {

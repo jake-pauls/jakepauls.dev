@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Tag, Table, Tbody, Thead, Th, Tr, Td } from "@chakra-ui/react";
+import { Flex, FlexProps, Spinner, Tag, Table, TableCaption, Tbody, Thead, Th, Tr, Td } from "@chakra-ui/react";
 
 import { Repository } from "../../types/repository";
 import { queryRepositories } from "../../hooks/APIQueries";
@@ -19,8 +19,8 @@ const RepoRow = (repo: Repository) => {
    );
 };
 
-const RepoTable = () => {
-    const { data: repos, status: callStatus } = queryRepositories();
+const RepoTable = (props: FlexProps) => {
+    const { isLoading: loading, data: repos, status: callStatus } = queryRepositories();
     const reposTableData = callStatus === "success" && (
         <Tbody fontSize="sm">
             {repos!.map((repo: Repository) => (
@@ -29,9 +29,22 @@ const RepoTable = () => {
         </Tbody>
     );
 
+    if (loading) {
+        return (
+            <Flex justifyContent="center" pt={12} {...props}>
+               <Spinner
+                   thickness="4px"
+                   speed="0.85s"
+                   emptyColor="base.grey"
+                   color="base.primary"
+                   size="xl" />
+            </Flex>
+        );
+    }
+
     return (
-        <Flex pl={12} pr={12}>
-            <Table variant="simple" size="sm" color="base.text" colorScheme="">
+        <Flex pl={12} pr={12} {...props}>
+            <Table variant="striped" size="sm" color="base.text" colorScheme="">
                 <Thead>
                     <Tr>
                         <Th color="base.text">Name</Th>
