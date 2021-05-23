@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 
 import { projects } from "../Constants"
-import ProjectCard from "../components/core/ProjectCard"
+import ProjectCard from "../components/data/ProjectCard"
 import { PageHeader } from "../ui/Styles";
 import { FadeIn } from "../ui/Transitions";
 

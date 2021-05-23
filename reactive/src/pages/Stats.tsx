@@ -6,7 +6,7 @@ import { FadeIn } from "../ui/Transitions";
 import { Repository } from "../types/repository";
 import { queryRepositories } from "../hooks/APIQueries";
 
-import RepoCard from "../components/data/RepoCards";
+import RepoCard from "../components/data/RepoCard";
 
 const RepoCards = () => {
     const { isLoading: loading, data: repos, status: callStatus } = queryRepositories();
