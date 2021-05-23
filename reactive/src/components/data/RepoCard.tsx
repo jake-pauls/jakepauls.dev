@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Badge, Flex } from "@chakra-ui/react";
+import { Box, Badge, Flex, Link } from "@chakra-ui/react";
 
 import { Repository } from "../../types/repository";
 import { InconsolataText, RobotoText } from "../../ui/Styles";
@@ -56,7 +56,7 @@ export const RepoCard = (repo: Repository) => {
                         p={3}
                         ml={2}
                         mr={2}>
-                        {repo.name}
+                        <Link href={repo.url} color="base.text">{repo.name}</Link>
                     </RobotoText>
                 </Box>
                 <Box>
@@ -65,9 +65,9 @@ export const RepoCard = (repo: Repository) => {
                     </RobotoText>
                 </Box>
                 <Flex justifyContent="space-between" m={4}>
-                        {createStatsBadges(statsArray.filter((stat) => {
-                            return stat !== "";
-                        }))}
+                    {createStatsBadges(statsArray.filter((stat) => {
+                        return stat !== "";
+                    }))}
                 </Flex>
             </Box>
         </Box>

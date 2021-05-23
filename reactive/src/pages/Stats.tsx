@@ -1,26 +1,22 @@
 import React from "react";
-import { Box, Flex, SimpleGrid, Spinner } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 
 import { PageHeader, RobotoText } from "../ui/Styles";
 import { FadeIn } from "../ui/Transitions";
 import { Repository } from "../types/repository";
-import { queryRepositories } from "../hooks/APIQueries";
+import { GitHubProfile } from "../types/gitHubProfile";
+import { queryRepositories, queryProfile } from "../hooks/APIQueries";
 
+import Loading from "../components/core/Loading";
 import RepoCard from "../components/data/RepoCard";
+import GitHubProfileCard from "../components/data/GitHubProfileCard";
 
 const RepoCards = () => {
     const { isLoading: loading, data: repos, status: callStatus } = queryRepositories();
 
     if (loading) {
         return (
-            <Flex justifyContent="center" pt={12}>
-               <Spinner
-                   thickness="4px"
-                   speed="0.85s"
-                   emptyColor="base.grey"
-                   color="base.primary"
-                   size="xl" />
-            </Flex>
+           <Loading />
         );
     }
 
@@ -41,6 +37,30 @@ const RepoCards = () => {
     );
 };
 
+const ProfileCard = () => {
+    const { isLoading: loading, data: profile, status: callStatus } = queryProfile();
+
+    if (loading) {
+        return (
+           <Loading />
+        );
+    }
+
+    return (
+        <Flex
+            justifyContent="center"
+            pl={{ base: 1, md: 16 }}
+            pr={{ base: 1, md: 16 }}
+            pb={24}
+            pt={5}
+            m={4}>
+            { callStatus === "success"
+              ? <GitHubProfileCard {...profile as GitHubProfile} />
+              : <RobotoText>Sorry, data could not be loaded at this time.</RobotoText> }
+        </Flex>
+    );
+};
+
 const Stats = () => {
     return (
         <FadeIn>
@@ -49,8 +69,9 @@ const Stats = () => {
                 py={2}
                 px={2}>
                 <Box>
-                    <PageHeader heading="Stats" subheading="Trying to make my statistics instructor proud" />
+                    <PageHeader heading="Stats" subheading="GitHub metrics and recently updated repositories" />
                     <RepoCards />
+                    <ProfileCard />
                 </Box>
             </Flex>
         </FadeIn>

@@ -21,6 +21,18 @@ type Profile struct {
     Followers   int
     Following   int
     URL         string  `json:"html_url"`
+    AvatarUrl   string  `json:"avatar_url"`
+}
+
+type OutProfile struct {
+    Name        string  `json:"name"`
+    Location    string  `json:"location"`
+    Followers   int     `json:"followers"`
+    Following   int     `json:"following"`
+    URL         string  `json:"profileUrl"`
+    AvatarUrl   string  `json:"avatarUrl"`
+    TotalStars  int     `json:"totalStars"`
+    TotalWatchers int   `json:"totalWatchers"`
 }
 
 type License struct {
@@ -66,7 +78,6 @@ func GitHubRegister(group *gin.RouterGroup) {
     group.GET("/profile", GetProfile)
     group.GET("/repos", GetRepos)
     group.GET("/langs", GetLangs)
-    group.GET("/extended-stats", GetExtendedStats)
 }
 
 func GetProfile(c *gin.Context) {
@@ -94,11 +105,20 @@ func GetLangs(c *gin.Context) {
         languageMap[repositories[i].Language] = 1
     }
 
-    c.JSON(http.StatusOK, languageMap)
+    parsedLangs := make([]map[string]interface{}, 0, 0)
+
+    for i := 0; i < len(repositories); i++ {
+        var singleLang = make(map[string]interface{})
+        singleLang["language"] = repositories[i].Language
+        singleLang["count"] = languageMap[repositories[i].Language]
+        parsedLangs = append(parsedLangs, singleLang)
+    }
+
+    c.JSON(http.StatusOK, parsedLangs)
 }
 
 // Stars and Watchers
-func GetExtendedStats(c *gin.Context) {
+func GetExtendedStats() map[string]int {
     repositories := GetRepoJSON()
 
     extendedStatsMap := make(map[string]int)
@@ -108,10 +128,10 @@ func GetExtendedStats(c *gin.Context) {
         extendedStatsMap["Stars"] += repositories[i].Stars
     }
 
-    c.JSON(http.StatusOK, extendedStatsMap)
+    return extendedStatsMap
 }
 
-func GetProfileJSON() Profile {
+func GetProfileJSON() OutProfile {
     resp := CallGitHubApi(profile_url)
 
     defer resp.Body.Close()
@@ -120,7 +140,20 @@ func GetProfileJSON() Profile {
     var profile Profile
     json.Unmarshal([]byte(body), &profile)
 
-    return profile
+    extendedStats := GetExtendedStats();
+
+    outProfile := OutProfile{
+        Name: profile.Name,
+        Location: profile.Location,
+        Followers: profile.Followers,
+        Following: profile.Following,
+        URL: profile.URL,
+        AvatarUrl: profile.AvatarUrl,
+        TotalStars: extendedStats["Stars"],
+        TotalWatchers: extendedStats["Watchers"],
+    }
+
+    return outProfile
 }
 
 func GetRepoJSON() []OutRepository {
