@@ -1,6 +1,7 @@
 package api
 
 import (
+    "fmt"
     "io/ioutil"
     "os"
     "net/http"
@@ -107,10 +108,10 @@ func GetLangs(c *gin.Context) {
 
     parsedLangs := make([]map[string]interface{}, 0, 0)
 
-    for i := 0; i < len(repositories); i++ {
+    for lang, count := range languageMap {
         var singleLang = make(map[string]interface{})
-        singleLang["language"] = repositories[i].Language
-        singleLang["count"] = languageMap[repositories[i].Language]
+        singleLang["language"] = lang
+        singleLang["count"] = count
         parsedLangs = append(parsedLangs, singleLang)
     }
 

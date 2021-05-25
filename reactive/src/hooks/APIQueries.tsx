@@ -32,14 +32,16 @@ export const queryProfile = (options = {}) => {
 };
 
 // Languages
-const fetchLanguages = async () => {
+const fetchLanguages = async (limit = 6) => {
     let { data: langs } = await axios.get("/api/gh/langs");
 
-    langs = langs.sort((a: Language, b: Language) => { return a.count - b.count });
+    langs = langs
+            .sort((a: Language, b: Language) => { return b.count - a.count || (b.language).localeCompare(a.language)})
+            .slice(0, limit);
 
     return langs;
 };
 
 export const queryLanguages = (options = {}) => {
-    return useQuery<Language, Error>("langs", () => fetchLanguages(), options);
+    return useQuery<Language[], Error>("langs", () => fetchLanguages(), options);
 };

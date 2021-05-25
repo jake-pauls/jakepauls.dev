@@ -28,10 +28,10 @@ export const RepoCard = (repo: Repository) => {
     return (
         <Box
          borderRadius="md"
-         boxShadow="md"
+         boxShadow="sm"
          overflow="hidden"
          mb="auto"
-         _hover={{ boxShadow: "lg" }}>
+         _hover={{ boxShadow: "md" }}>
          <Box pl={2} pr={2} pb={2}>
             <Box d="flex" justifyContent="space-between" alignItems="baseline" mt={3}>
                 <Box lineHeight="tight">
