@@ -28,6 +28,10 @@ export const RobotoText = styled(Text)`
     font-size: 16px;
 `;
 
+export const CodeText  = styled(Text)`
+    font-family: mono;
+`;
+
 /* Heading and Subheading */
 type PageHeaderProps = {
     heading: string;

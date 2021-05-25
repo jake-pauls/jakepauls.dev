@@ -21,7 +21,7 @@ const createStatsBadges = (stats: (string | number)[]) => {
 };
 
 export const RepoCard = (repo: Repository) => {
-    const stars = "🤩 "+ repo.stars;
+    const stars = "★ " + repo.stars;
     const watchers = "👁 " + repo.watchers;
     const statsArray = [ stars, watchers, repo.license, repo.language ];
 
