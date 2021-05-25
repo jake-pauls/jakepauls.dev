@@ -1,13 +1,14 @@
 import React from "react";
 import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 
-import { PageHeader, RobotoText } from "../ui/Styles";
+import { PageHeader } from "../ui/Styles";
 import { FadeIn } from "../ui/Transitions";
 import { Repository } from "../types/repository";
 import { GitHubProfile } from "../types/gitHubProfile";
 import { queryRepositories, queryProfile } from "../hooks/APIQueries";
 
 import Loading from "../components/core/Loading";
+import APIError from "../components/core/APIError";
 import RepoCard from "../components/data/RepoCard";
 import GitHubProfileCard from "../components/data/GitHubProfileCard";
 
@@ -28,23 +29,17 @@ const RepoCards = () => {
             pb={24}
             pt={5}
             m={4}>
-            <SimpleGrid columns={{ sm: 1, lg: 2, xl: 3 }} spacingX={8} spacingY={10}>
+                <SimpleGrid columns={{ sm: 1, lg: 2, xl: 3 }} spacingX={8} spacingY={10}>
                 { callStatus === "success" ? repos!.map((repo: Repository) => (
-                    <RepoCard key={repo.cloneUrl} {...repo} />
-                )) : <RobotoText>Sorry, data could not be loaded at this time.</RobotoText> }
-            </SimpleGrid>
+                        <RepoCard key={repo.cloneUrl} {...repo} />
+                )) : <APIError /> }
+                </SimpleGrid>
         </Flex>
     );
 };
 
 const ProfileCard = () => {
-    const { isLoading: loading, data: profile, status: callStatus } = queryProfile();
-
-    if (loading) {
-        return (
-           <Loading />
-        );
-    }
+    const { data: profile, status: callStatus } = queryProfile();
 
     return (
         <Flex
@@ -56,7 +51,7 @@ const ProfileCard = () => {
             m={4}>
             { callStatus === "success"
               ? <GitHubProfileCard {...profile as GitHubProfile} />
-              : <RobotoText>Sorry, data could not be loaded at this time.</RobotoText> }
+              : "" }
         </Flex>
     );
 };
@@ -68,7 +63,7 @@ const Stats = () => {
                 mx={{ base: 0, lg: 12 }}
                 py={2}
                 px={2}>
-                <Box>
+                <Box width="100%">
                     <PageHeader heading="Stats" subheading="GitHub metrics and recently updated repositories" />
                     <RepoCards />
                     <ProfileCard />

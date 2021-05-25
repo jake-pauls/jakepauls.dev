@@ -10,11 +10,11 @@ const AboutImage = () => {
             justifyContent="center"
             alignSelf="center"
             m={{ base: 4, lg: 0  }}
-            pb={{ base: 16, lg: 0 }}>
+            pb={{ base: 16, md: 8, lg: 0 }}>
             <Image
                 src="https://avatars.githubusercontent.com/u/48817786?v=4"
                 alt="Jake Pauls"
-                boxSize={{ base: "xs", lg: "sm" }}
+                boxSize={{ base: "150px", md: "xs", lg: "sm" }}
                 boxShadow="lg"
                 borderRadius="full"/>
         </Flex>

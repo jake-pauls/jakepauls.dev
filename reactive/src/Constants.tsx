@@ -12,6 +12,9 @@ export const Links = {
     REPO: "https://github.com/jacob-pauls/jakepauls.dev",
 };
 
+/* Error Message */
+export const ERROR_MESSAGE = "Well. This is awkward. Looks like we can't connect to the API. 🥺"
+
 /* Projects */
 export const projects = [
     {
