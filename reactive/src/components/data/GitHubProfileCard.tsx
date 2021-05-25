@@ -25,11 +25,11 @@ const GitHubProfileCard = (profile: GitHubProfile) => {
                 </Box>
             </Box>
             <Box mt={1} mb={3}>
-                <Box d="flex" alignItems={{ base: "left", lg: "center" }} m={4}>
+                <Box d="flex" alignItems="center" m={4}>
                     <Image
                         src={profile.avatarUrl}
                         alt="Jake Pauls"
-                        boxSize="75px"
+                        boxSize={{ base: "50px", lg: "75px"}}
                         boxShadow="md"
                         borderRadius="full"/>
                     <Box mx={2}>
@@ -37,7 +37,7 @@ const GitHubProfileCard = (profile: GitHubProfile) => {
                             color="base.text"
                             align="left"
                             lineHeight={1}
-                            fontSize={{ base: "1em", md: "1.75em", sm: "1.25em" }}
+                            fontSize={{ base: "0.75em", sm: "1.25em", md: "1.5em" }}
                             fontWeight="black"
                             py={{ base: 0, md: 3 }}
                             mx={2}>

@@ -12,9 +12,9 @@ const GitHubLanguageCard = () => {
 
     const langStats = (
         <SimpleGrid columns={3} spacingX={2} spacingY={3} p={3}>
-            { callStatus === "success" ? langs!.map((lang: Language) => (
+            { callStatus === "success" ? langs!.slice(0, 6).map((lang: Language) => (
                 <Stat key={lang.language}>
-                    <StatLabel color="base.text" fontSize={{ base: "xs", lg: "sm" }}>{lang.language}</StatLabel>
+                    <StatLabel color="base.text" fontSize="xs">{lang.language}</StatLabel>
                     <StatNumber color="base.text" >{lang.count}</StatNumber>
                 </Stat>
             )) : "" }

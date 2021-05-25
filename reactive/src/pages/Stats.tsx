@@ -12,11 +12,21 @@ import APIError from "../components/core/APIError";
 import RepoCard from "../components/data/RepoCard";
 import GitHubProfileCard from "../components/data/GitHubProfileCard";
 import GitHubLanguageCard from "../components/data/GitHubLanguageCard";
+import GitHubTotalReposCard from "../components/data/GitHubTotalReposCard";
 
-const RepoCards = () => {
-    const { isLoading: loading, data: repos, status: callStatus } = queryRepositories();
+type RepoCardsProps = {
+    isLoading: boolean;
+    repos: Object[] | undefined;
+    status: string;
+};
 
-    if (loading) {
+type ProfileCardProps = {
+    profile: Object | undefined;
+    status: string;
+};
+
+const RepoCards = (props: RepoCardsProps) => {
+    if (props.isLoading) {
         return (
            <Loading />
         );
@@ -31,7 +41,7 @@ const RepoCards = () => {
             pt={5}
             m={4}>
                 <SimpleGrid columns={{ sm: 1, lg: 2, xl: 3 }} spacingX={8} spacingY={10}>
-                { callStatus === "success" ? repos!.map((repo: Repository) => (
+                { props.status === "success" ? props.repos!.map((repo: Repository) => (
                         <RepoCard key={repo.cloneUrl} {...repo} />
                 )) : <APIError /> }
                 </SimpleGrid>
@@ -39,19 +49,20 @@ const RepoCards = () => {
     );
 };
 
-const ProfileCard = () => {
-    const { data: profile, status: callStatus } = queryProfile();
-
+const ProfileCard = (props: ProfileCardProps) => {
     return (
         <Box>
-            { callStatus === "success"
-              ? <GitHubProfileCard {...profile as GitHubProfile} />
+            { props.status === "success"
+              ? <GitHubProfileCard {...props.profile as GitHubProfile} />
               : "" }
         </Box>
     );
 };
 
 const Stats = () => {
+    const { isLoading: loading, data: repos, status: reposCallStatus } = queryRepositories();
+    const { data: profile, status: profileCallStatus } = queryProfile();
+
     return (
         <FadeIn>
             <Flex
@@ -65,15 +76,16 @@ const Stats = () => {
                         <Flex
                             justifyContent="center"
                             m={4}>
-                            <SimpleGrid columns={{ sm: 1, md: 2 }} spacingX={8} spacingY={10}>
-                                <ProfileCard />
+                            <SimpleGrid columns={{ sm: 1, md: 3 }} spacingX={8} spacingY={10}>
+                                <ProfileCard profile={profile} status={profileCallStatus}/>
                                 <GitHubLanguageCard />
+                                <GitHubTotalReposCard count={repos?.length} />
                             </SimpleGrid>
                         </Flex>
                     </Box>
                     <Box p={4}>
                         <InconsolataText color="base.grey">Recently Updated Repositories</InconsolataText>
-                        <RepoCards />
+                        <RepoCards isLoading={loading} repos={repos} status={reposCallStatus} />
                     </Box>
                 </Box>
             </Flex>
