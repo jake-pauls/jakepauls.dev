@@ -32,7 +32,7 @@ const getGolangIconLink = () => {
 
 const getGitHubRepoLink = () => {
     return (
-        <Link href={Links.REPO} title="Go" textDecoration="underline" isExternal>GitHub</Link>
+        <Link href={Links.WEBSITE_REPO} title="Go" textDecoration="underline" isExternal>GitHub</Link>
     );
 };
 

@@ -11,10 +11,10 @@ const GitHubLanguageCard = () => {
     const { data: langs, status: callStatus } = queryLanguages();
 
     const langStats = (
-        <SimpleGrid columns={3} spacingX={2} spacingY={3} p={3}>
+        <SimpleGrid columns={{ base: 2, md: 3 }} spacingX={2} spacingY={3} px={{ base: 2, md: 3 }} py={3}>
             { callStatus === "success" ? langs!.slice(0, 6).map((lang: Language) => (
                 <Stat key={lang.language}>
-                    <StatLabel color="base.text" fontSize="xs">{lang.language}</StatLabel>
+                    <StatLabel color="base.text" fontSize={{ base: "10px", md: "xs" }}>{lang.language}</StatLabel>
                     <StatNumber color="base.text" >{lang.count}</StatNumber>
                 </Stat>
             )) : "" }

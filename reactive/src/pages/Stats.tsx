@@ -73,6 +73,7 @@ const Stats = () => {
                     <PageHeader heading="Stats" subheading="Making my statistics instructor proud?" />
                     <Box p={4} >
                         <InconsolataText color="base.grey">Profile Metrics</InconsolataText>
+                        <hr />
                         <Flex
                             justifyContent="center"
                             m={4}>
@@ -85,6 +86,7 @@ const Stats = () => {
                     </Box>
                     <Box p={4}>
                         <InconsolataText color="base.grey">Recently Updated Repositories</InconsolataText>
+                        <hr />
                         <RepoCards isLoading={loading} repos={repos} status={reposCallStatus} />
                     </Box>
                 </Box>

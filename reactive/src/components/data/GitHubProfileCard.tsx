@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Code, Icon, Image, Link } from "@chakra-ui/react";
+import { Box, Code, Icon, Image, Link, Stack } from "@chakra-ui/react";
 import { GrGithub } from "react-icons/gr";
 
 import { GitHubProfile } from "../../types/gitHubProfile";
@@ -45,15 +45,19 @@ const GitHubProfileCard = (profile: GitHubProfile) => {
                         </RobotoText>
                     </Box>
                 </Box>
-                <Box m={2} alignSelf="left">
-                    <Box>
-                        <Code color="base.grey" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Followers: <b>{profile.followers}</b> &nbsp;</Code>
-                        <Code color="base.grey" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Following: <b>{profile.following}</b></Code>
-                    </Box>
-                    <Box>
-                        <Code color="base.grey" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Total Stars: <b>{profile.totalStars}</b>&nbsp;</Code>
-                        <Code color="base.grey" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Total Watchers: <b>{profile.totalWatchers}</b></Code>
-                    </Box>
+                <Box d="flex" justifyContent="space-between" m={2} alignSelf="left">
+                    <Stack spacing={1}>
+                        <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Followers:</Code>
+                        <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Following:</Code>
+                        <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Total Stars (★):</Code>
+                        <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Total Watchers (👁):</Code>
+                    </Stack>
+                    <Stack spacing={1}>
+                       <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}><b>{profile.followers}</b></Code>
+                       <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}><b>{profile.following}</b></Code>
+                       <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}><b>{profile.totalStars}</b></Code>
+                       <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}><b>{profile.totalWatchers}</b></Code>
+                    </Stack>
                 </Box>
             </Box>
         </Box>

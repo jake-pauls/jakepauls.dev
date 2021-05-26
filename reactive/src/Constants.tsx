@@ -6,10 +6,16 @@ export const Links = {
     LINKEDIN: "https://www.linkedin.com/in/jacobpauls/",
     EMAIL: "mailto:jakepauls99@gmail.com",
     TWITTER: "https://twitter.com/jackjakejacob",
+    ITCH: "https://jake-pauls.itch.io/",
     RESUME: "https://drive.google.com/file/d/1m_u06Cs8JCTLuxQH7yPvbdiT_zJQEYcf/view?usp=sharing",
     REACT: "https://reactjs.org/",
     GOLANG: "https://golang.org/",
-    REPO: "https://github.com/jacob-pauls/jakepauls.dev",
+    WEBSITE_REPO: "https://github.com/jacob-pauls/jakepauls.dev",
+    DOTFILES_REPO: "https://github.com/jacob-pauls/.dotfiles",
+    ARCH: "https://archlinux.org/",
+    NVIM: "https://neovim.io/",
+    PT: "https://www.facebook.com/Pink4Thursdays",
+    BCIT_PROGRAM: "https://www.bcit.ca/programs/computer-systems-games-development-option-bachelor-of-technology-full-time-862bbtech/#overview",
 };
 
 /* Error Message */
