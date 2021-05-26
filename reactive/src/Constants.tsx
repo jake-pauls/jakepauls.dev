@@ -1,4 +1,9 @@
+import gtImg from "../public/images/project_gt.png";
+import uhdaImg from "../public/images/project_uhda.png";
+import egImg from "../public/images/project_eg.png";
+import ibImg from "../public/images/project_ib.png";
 import tpbImg from "../public/images/project_tpb.png";
+import pgImg from "../public/images/project_pg.png";
 
 /* Links */
 export const Links = {
@@ -25,17 +30,17 @@ export const ERROR_MESSAGE = "Well. This is awkward. Looks like we can't connect
 export const projects = [
     {
         title: "PunkGauth",
-        description: "Hypothesis for enabling artists to democratize their revenues from album and single sales through cryptocurrency authentication based on Ethereum and NFTs",
+        description: "Hypothesis for enabling artists to democratize their revenues from album and single sales through cryptocurrency authentication based on Ethereum and NFTs.",
         date: "April 2021",
         category: "Hackathon",
         tech: ["Vue", "TypeScript", "Python", "Solidity"],
         ghLink: "https://github.com/jacob-pauls/PunkGauth",
         projLink: "",
-        image: tpbImg,
+        image: pgImg,
     },
     {
         title: "The Phantom Blade",
-        description: "👹 Proof of concept for a Metroidvania-style game built in Unity... psst... it involves ninjas",
+        description: "Proof of concept for a Metroidvania-style game built in Unity. Contributed to the player and AI controllers, physics, and ability systems. Built a multi-phased final boss battle with custom abilities.",
         date: "March 2021",
         category: "Game Jam",
         tech: ["C#", "Unity"],
@@ -45,42 +50,42 @@ export const projects = [
     },
     {
         title: "InterviewBuddy.online",
-        description: "🤖 Web application that provisions peer-to-peer or AI mock interviews online",
+        description: "Web application that provisions peer-to-peer or AI mock interviews online.",
         date: "February 2021",
         category: "Hackathon",
         tech: ["React", "Python", "Flask", "Google Cloud"],
         ghLink: "https://github.com/siddg97/stormhacks2021",
         projLink: "",
-        image: tpbImg,
+        image: ibImg,
     },
     {
         title: "EduGlobe",
-        description: "🌏 Web application that provides 3D visualizatons of COVID-19 and earthquake data using three.js",
+        description: "🌏 Web application that provides 3D visualizatons of COVID-19 and earthquake data using three.js. 🌏",
         date: "January 2021",
         category: "Hackathon",
         tech: ["JavaScript", "three.js", "Netlify"],
         ghLink: "https://github.com/jacob-pauls/EduGlobe",
         projLink: "https://eduglobe.space",
-        image: tpbImg,
+        image: egImg,
     },
     {
         title: "UHDA",
-        description: "Help desk ticketing webapp built in Java using SpringBoot, also featured a Slack integration built in Python",
+        description: "Help desk ticketing webapp built in Java using SpringBoot, also featured a Slack integration built in Python. ",
         date: "December 2020",
-        category: "School",
+        category: "Project",
         tech: ["Java", "SpringBoot", "Python"],
         ghLink: "https://github.com/jacob-pauls/Untitled_UHDA_Project",
         projLink: "",
-        image: tpbImg,
+        image: uhdaImg,
     },
     {
         title: "gasTRAK",
-        description: "Android app that tracks user gas data and allows them to create trips to local gas stations",
+        description: "Android app that tracks user gas data and allows them to create trips to local gas stations.",
         date: "December 2019",
-        category: "School",
+        category: "Project",
         tech: ["Java", "Google Cloud", "AWS", "Firebase", "MySQL"],
         ghLink: "https://github.com/jacob-pauls/gasTRAK",
         projLink: "",
-        image: tpbImg,
+        image: gtImg,
     },
 ];
