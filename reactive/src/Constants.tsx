@@ -1,10 +1,3 @@
-import gtImg from "../public/images/project_gt.png";
-import uhdaImg from "../public/images/project_uhda.png";
-import egImg from "../public/images/project_eg.png";
-import ibImg from "../public/images/project_ib.png";
-import tpbImg from "../public/images/project_tpb.png";
-import pgImg from "../public/images/project_pg.png";
-
 /* Links */
 export const Links = {
     GITHUB: "https://github.com/jacob-pauls/",
@@ -30,13 +23,12 @@ export const ERROR_MESSAGE = "Well. This is awkward. Looks like we can't connect
 export const projects = [
     {
         title: "PunkGauth",
-        description: "Hypothesis for enabling artists to democratize their revenues from album and single sales through cryptocurrency authentication based on Ethereum and NFTs.",
+        description: "Runner-up Most Technically Impressive @ UncommonHacks 2021 ✨ Hypothesis for enabling artists to democratize their revenues from album and single sales through cryptocurrency authentication based on Ethereum and NFTs.",
         date: "April 2021",
         category: "Hackathon",
         tech: ["Vue", "TypeScript", "Python", "Solidity"],
         ghLink: "https://github.com/jacob-pauls/PunkGauth",
         projLink: "",
-        image: pgImg,
     },
     {
         title: "The Phantom Blade",
@@ -46,27 +38,24 @@ export const projects = [
         tech: ["C#", "Unity"],
         ghLink: "https://github.com/jacob-pauls/phantom-blade",
         projLink: "https://tpbstudios.itch.io/the-phantom-blade",
-        image: tpbImg,
     },
     {
         title: "InterviewBuddy.online",
-        description: "Web application that provisions peer-to-peer or AI mock interviews online.",
+        description: "2nd Place Overall @ StormHacks 2021 🤖 Web application that provisions peer-to-peer or AI mock interviews online.",
         date: "February 2021",
         category: "Hackathon",
         tech: ["React", "Python", "Flask", "Google Cloud"],
         ghLink: "https://github.com/siddg97/stormhacks2021",
         projLink: "",
-        image: ibImg,
     },
     {
         title: "EduGlobe",
-        description: "🌏 Web application that provides 3D visualizatons of COVID-19 and earthquake data using three.js. 🌏",
+        description: "3rd Place Overall and Best Presentation @ CUNY Hackathon 2021 🌏 Web application that provides 3D visualizatons of COVID-19 and earthquake data using three.js",
         date: "January 2021",
         category: "Hackathon",
         tech: ["JavaScript", "three.js", "Netlify"],
         ghLink: "https://github.com/jacob-pauls/EduGlobe",
         projLink: "https://eduglobe.space",
-        image: egImg,
     },
     {
         title: "UHDA",
@@ -76,7 +65,6 @@ export const projects = [
         tech: ["Java", "SpringBoot", "Python"],
         ghLink: "https://github.com/jacob-pauls/Untitled_UHDA_Project",
         projLink: "",
-        image: uhdaImg,
     },
     {
         title: "gasTRAK",
@@ -86,6 +74,5 @@ export const projects = [
         tech: ["Java", "Google Cloud", "AWS", "Firebase", "MySQL"],
         ghLink: "https://github.com/jacob-pauls/gasTRAK",
         projLink: "",
-        image: gtImg,
     },
 ];

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Badge, IconButton, Image, Tooltip } from "@chakra-ui/react"
+import { Box, Badge, IconButton, Tooltip } from "@chakra-ui/react"
 import { GrGithub } from "react-icons/gr";
 import { FaPaperclip } from "react-icons/fa";
 
@@ -13,7 +13,6 @@ type ProjectCardProps = {
     tech: string[];
     ghLink: string;
     projLink: string;
-    image: string;
 };
 
 const createTechBadges = (tech: string[]) => {
@@ -40,7 +39,6 @@ const ProjectCard = (props: ProjectCardProps) => {
             overflow="hidden"
             mb="auto"
             _hover={{ boxShadow: "md" }}>
-            <Image src={props.image} alt={props.title} />
             <Box pl={2} pr={2} pb={2}>
                 <Box d="flex" justifyContent="space-between" alignItems="baseline" mt={3}>
                     <Box lineHeight="tight">
