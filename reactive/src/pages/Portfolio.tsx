@@ -3,7 +3,7 @@ import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 
 import { projects } from "../Constants"
 import ProjectCard from "../components/data/ProjectCard"
-import { PageHeader } from "../ui/Styles";
+import { PageHeader } from "../ui/BuildingBlocks";
 import { FadeIn } from "../ui/Transitions";
 
 const ProjectCards = () => {

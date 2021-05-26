@@ -2,7 +2,8 @@ import React from "react";
 import { Link as RouteLink } from "react-router-dom";
 import { Flex, Link } from "@chakra-ui/react";
 
-import { DividerLightningIcon, InconsolataText } from "../../ui/Styles";
+import { InconsolataText } from "../../ui/Styles";
+import { DividerLightningIcon } from "../../ui/BuildingBlocks";
 
 type NavItem = {
     text: string;

@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Flex, Stack } from "@chakra-ui/react";
 
 import SocialIcons from "../components/SocialIcons";
-import { LightningIcon, MorganiteText, RobotoText } from "../ui/Styles";
+import { MorganiteText, RobotoText } from "../ui/Styles";
+import { LightningIcon } from "../ui/BuildingBlocks";
 import { FadeIn } from "../ui/Transitions";
 
 const SubtitleText = styled(RobotoText)`

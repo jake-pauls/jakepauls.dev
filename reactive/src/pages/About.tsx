@@ -4,7 +4,7 @@ import { GrArchlinux } from "react-icons/gr";
 import { SiNeovim } from "react-icons/si";
 
 import { Links } from "../Constants";
-import { PageHeader } from "../ui/Styles";
+import { PageHeader } from "../ui/BuildingBlocks";
 import { FadeIn } from "../ui/Transitions";
 
 const AboutImage = () => {

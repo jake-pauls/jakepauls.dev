@@ -5,7 +5,7 @@ import NavToggle from "./NavToggle";
 import { DesktopNavItem, MobileNavItem } from "./NavItem"
 import ModeToggle from "../ModeToggle";
 import Logo from "../core/Logo";
-import { DividerLightningIcon } from "../../ui/Styles";
+import { DividerLightningIcon } from "../../ui/BuildingBlocks";
 import { Links } from "../../Constants";
 
 const NavBar = () => {

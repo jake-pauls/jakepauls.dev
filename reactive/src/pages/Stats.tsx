@@ -1,37 +1,28 @@
 import React from "react";
 import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
 
-import { InconsolataText, PageHeader } from "../ui/Styles";
+import { PageHeader, DividerSubheading } from "../ui/BuildingBlocks";
 import { FadeIn } from "../ui/Transitions";
 import { Repository } from "../types/repository";
 import { GitHubProfile } from "../types/gitHubProfile";
-import { queryRepositories, queryProfile } from "../hooks/APIQueries";
+import { queryRepositories, queryProfile, queryLanguages } from "../hooks/APIQueries";
 
 import Loading from "../components/core/Loading";
-import APIError from "../components/core/APIError";
 import RepoCard from "../components/data/RepoCard";
 import GitHubProfileCard from "../components/data/GitHubProfileCard";
 import GitHubLanguageCard from "../components/data/GitHubLanguageCard";
 import GitHubTotalReposCard from "../components/data/GitHubTotalReposCard";
 
 type RepoCardsProps = {
-    isLoading: boolean;
     repos: Object[] | undefined;
     status: string;
 };
 
 type ProfileCardProps = {
     profile: Object | undefined;
-    status: string;
 };
 
 const RepoCards = (props: RepoCardsProps) => {
-    if (props.isLoading) {
-        return (
-           <Loading />
-        );
-    }
-
     return (
         <Flex
             justifyContent="center"
@@ -43,7 +34,7 @@ const RepoCards = (props: RepoCardsProps) => {
                 <SimpleGrid columns={{ sm: 1, lg: 2, xl: 3 }} spacingX={8} spacingY={10}>
                 { props.status === "success" ? props.repos!.map((repo: Repository) => (
                         <RepoCard key={repo.cloneUrl} {...repo} />
-                )) : <APIError /> }
+                )) : "" }
                 </SimpleGrid>
         </Flex>
     );
@@ -52,16 +43,21 @@ const RepoCards = (props: RepoCardsProps) => {
 const ProfileCard = (props: ProfileCardProps) => {
     return (
         <Box>
-            { props.status === "success"
-              ? <GitHubProfileCard {...props.profile as GitHubProfile} />
-              : "" }
+          <GitHubProfileCard {...props.profile as GitHubProfile} />
         </Box>
     );
 };
 
 const Stats = () => {
     const { isLoading: loading, data: repos, status: reposCallStatus } = queryRepositories();
+    const { data: langs, status: langsCallStatus } = queryLanguages();
     const { data: profile, status: profileCallStatus } = queryProfile();
+
+    if (loading) {
+        return (
+            <Loading />
+        );
+    }
 
     return (
         <FadeIn>
@@ -72,22 +68,22 @@ const Stats = () => {
                 <Box width="100%">
                     <PageHeader heading="Stats" subheading="Making my statistics instructor proud?" />
                     <Box p={4} >
-                        <InconsolataText color="base.grey">Profile Metrics</InconsolataText>
-                        <hr />
+                        <DividerSubheading subheading="Profile Metrics" />
                         <Flex
                             justifyContent="center"
-                            m={4}>
+                            m={4}
+                            pt={2}>
+                            { reposCallStatus  === "success" && profileCallStatus === "success" && langsCallStatus === "success" ?
                             <SimpleGrid columns={{ sm: 1, md: 3 }} spacingX={8} spacingY={10}>
-                                <ProfileCard profile={profile} status={profileCallStatus}/>
-                                <GitHubLanguageCard />
-                                <GitHubTotalReposCard count={repos?.length} />
-                            </SimpleGrid>
+                                <ProfileCard profile={profile} />
+                                <GitHubLanguageCard langs={langs} />
+                                <GitHubTotalReposCard count={repos?.length} status={reposCallStatus} />
+                            </SimpleGrid> : "" }
                         </Flex>
                     </Box>
-                    <Box p={4}>
-                        <InconsolataText color="base.grey">Recently Updated Repositories</InconsolataText>
-                        <hr />
-                        <RepoCards isLoading={loading} repos={repos} status={reposCallStatus} />
+                    <Box m={4} pt={2}>
+                        <DividerSubheading subheading="Recently Updated Repositories" />
+                        <RepoCards repos={repos} status={reposCallStatus} />
                     </Box>
                 </Box>
             </Flex>

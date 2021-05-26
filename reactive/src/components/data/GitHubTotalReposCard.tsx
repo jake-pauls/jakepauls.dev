@@ -4,7 +4,7 @@ import { GrGithub } from "react-icons/gr";
 
 import { InconsolataText, RobotoText } from "../../ui/Styles";
 
-const GitHubTotalReposCard = ({ count = 0 }) => {
+const GitHubTotalReposCard = ({ count = 0, status = "" }) => {
     return (
         <Box
              borderRadius="md"
@@ -23,12 +23,15 @@ const GitHubTotalReposCard = ({ count = 0 }) => {
                         <Icon as={GrGithub} color="base.primary" />
                     </Box>
                 </Box>
-                <Box d="flex" justifyContent="center" pt={2} px={2}>
-                    <RobotoText color="base.text" fontSize="3xl" fontWeight="black">{count}</RobotoText>
-                </Box>
-                <Box d="flex" justifyContent="center">
-                    <RobotoText textAlign="center" color="base.text" fontSize="lg" fontWeight="medium">Total Repositories</RobotoText>
-                </Box>
+                { status === "success" ?
+                    <Box>
+                        <Box d="flex" justifyContent="center" pt={2} px={2}>
+                            <RobotoText color="base.text" fontSize="3xl" fontWeight="black">{count}</RobotoText>
+                        </Box>
+                        <Box d="flex" justifyContent="center">
+                            <RobotoText textAlign="center" color="base.text" fontSize="lg" fontWeight="medium">Total Repositories</RobotoText>
+                        </Box>
+                    </Box> : "" }
              </Box>
         </Box>
     );

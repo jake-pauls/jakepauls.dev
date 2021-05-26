@@ -36,7 +36,7 @@ const fetchLanguages = async () => {
     let { data: langs } = await axios.get("/api/gh/langs");
 
     langs = langs
-            .sort((a: Language, b: Language) => { return b.count - a.count || (b.language).localeCompare(a.language)});
+            .sort((a: Language, b: Language) => { return b.count - a.count || (a.language).localeCompare(b.language)});
 
     return langs;
 };

@@ -19,9 +19,9 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-/* Horizontal rule fades the primary color into background color */
-hr {
+/* Horizontal rule fades the primary color into transparency */
+.faded-hr {
     border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, #F8BD00, #e8e8e8);
+    height: 2px;
+    background-image: linear-gradient(to right, #F8BD00, rgba(0,0,0,0));
 }

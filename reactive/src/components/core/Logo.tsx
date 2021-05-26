@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 
-import { LightningIcon, MorganiteText } from "../../ui/Styles";
+import { MorganiteText } from "../../ui/Styles";
+import { LightningIcon } from "../../ui/BuildingBlocks";
 
 const LogoText = styled(MorganiteText)`
     font-size: 100px;

@@ -47,16 +47,10 @@ const GitHubProfileCard = (profile: GitHubProfile) => {
                 </Box>
                 <Box d="flex" justifyContent="space-between" m={2} alignSelf="left">
                     <Stack spacing={1}>
-                        <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Followers:</Code>
-                        <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Following:</Code>
-                        <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Total Stars (★):</Code>
-                        <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}>Total Watchers (👁):</Code>
-                    </Stack>
-                    <Stack spacing={1}>
-                       <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}><b>{profile.followers}</b></Code>
-                       <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}><b>{profile.following}</b></Code>
-                       <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}><b>{profile.totalStars}</b></Code>
-                       <Code color="base.text" background="base.background" fontSize={{ base: "xs", md: "sm" }}><b>{profile.totalWatchers}</b></Code>
+                        <Code color="base.text" background="base.background" fontSize="xs">Followers:&nbsp;<b>{profile.followers}</b></Code>
+                        <Code color="base.text" background="base.background" fontSize="xs">Following:&nbsp;<b>{profile.following}</b></Code>
+                        <Code color="base.text" background="base.background" fontSize="xs">Total Stars:&nbsp;<b>{profile.totalStars}</b></Code>
+                        <Code color="base.text" background="base.background" fontSize="xs">Total Watchers:&nbsp;<b>{profile.totalWatchers}</b></Code>
                     </Stack>
                 </Box>
             </Box>
