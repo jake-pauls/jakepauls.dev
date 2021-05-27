@@ -7,10 +7,13 @@
 *Dockerfile*
 *docker-compose*
 
-# Deps
-node_modules
-npm-debug.log
+# Context Specific
+reactive/node_modules
+reactive/build
+gopher/build
 
 # Misc.
-build
+.env
+npm-debug.log
 README.md
+LICENSE

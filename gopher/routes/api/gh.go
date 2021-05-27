@@ -198,7 +198,10 @@ func GetRepoJSON() []OutRepository {
 func CallGitHubApi(url string) *http.Response {
     client := &http.Client{}
     req, _ := http.NewRequest("GET", url, nil)
-    req.Header.Set("Authorization", os.Getenv("GH_ACCESS_TOKEN"))
+
+    authHeader := "token " + os.Getenv("GH_ACCESS_TOKEN")
+    req.Header.Set("Authorization", authHeader)
+
     resp, err := client.Do(req)
 
     if err != nil {

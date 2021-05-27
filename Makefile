@@ -1,8 +1,3 @@
-# Import environment, can pass a different env as parameter
-cnf ?= .env
-include $(cnf)
-export $(shell sed 's/=.*//' $(cnf))
-
 ##
 ## Development
 ##
@@ -37,10 +32,15 @@ prod-push:
 prod-release:
 	heroku container:release web
 
-prod-deploy:
+heroku-deploy:
+	echo "Building prod container for $(APP_NAME)"
 	$(MAKE) prod-build
+	echo "Tagging and pushing containers to $(HEROKU)"
 	$(MAKE) prod-push
+	echo "Releasing containers to web dyno..."
 	$(MAKE) prod-release
+	echo "Cleaning hanging images..."
+	$(MAKE) clean
 
 ##
 ## General

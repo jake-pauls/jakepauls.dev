@@ -1,20 +1,27 @@
 package utils
 
 import (
+    "os"
     "time"
     "log"
-
-    "jakepauls.dev/gopher/setup"
 
     "github.com/joho/godotenv"
     "github.com/araddon/dateparse"
     "go.uber.org/zap"
+
+    "jakepauls.dev/gopher/setup"
 )
 
 // Sources variables from .env file
 func LoadEnv() {
     if err := godotenv.Load(); err != nil {
-        log.Print("[warn] .env file not detected, gopher will default to DEBUG mode")
+        // Check if env failure was due to prod
+        // Since this is the first init method the ServerSetting is not yet configured
+        if (os.Getenv("MODE") == "release") {
+            log.Print("[env] heroku configuration detected, gopher set to RELEASE mode")
+        } else {
+            log.Print("[env] .env file not detected, gopher will default to DEBUG mode")
+        }
     }
 }
 
@@ -25,15 +32,6 @@ func IsProduction() bool {
        isProd = true
     }
     return isProd
-}
-
-// Returns string representation for current server mode
-func GetServerMode() string {
-    var serverMode string = setup.ServerSetting.RunMode
-    if serverMode == "" {
-        serverMode = "debug"
-    }
-    return serverMode
 }
 
 // Returns current date formatted "DDMMYYY"
@@ -47,7 +45,7 @@ func FormatCustomDate(cd string) string {
     t, err := dateparse.ParseAny(cd)
 
     if err != nil {
-        zap.S().Warnf("[UTILS] failed to format custom date: %s", err)
+        zap.S().Warnf("[utils] failed to format custom date: %s", err)
     }
 
     layout := "2006-01-02"

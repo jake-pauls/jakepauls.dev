@@ -1,15 +1,15 @@
 package routes
 
 import (
-    "fmt"
     "time"
     "net/http"
-
-    "jakepauls.dev/gopher/routes/api"
 
     "github.com/gin-gonic/contrib/static"
     "github.com/gin-gonic/gin"
     "go.uber.org/zap"
+
+    "jakepauls.dev/gopher/utils"
+    "jakepauls.dev/gopher/routes/api"
 )
 
 func InitRouter() *gin.Engine {
@@ -17,7 +17,7 @@ func InitRouter() *gin.Engine {
     router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
 
         // Reroute logger to zap
-        zap.S().Infof("[GIN] [%s] %s %s %s %d %s",
+        zap.S().Infof("[gin] [%s] %s %s %s %d %s",
 		    param.TimeStamp.Format(time.RFC1123),
 			param.Method,
             param.Path,
@@ -30,14 +30,17 @@ func InitRouter() *gin.Engine {
     }))
     router.Use(gin.Recovery())
 
-    router.Use(static.Serve("/", static.LocalFile("./reactive", true)))
+    if (utils.IsProduction()) {
+        zap.S().Info("[gin] successfully serving snowpack 'reactive' app")
+        router.Use(static.Serve("/", static.LocalFile("./reactive", true)))
+    }
 
     v1 := router.Group("/api")
     api.GitHubRegister(v1.Group("/gh"))
 
     // Test Endpoint
     v1.GET("/ping", func(c *gin.Context) {
-        fmt.Println("The client pinged, the server ponged...")
+        zap.S().Info("The client pinged, the server ponged...")
         c.Header("Content-Type", "application/json")
         c.JSON(http.StatusOK, gin.H{
             "ping": "pong",

@@ -36,7 +36,7 @@ func main() {
         Handler:       router,
     }
 
-    zap.S().Infof("http server started on port %s", port)
+    zap.S().Infof("[gin] http server started on port %d", serverSetup.Port)
 
     server.ListenAndServe()
 }

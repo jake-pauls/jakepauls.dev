@@ -4,6 +4,7 @@ services:
     # NGINX
     nginx:
         build: ./nginx
+        image: rg-nginx:development
         container_name: nginx
         restart: always
         links:
@@ -20,6 +21,7 @@ services:
     # React Client
     reactive:
         build: ../../reactive
+        image: rg-reactive:development
         container_name: reactive
         restart: always
         ports:
@@ -30,6 +32,7 @@ services:
     # Golang Server
     gopher:
         build: ../../gopher
+        image: rg-gopher:development
         container_name: gopher
         restart: always
         ports:
