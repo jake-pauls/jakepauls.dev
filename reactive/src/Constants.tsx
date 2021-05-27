@@ -17,7 +17,15 @@ export const Links = {
 };
 
 /* API URL */
-export const GOPHER_BASE_URL = "https://reactive-gopher.herokuapp.com";
+export const GOPHER_HEROKU_URL = "https://reactive-gopher.herokuapp.com";
+export const getGopherBaseUrl = (): string => {
+    let baseUrl = "";
+
+    if (import.meta.env["NODE_ENV"] === "production")
+       baseUrl = GOPHER_HEROKU_URL;
+
+    return baseUrl;
+}
 
 /* Error Message */
 export const ERROR_MESSAGE = "Well. This is awkward. Looks like we can't connect to the API. 🥺"
