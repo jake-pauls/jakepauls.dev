@@ -1,0 +1,16 @@
+# Git
+.git
+.github
+.gitignore
+
+# Docker
+*Dockerfile*
+*docker-compose*
+
+# Deps
+node_modules
+npm-debug.log
+
+# Misc.
+build
+README.md

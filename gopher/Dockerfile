@@ -1,4 +1,4 @@
-FROM golang:1.16.3-alpine3.12 AS build-stage
+FROM golang:1.16.3-alpine3.12
 WORKDIR /server/src
 
 COPY . .

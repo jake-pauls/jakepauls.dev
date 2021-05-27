@@ -7,6 +7,7 @@ import (
 
     "jakepauls.dev/gopher/routes/api"
 
+    "github.com/gin-gonic/contrib/static"
     "github.com/gin-gonic/gin"
     "go.uber.org/zap"
 )
@@ -28,6 +29,8 @@ func InitRouter() *gin.Engine {
         return ""
     }))
     router.Use(gin.Recovery())
+
+    router.Use(static.Serve("/", static.LocalFile("./reactive", true)))
 
     v1 := router.Group("/api")
     api.GitHubRegister(v1.Group("/gh"))
