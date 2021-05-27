@@ -16,6 +16,9 @@ export const Links = {
     BCIT_PROGRAM: "https://www.bcit.ca/programs/computer-systems-games-development-option-bachelor-of-technology-full-time-862bbtech/#overview",
 };
 
+/* API URL */
+export const GOPHER_BASE_URL = "https://reactive-gopher.herokuapp.com";
+
 /* Error Message */
 export const ERROR_MESSAGE = "Well. This is awkward. Looks like we can't connect to the API. 🥺"
 

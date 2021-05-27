@@ -20,7 +20,7 @@ dev-down:
 
 APP_NAME=reactive-gopher
 HEROKU=registry.heroku.com/$(APP_NAME)
-IMAGE_TAG=reactive-gopher:latest
+IMAGE_TAG=heroku-gopher:latest
 
 prod-build:
 	docker build -t $(IMAGE_TAG) .
