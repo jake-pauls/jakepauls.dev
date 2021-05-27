@@ -4,4 +4,4 @@ FROM nginx
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy custom app nginx config
-COPY nginx.conf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/conf.d/

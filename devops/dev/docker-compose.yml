@@ -9,30 +9,30 @@ services:
         links:
             - reactive
             - gopher
-        depends_on: 
+        depends_on:
             - reactive
             - gopher
-        ports: 
+        ports:
             - "8000:80"
         volumes:
             - ./nginx:/etc/nginx/conf.d
 
     # React Client
     reactive:
-        build: ./reactive
+        build: ../../reactive
         container_name: reactive
         restart: always
-        ports: 
+        ports:
             - 8080:8080
         volumes:
-            - ./reactive:/client
+            - ../../reactive:/client
 
     # Golang Server
     gopher:
-        build: ./gopher
+        build: ../../gopher
         container_name: gopher
         restart: always
-        ports: 
+        ports:
             - 4040:4040
         volumes:
-            - ./gopher:/server/src
+            - ../../gopher:/server/src
