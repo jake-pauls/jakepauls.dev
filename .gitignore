@@ -10,7 +10,6 @@ build
 lib-cov
 *.env
 *.log
-*.prod
 
 # Debug
 npm-debug.log*
