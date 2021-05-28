@@ -15,15 +15,15 @@ const HomeTitle = () => {
     return (
         <Flex
             display="flex"
-            alignItems="center"
-            flexWrap="wrap">
+            flexWrap="wrap"
+            alignItems="baseline">
             <MorganiteText
                 fontSize={{ base: "5em", md: "8em" }}
                 color="base.text"
                 lineHeight="0%">
                 Jake Pauls
-                <LightningIcon fontSize={{ base: "20px", md: "28px" }} ml="90%"/>
             </MorganiteText>
+            <LightningIcon fontSize={{ base: "20px", md: "28px" }} />
         </Flex>
     );
 }

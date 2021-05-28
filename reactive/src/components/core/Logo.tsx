@@ -14,11 +14,11 @@ const Logo = () => {
     return (
         <Flex
             flex={{ base: 1 }}
-            justify={{ base: "start", md: "start" }}>
+            alignItems="baseline">
             <Link to="/" color="base.text">
                 <LogoText color="base.text">JP</LogoText>
             </Link>
-            <LightningIcon mt="78px" ml="-10px" fontSize="30px"/>
+            <LightningIcon  ml="-10px" fontSize="30px"/>
         </Flex>
     );
 };
