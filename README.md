@@ -4,6 +4,7 @@
 </p>
 
 ![deploy](https://github.com/jacob-pauls/jakepauls.dev/actions/workflows/prod-deploy.yml/badge.svg)
+![GitHub](https://img.shields.io/github/license/jacob-pauls/jakepauls.dev?color=blue&style=flat-square)
 
 #### Reactive
 - React.js
