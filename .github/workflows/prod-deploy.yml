@@ -1,0 +1,37 @@
+name: Auto Deploy (reactive-gopher)
+
+on:
+    push:
+        branches: [master]
+
+jobs:
+    reactive-build-deploy:
+        name: Reactive Build, Netlify Deploy
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Reactive
+              uses: actions/checkout@v2
+
+            # Install Node.js
+            - name: Setup Node.js (v14)
+              uses: actions/setup-node@v1
+              with:
+                node-version: '14'
+
+            # Install Deps
+            - run: yarn install --frozen-lockfile
+
+            # Custom Snowpack Build
+            - name: Snowpack Build
+              run: make reactive-build
+
+            # Deploy Reactive
+            - name: Netlify Deploy
+              uses: netlify/actions/cli@master
+              env:
+                NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+              with:
+                args: deploy --dir=build --prod
+                secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
