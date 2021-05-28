@@ -2,7 +2,7 @@ name: Auto Deploy (reactive-gopher)
 
 on:
     push:
-        branches: [master]
+        branches: [main]
 
 jobs:
     reactive-build-deploy:
