@@ -8,8 +8,6 @@ import { getGopherBaseUrl } from "../Constants";
 
 // Repositories
 const fetchRepositories = async () => {
-    console.log("url")
-    console.log(getGopherBaseUrl())
     let { data: repos } = await axios.get(`${getGopherBaseUrl()}/api/gh/repos`);
 
     repos = repos

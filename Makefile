@@ -16,6 +16,7 @@ dev-down:
 
 ##
 ## Production
+## Note: Heroku and Netlify both require CLIs for these commands to run locally
 ##
 
 APP_NAME=reactive-gopher
@@ -47,6 +48,8 @@ gopher-deploy:
 reactive-build:
 	cd reactive && \
 		yarn build
+	cd reactive && \
+		cp env.js.prod build/_snowpack/env.js
 
 reactive-release:
 	cd reactive && \
