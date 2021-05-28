@@ -20,7 +20,7 @@ jobs:
                 node-version: '14'
 
             # Install Deps
-            - run: cd reactive
+            - run: cd reactive &&
                    yarn install --frozen-lockfile
 
             # Custom Snowpack Build
