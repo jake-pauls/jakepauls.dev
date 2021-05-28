@@ -63,7 +63,7 @@ const About = () => {
                 px={2}>
                 <SimpleGrid columns={{ base: 1, lg: 2 }}>
                     <Box pb={{ base: 0, lg: 16 }}>
-                        <PageHeader heading="About" subheading="Obligatory, 'I use Arch btw.'" />
+                        <PageHeader heading="About" subheading="&quot;For science.&quot; - Glados, Portal 2" />
                         <Text color="base.text" fontSize="lg">
                         Hey! My name is <b>Jake.</b><br /><br />
                         I love software. In particular, I'm fascinated with the development behind games,

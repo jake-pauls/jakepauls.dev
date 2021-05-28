@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Divider, Icon, IconProps } from "@chakra-ui/react";
+import styled from "styled-components";
+import { Box, Icon, IconProps } from "@chakra-ui/react";
 import { BsLightningFill } from "react-icons/bs";
 
 import { lightning, InconsolataText, RobotoText } from "./Styles";
@@ -31,11 +32,17 @@ export const PageHeader = (props: PageHeaderProps) => {
     );
 };
 
+const FadedDivider = styled.hr`
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #F8BD00, rgba(0,0,0,0));
+`;
+
 export const DividerSubheading = (props: PageHeaderProps) => {
     return (
         <Box>
             <RobotoText color="base.text" fontWeight="black">{props.subheading}</RobotoText>
-            <Divider className="faded-hr" orientation="horizontal" />
+            <FadedDivider />
         </Box>
     );
 };

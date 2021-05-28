@@ -73,7 +73,7 @@ export const projects = [
         description: "Help desk ticketing webapp built in Java using SpringBoot, also featured a Slack integration built in Python. ",
         date: "December 2020",
         category: "Project",
-        tech: ["Java", "SpringBoot", "Python"],
+        tech: ["Java", "SpringBoot", "Python", "Heroku"],
         ghLink: "https://github.com/jacob-pauls/Untitled_UHDA_Project",
         projLink: "",
     },

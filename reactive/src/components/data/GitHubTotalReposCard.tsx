@@ -29,7 +29,7 @@ const GitHubTotalReposCard = ({ count = 0, status = "" }) => {
                             <RobotoText color="base.text" fontSize="3xl" fontWeight="black">{count}</RobotoText>
                         </Box>
                         <Box d="flex" justifyContent="center">
-                            <RobotoText textAlign="center" color="base.text" fontSize="lg" fontWeight="medium">Total Repositories</RobotoText>
+                            <RobotoText textAlign="center" color="base.text" fontSize="lg" fontWeight="medium">Public Repositories</RobotoText>
                         </Box>
                     </Box> : "" }
              </Box>

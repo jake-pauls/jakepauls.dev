@@ -7,14 +7,13 @@ import { Language } from "../types/language";
 import { getGopherBaseUrl } from "../Constants";
 
 // Repositories
-const fetchRepositories = async (limit = 6) => {
+const fetchRepositories = async () => {
     console.log("url")
     console.log(getGopherBaseUrl())
     let { data: repos } = await axios.get(`${getGopherBaseUrl()}/api/gh/repos`);
 
     repos = repos
-            .sort((a: Repository, b: Repository) => { return new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime() })
-            .slice(0, limit);
+            .sort((a: Repository, b: Repository) => { return new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime() });
 
     return repos;
 };

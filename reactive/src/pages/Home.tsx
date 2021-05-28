@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex, Stack } from "@chakra-ui/react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 
 import SocialIcons from "../components/SocialIcons";
 import { MorganiteText, RobotoText } from "../ui/Styles";
@@ -22,7 +22,7 @@ const HomeTitle = () => {
                 color="base.text"
                 lineHeight="0%">
                 Jake Pauls
-                <LightningIcon fontSize={{ base: "20px", md: "28px" }} ml="92%"/>
+                <LightningIcon fontSize={{ base: "20px", md: "28px" }} ml="90%"/>
             </MorganiteText>
         </Flex>
     );
@@ -39,11 +39,13 @@ const Home = () => {
                 px={10}>
                 <Stack align="center">
                     <HomeTitle />
-                    <SubtitleText
-                        fontSize={{ base: "1.3em", md: "2em"}}
-                        color="base.text">
-                        Software Developer
-                    </SubtitleText>
+                    <Box>
+                        <SubtitleText
+                            fontSize={{ base: "1.3em", md: "2em"}}
+                            color="base.text">
+                            Software Developer
+                        </SubtitleText>
+                    </Box>
                     <SocialIcons color="base.primary"/>
                 </Stack>
             </Flex>

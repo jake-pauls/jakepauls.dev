@@ -32,7 +32,7 @@ const RepoCards = (props: RepoCardsProps) => {
             pt={5}
             m={4}>
                 <SimpleGrid columns={{ sm: 1, lg: 2, xl: 3 }} spacingX={8} spacingY={10}>
-                { props.status === "success" ? props.repos!.map((repo: Repository) => (
+                { props.status === "success" ? props.repos!.slice(0, 6).map((repo: Repository) => (
                         <RepoCard key={repo.cloneUrl} {...repo} />
                 )) : "" }
                 </SimpleGrid>
@@ -66,7 +66,7 @@ const Stats = () => {
                 py={2}
                 px={2}>
                 <Box width="100%">
-                    <PageHeader heading="Stats" subheading="Making my statistics instructor proud?" />
+                    <PageHeader heading="Stats" subheading="Making my statistics instructor proud" />
                     <Box p={4} >
                         <DividerSubheading subheading="Profile Metrics" />
                         <Flex
