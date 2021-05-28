@@ -53,7 +53,7 @@ reactive-build:
 
 reactive-release:
 	cd reactive && \
-		netlify deploy --prod
+		netlify deploy --build=build --prod
 
 reactive-deploy:
 	$(MAKE) reactive-build
