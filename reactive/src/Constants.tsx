@@ -1,15 +1,15 @@
 /* Links */
 export const Links = {
-    GITHUB: "https://github.com/jacob-pauls/",
-    LINKEDIN: "https://www.linkedin.com/in/jacobpauls/",
+    GITHUB: "https://github.com/jake-pauls/",
+    LINKEDIN: "https://www.linkedin.com/in/jake-pauls/",
     EMAIL: "mailto:jakepauls99@gmail.com",
     TWITTER: "https://twitter.com/jackjakejacob",
     ITCH: "https://jake-pauls.itch.io/",
     RESUME: "https://drive.google.com/file/d/1m_u06Cs8JCTLuxQH7yPvbdiT_zJQEYcf/view?usp=sharing",
     REACT: "https://reactjs.org/",
     GOLANG: "https://golang.org/",
-    WEBSITE_REPO: "https://github.com/jacob-pauls/jakepauls.dev",
-    DOTFILES_REPO: "https://github.com/jacob-pauls/.dotfiles",
+    WEBSITE_REPO: "https://github.com/jake-pauls/jakepauls.dev",
+    DOTFILES_REPO: "https://github.com/jake-pauls/.dotfiles",
     ARCH: "https://archlinux.org/",
     NVIM: "https://neovim.io/",
     PT: "https://www.facebook.com/Pink4Thursdays",
@@ -39,7 +39,7 @@ export const projects = [
         date: "April 2021",
         category: "Hackathon",
         tech: ["Vue", "TypeScript", "Python", "Solidity"],
-        ghLink: "https://github.com/jacob-pauls/PunkGauth",
+        ghLink: "https://github.com/jake-pauls/PunkGauth",
         projLink: "",
     },
     {
@@ -48,7 +48,7 @@ export const projects = [
         date: "March 2021",
         category: "Game Jam",
         tech: ["C#", "Unity"],
-        ghLink: "https://github.com/jacob-pauls/phantom-blade",
+        ghLink: "https://github.com/jake-pauls/phantom-blade",
         projLink: "https://tpbstudios.itch.io/the-phantom-blade",
     },
     {
@@ -66,7 +66,7 @@ export const projects = [
         date: "January 2021",
         category: "Hackathon",
         tech: ["JavaScript", "three.js", "Netlify"],
-        ghLink: "https://github.com/jacob-pauls/EduGlobe",
+        ghLink: "https://github.com/jake-pauls/EduGlobe",
         projLink: "https://eduglobe.space",
     },
     {
@@ -75,7 +75,7 @@ export const projects = [
         date: "December 2020",
         category: "Project",
         tech: ["Java", "SpringBoot", "Python", "Heroku"],
-        ghLink: "https://github.com/jacob-pauls/Untitled_UHDA_Project",
+        ghLink: "https://github.com/jake-pauls/Untitled_UHDA_Project",
         projLink: "",
     },
     {
@@ -84,7 +84,7 @@ export const projects = [
         date: "December 2019",
         category: "Project",
         tech: ["Java", "Google Cloud", "AWS", "Firebase", "MySQL"],
-        ghLink: "https://github.com/jacob-pauls/gasTRAK",
+        ghLink: "https://github.com/jake-pauls/gasTRAK",
         projLink: "",
     },
 ];

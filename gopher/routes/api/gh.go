@@ -12,8 +12,8 @@ import (
     "go.uber.org/zap"
 )
 
-const repos_url string = "https://api.github.com/users/jacob-pauls/repos"
-const profile_url string = "https://api.github.com/users/jacob-pauls"
+const repos_url string = "https://api.github.com/users/jake-pauls/repos"
+const profile_url string = "https://api.github.com/users/jake-pauls"
 
 type Profile struct {
     Name        string
