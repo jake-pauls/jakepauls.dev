@@ -5,7 +5,7 @@ export const Links = {
     EMAIL: "mailto:jakepauls99@gmail.com",
     TWITTER: "https://twitter.com/jackjakejacob",
     ITCH: "https://jake-pauls.itch.io/",
-    RESUME: "https://drive.google.com/file/d/1m_u06Cs8JCTLuxQH7yPvbdiT_zJQEYcf/view?usp=sharing",
+    RESUME: "https://drive.google.com/file/d/1ea1-bNvPpnfAiHsDG9fFFq0jJuHFCYml/view?usp=sharing",
     REACT: "https://reactjs.org/",
     GOLANG: "https://golang.org/",
     WEBSITE_REPO: "https://github.com/jake-pauls/jakepauls.dev",
