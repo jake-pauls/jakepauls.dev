@@ -36,6 +36,7 @@ const fetchLanguages = async () => {
     let { data: langs } = await axios.get(`${getGopherBaseUrl()}/api/gh/langs`);
 
     langs = langs
+            .filter((l: Language) => l.language !== "")
             .sort((a: Language, b: Language) => { return b.count - a.count || (a.language).localeCompare(b.language)});
 
     return langs;

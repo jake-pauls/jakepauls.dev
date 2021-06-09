@@ -23,7 +23,7 @@ const createStatsBadges = (stats: (string | number)[]) => {
 export const RepoCard = (repo: Repository) => {
     const stars = "★ " + repo.stars;
     const watchers = "👁 " + repo.watchers;
-    const statsArray = [ stars, watchers, repo.license, repo.language ];
+    const statsArray = [ stars, watchers, repo.language ];
 
     return (
         <Box
@@ -68,6 +68,22 @@ export const RepoCard = (repo: Repository) => {
                     {createStatsBadges(statsArray.filter((stat) => {
                         return stat !== "";
                     }))}
+                    {repo.license !== "" ?
+                        <Badge
+                            color="base.black"
+                            backgroundColor="base.primary"
+                            borderRadius="full"
+                            fontSize={{ base: "10px", md: "xs" }}
+                            whiteSpace="nowrap"
+                            overflow="hidden"
+                            textOverflow="ellipsis"
+                            width="90px"
+                            px={2}
+                            ml={1}
+                            mr={1}>
+                            {repo.license}
+                        </Badge>
+                    : "" }
                 </Box>
             </Box>
         </Box>
