@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Badge, Link } from "@chakra-ui/react";
+import { Box, Badge, Icon, Link } from "@chakra-ui/react";
+import { GoRepoForked } from "react-icons/go";
 
 import { Repository } from "../../types/repository";
 import { InconsolataText, RobotoText } from "../../ui/Styles";
@@ -68,6 +69,11 @@ export const RepoCard = (repo: Repository) => {
                     {createStatsBadges(statsArray.filter((stat) => {
                         return stat !== "";
                     }))}
+                    {repo.isFork ?
+                        <Badge color="base.black" backgroundColor="base.primary" fontSize="xs" borderRadius="full" px={2} ml={2} mr={2}>
+                            <Icon as={GoRepoForked} />
+                        </Badge>
+                    : ""}
                     {repo.license !== "" ?
                         <Badge
                             color="base.black"
