@@ -8,15 +8,15 @@ type ModeContext = { mode: Mode; toggleMode: () => void };
 export const ModeContext = React.createContext<ModeContext>({} as ModeContext);
 
 export const ModeProvider = ({ children }: { children?: React.ReactNode }) => {
-    const [mode, setMode] = useState<Mode>(light);
+  const [mode, setMode] = useState<Mode>(light);
 
-    const toggleMode = () => {
-        setMode(mode.type === "light" ? dark : light);
-    };
+  const toggleMode = () => {
+    setMode(mode.type === "light" ? dark : light);
+  };
 
-    return (
-        <ModeContext.Provider value={{ mode, toggleMode }}>
-            { children }
-        </ModeContext.Provider>
-    );
+  return (
+    <ModeContext.Provider value={{ mode, toggleMode }}>
+      {children}
+    </ModeContext.Provider>
+  );
 };

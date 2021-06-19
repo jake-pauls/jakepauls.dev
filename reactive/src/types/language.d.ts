@@ -1,4 +1,4 @@
 export interface Language {
-    count: number;
-    language: string;
+  count: number;
+  language: string;
 }

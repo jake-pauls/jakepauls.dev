@@ -9,19 +9,19 @@ export const grey = "#A1A1A1";
 
 /* Typography */
 export const MorganiteText = styled(Text)`
-    font-family: Morganite;
-    font-style: Italic;
-    font-size: 16px;
+  font-family: Morganite;
+  font-style: Italic;
+  font-size: 16px;
 `;
 
 export const InconsolataText = styled(Text)`
-    font-weight: bold;
-    font-family: Inconsolata;
-    font-size: 16px;
-    letter-spacing: -1.5px;
+  font-weight: bold;
+  font-family: Inconsolata;
+  font-size: 16px;
+  letter-spacing: -1.5px;
 `;
 
 export const RobotoText = styled(Text)`
-    font-family: Roboto;
-    font-size: 16px;
+  font-family: Roboto;
+  font-size: 16px;
 `;
