@@ -11,7 +11,7 @@
   "scripts": {
     "start:dev": "snowpack dev",
     "build": "snowpack build",
-    "pretty": "prettier --config .prettierrc 'src/**/*.tsx' --write"
+    "pretty": "prettier --config .prettierrc 'src/**/*.ts*' --write"
   },
   "devDependencies": {
     "@snowpack/plugin-dotenv": "^2.1.0",
@@ -45,5 +45,10 @@
     "react-query": "^3.16.0",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"[Husky] Prettifying code pre-commit... \" && yarn pretty && git add -A"
+    }
   }
 }
