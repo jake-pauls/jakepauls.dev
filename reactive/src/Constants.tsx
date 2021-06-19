@@ -37,6 +37,16 @@ export const ERROR_MESSAGE =
 /* Projects */
 export const projects = [
   {
+    title: "Babble",
+    description:
+      "Web application hosting video calls and synchronous text-editing for pair programming sessions",
+    date: "June 2021",
+    category: "Hackathon",
+    tech: ["Vue", "TailwindCSS", "PeerJS", "JavaScript", "Firebase"],
+    ghLink: "https://github.com/jake-pauls/babble",
+    projLink: "https://letsbabble.tech",
+  },
+  {
     title: "PunkGauth",
     description:
       "Runner-up Most Technically Impressive @ UncommonHacks 2021 ✨ Hypothesis for enabling artists to democratize their revenues from album and single sales through cryptocurrency authentication based on Ethereum and NFTs.",
@@ -51,7 +61,7 @@ export const projects = [
     description:
       "Proof of concept for a Metroidvania-style game built in Unity. Contributed to the player and AI controllers, physics, and ability systems. Built a multi-phased final boss battle with custom abilities.",
     date: "March 2021",
-    category: "Game Jam",
+    category: "Game",
     tech: ["C#", "Unity"],
     ghLink: "https://github.com/jake-pauls/phantom-blade",
     projLink: "https://tpbstudios.itch.io/the-phantom-blade",
