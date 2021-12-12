@@ -7,7 +7,7 @@ export const Links = {
   ITCH: "https://jake-pauls.itch.io/",
   MEDIUM: "https://jake-pauls.medium.com/",
   RESUME:
-    "https://drive.google.com/file/d/1QQDhjafIrSloCPZDyEPC7LTQN6QNwnMz/view?usp=sharing",
+    "https://drive.google.com/file/d/1pihMXt1kvm6Jx1lGKGVx1Ks737PhKKzP/view?usp=sharing",
   REACT: "https://reactjs.org/",
   GOLANG: "https://golang.org/",
   WEBSITE_REPO: "https://github.com/jake-pauls/jakepauls.dev",
