@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, SimpleGrid } from "@chakra-ui/react";
+import { Box, Flex, Skeleton, SimpleGrid, Stack } from "@chakra-ui/react";
 
 import { PageHeader, DividerSubheading } from "../ui/BuildingBlocks";
 import { FadeIn } from "../ui/Transitions";
@@ -11,7 +11,6 @@ import {
   queryLanguages,
 } from "../hooks/APIQueries";
 
-import Loading from "../components/core/Loading";
 import RepoCard from "../components/data/RepoCard";
 import GitHubProfileCard from "../components/data/GitHubProfileCard";
 import GitHubLanguageCard from "../components/data/GitHubLanguageCard";
@@ -57,17 +56,9 @@ const ProfileCard = (props: ProfileCardProps) => {
 };
 
 const Stats = () => {
-  const {
-    isLoading: loading,
-    data: repos,
-    status: reposCallStatus,
-  } = queryRepositories();
+  const { data: repos, status: reposCallStatus } = queryRepositories();
   const { data: langs, status: langsCallStatus } = queryLanguages();
   const { data: profile, status: profileCallStatus } = queryProfile();
-
-  if (loading) {
-    return <Loading />;
-  }
 
   return (
     <FadeIn>
@@ -79,29 +70,49 @@ const Stats = () => {
           />
           <Box p={4}>
             <DividerSubheading subheading="Profile Metrics" />
-            <Flex justifyContent="center" m={4} pt={2}>
-              {reposCallStatus === "success" &&
-              profileCallStatus === "success" &&
-              langsCallStatus === "success" ? (
-                <SimpleGrid
-                  columns={{ sm: 1, md: 3 }}
-                  spacingX={8}
-                  spacingY={10}>
-                  <ProfileCard profile={profile} />
-                  <GitHubLanguageCard langs={langs} />
-                  <GitHubTotalReposCard
-                    count={repos?.length}
-                    status={reposCallStatus}
-                  />
-                </SimpleGrid>
-              ) : (
-                ""
-              )}
-            </Flex>
+            {reposCallStatus === "success" &&
+            profileCallStatus === "success" &&
+            langsCallStatus === "success" ? (
+              <FadeIn>
+                <Flex justifyContent="center" m={4} pt={2}>
+                  <SimpleGrid
+                    columns={{ sm: 1, md: 3 }}
+                    spacingX={8}
+                    spacingY={10}>
+                    <ProfileCard profile={profile} />
+                    <GitHubLanguageCard langs={langs} />
+                    <GitHubTotalReposCard
+                      count={repos?.length}
+                      status={reposCallStatus}
+                    />
+                  </SimpleGrid>
+                </Flex>
+              </FadeIn>
+            ) : (
+              <Stack mt={4} mb={6}>
+                <Skeleton
+                  height="50px"
+                  startColor="base.primary"
+                  endColor="base.background"
+                />
+              </Stack>
+            )}
           </Box>
           <Box m={4} pt={2}>
             <DividerSubheading subheading="Recently Updated Repositories" />
-            <RepoCards repos={repos} status={reposCallStatus} />
+            {reposCallStatus === "success" ? (
+              <FadeIn>
+                <RepoCards repos={repos} status={reposCallStatus} />
+              </FadeIn>
+            ) : (
+              <Stack mt={4} mb={6}>
+                <Skeleton
+                  height="100px"
+                  startColor="base.primary"
+                  endColor="base.background"
+                />
+              </Stack>
+            )}
           </Box>
         </Box>
       </Flex>

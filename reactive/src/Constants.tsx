@@ -5,15 +5,15 @@ export const Links = {
   EMAIL: "mailto:jakepauls99@gmail.com",
   TWITTER: "https://twitter.com/jackjakejacob",
   ITCH: "https://jake-pauls.itch.io/",
+  MEDIUM: "https://jake-pauls.medium.com/",
   RESUME:
-    "https://drive.google.com/file/d/1ea1-bNvPpnfAiHsDG9fFFq0jJuHFCYml/view?usp=sharing",
+    "https://drive.google.com/file/d/1QQDhjafIrSloCPZDyEPC7LTQN6QNwnMz/view?usp=sharing",
   REACT: "https://reactjs.org/",
   GOLANG: "https://golang.org/",
   WEBSITE_REPO: "https://github.com/jake-pauls/jakepauls.dev",
   DOTFILES_REPO: "https://github.com/jake-pauls/.dotfiles",
   ARCH: "https://archlinux.org/",
   NVIM: "https://neovim.io/",
-  PT: "https://www.facebook.com/Pink4Thursdays",
   BCIT_PROGRAM:
     "https://www.bcit.ca/programs/computer-systems-games-development-option-bachelor-of-technology-full-time-862bbtech/#overview",
 };
@@ -37,6 +37,17 @@ export const ERROR_MESSAGE =
 /* Projects */
 export const projects = [
   {
+    title: "FrostFire",
+    description:
+      "Top-down multiplayer survival defense game where players work to defend and replenish a diminishing campfire from enraged snowmen. Contributed to Unity frontend including UI/UX, player management, and visual effects.",
+    date: "December 2021",
+    category: "Game",
+    tech: ["C#", "Unity", "HLSL"],
+    ghLink: "https://github.com/paulc100/FrostFire",
+    projLink: "",
+    video: "https://youtu.be/USLnmfNqFdk",
+  },
+  {
     title: "Babble",
     description:
       "Web application hosting video calls and synchronous text-editing for pair programming sessions",
@@ -45,6 +56,7 @@ export const projects = [
     tech: ["Vue", "TailwindCSS", "PeerJS", "JavaScript", "Firebase"],
     ghLink: "https://github.com/jake-pauls/babble",
     projLink: "https://letsbabble.tech",
+    video: "",
   },
   {
     title: "PunkGauth",
@@ -55,6 +67,7 @@ export const projects = [
     tech: ["Vue", "TypeScript", "Python", "Solidity"],
     ghLink: "https://github.com/jake-pauls/PunkGauth",
     projLink: "",
+    video: "",
   },
   {
     title: "The Phantom Blade",
@@ -65,6 +78,7 @@ export const projects = [
     tech: ["C#", "Unity"],
     ghLink: "https://github.com/jake-pauls/phantom-blade",
     projLink: "https://tpbstudios.itch.io/the-phantom-blade",
+    video: "https://youtu.be/C9kMpJgolaA",
   },
   {
     title: "InterviewBuddy.online",
@@ -75,6 +89,7 @@ export const projects = [
     tech: ["React", "Python", "Flask", "Google Cloud"],
     ghLink: "https://github.com/siddg97/stormhacks2021",
     projLink: "",
+    video: "",
   },
   {
     title: "EduGlobe",
@@ -85,6 +100,7 @@ export const projects = [
     tech: ["JavaScript", "three.js", "Netlify"],
     ghLink: "https://github.com/jake-pauls/EduGlobe",
     projLink: "https://eduglobe.space",
+    video: "",
   },
   {
     title: "UHDA",
@@ -95,6 +111,7 @@ export const projects = [
     tech: ["Java", "SpringBoot", "Python", "Heroku"],
     ghLink: "https://github.com/jake-pauls/Untitled_UHDA_Project",
     projLink: "",
+    video: "",
   },
   {
     title: "gasTRAK",
@@ -105,5 +122,6 @@ export const projects = [
     tech: ["Java", "Google Cloud", "AWS", "Firebase", "MySQL"],
     ghLink: "https://github.com/jake-pauls/gasTRAK",
     projLink: "",
+    video: "",
   },
 ];
