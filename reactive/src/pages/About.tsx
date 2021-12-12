@@ -40,8 +40,6 @@ const About = () => {
     </Link>
   );
 
-  const ptLink = <Link href={Links.PT}>Pink Thursday</Link>;
-
   const archLink = (
     <Link href={Links.ARCH} m={1}>
       ArchLinx <Icon as={GrArchlinux} />
@@ -56,6 +54,8 @@ const About = () => {
 
   const dotfilesLink = <Link href={Links.DOTFILES_REPO}>dotfiles</Link>;
 
+  const mediumLink = <Link href={Links.MEDIUM}>Medium</Link>;
+
   return (
     <FadeIn>
       <Flex m={{ base: 0, lg: 16 }} py={2} px={2}>
@@ -66,22 +66,26 @@ const About = () => {
               subheading='"For science." - Glados, Portal 2'
             />
             <Text color="base.text" fontSize="lg">
-              Hey! My name is <b>Jake.</b>
+              Hey! My name is <b>Jake. &nbsp; 👋</b>
               <br />
               <br />I love software. In particular, I'm fascinated with the
-              development behind games, game engines, and graphics. Currently,
-              I'm an undergraduate student at BCIT finishing a {
-                bcitProgramLink
-              }{" "}
-              with an expected graduation date of
-              <b> Spring 2023</b>.<br />
+              development behind
+              <b> games, game engines, and graphics rendering</b>. I'm both
+              personally and professionally motivated to navigate the blur
+              between programming, visual effects, and art.
+              <br />
+              <br />
+              Currently, I'm an undergraduate student at BCIT finishing a{" "}
+              {bcitProgramLink} with an expected graduation date of
+              <b> Spring 2023</b>. At the moment, I'm currently looking for
+              internship opportunities for <b> Summer 2022</b>.
+              <br />
               <br />
               While I finish my degree, I'm making games, exploring graphics
-              APIs, and building an app for Vancouver non-profit {ptLink}. Not
-              to mention, I'm also building as much as possible with C, C++, and
-              C#. Recently, I've become a bit of a Linux ({archLink}) and vim (
-              {neovimLink}) fanatic, so you'll often find my {dotfilesLink} repo
-              is up to date. 😉
+              APIs, and writing about game design/popular culture on{" "}
+              {mediumLink}. Recently, I've become a bit of a Linux ({archLink})
+              and vim ({neovimLink}) fanatic, so you'll often find my{" "}
+              {dotfilesLink} repo is up to date.
               <br />
               <br />
             </Text>

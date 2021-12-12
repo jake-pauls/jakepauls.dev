@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Badge, IconButton, Tooltip } from "@chakra-ui/react";
 import { GrGithub } from "react-icons/gr";
-import { FaPaperclip } from "react-icons/fa";
+import { FaPaperclip, FaPlay } from "react-icons/fa";
 
 import { InconsolataText, RobotoText } from "../../ui/Styles";
 
@@ -13,6 +13,7 @@ type ProjectCardProps = {
   tech: string[];
   ghLink: string;
   projLink: string;
+  video: string;
 };
 
 const createTechBadges = (tech: string[]) => {
@@ -121,6 +122,22 @@ const ProjectCard = (props: ProjectCardProps) => {
                     isRound={true}
                     aria-label="Play"
                     icon={<FaPaperclip size={24} />}
+                  />
+                </Tooltip>
+              )}
+              {props.video === "" ? (
+                ""
+              ) : (
+                <Tooltip label="Video" aria-label="video-tooltip">
+                  <IconButton
+                    as="a"
+                    href={props.video}
+                    _hover={{ bg: "base.background" }}
+                    background="base.background"
+                    px={2}
+                    isRound={true}
+                    aria-label="Video"
+                    icon={<FaPlay size={18} />}
                   />
                 </Tooltip>
               )}
