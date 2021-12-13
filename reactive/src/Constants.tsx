@@ -50,7 +50,7 @@ export const projects = [
   {
     title: "Babble",
     description:
-      "Web application hosting video calls and synchronous text-editing for pair programming sessions",
+      "Web application hosting video calls and synchronous text-editing for pair programming sessions.",
     date: "June 2021",
     category: "Hackathon",
     tech: ["Vue", "TailwindCSS", "PeerJS", "JavaScript", "Firebase"],
@@ -94,7 +94,7 @@ export const projects = [
   {
     title: "EduGlobe",
     description:
-      "3rd Place Overall and Best Presentation @ CUNY Hackathon 2021 🌏 Web application that provides 3D visualizatons of COVID-19 and earthquake data using three.js",
+      "3rd Place Overall and Best Presentation @ CUNY Hackathon 2021 🌏 Web application that provides 3D visualizatons of COVID-19 and earthquake data using three.js.",
     date: "January 2021",
     category: "Hackathon",
     tech: ["JavaScript", "three.js", "Netlify"],
