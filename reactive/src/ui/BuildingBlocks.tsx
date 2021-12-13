@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Box, Icon, IconProps } from "@chakra-ui/react";
-import { BsLightningFill } from "react-icons/bs";
+import { BsLightningChargeFill } from "react-icons/bs";
 
 import { lightning, InconsolataText, RobotoText } from "./Styles";
 
@@ -51,7 +51,7 @@ export const DividerSubheading = (props: PageHeaderProps) => {
 
 /* Lightning Icons */
 export const LightningIcon = (props: IconProps) => {
-  return <Icon color={lightning} as={BsLightningFill} {...props} />;
+  return <Icon color={lightning} as={BsLightningChargeFill} {...props} />;
 };
 
 export const DividerLightningIcon = () => {
