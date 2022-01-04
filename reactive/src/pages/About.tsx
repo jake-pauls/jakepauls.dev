@@ -42,7 +42,7 @@ const About = () => {
 
   const archLink = (
     <Link href={Links.ARCH} m={1}>
-      ArchLinx <Icon as={GrArchlinux} />
+      ArchLinux <Icon as={GrArchlinux} />
     </Link>
   );
 
