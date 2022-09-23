@@ -17,23 +17,29 @@ type GitHubLanguageCardProps = {
 };
 
 const GitHubLanguageCard = (props: GitHubLanguageCardProps) => {
-  const langStats = (
-    <SimpleGrid
-      columns={{ base: 2, md: 3 }}
-      spacingX={2}
-      spacingY={3}
-      px={{ base: 2, md: 3 }}
-      py={3}>
-      {props.langs!.slice(0, 6).map((lang: Language) => (
-        <Stat key={lang.language}>
-          <StatLabel color="base.text" fontSize={{ base: "10px", md: "xs" }}>
-            {lang.language}
-          </StatLabel>
-          <StatNumber color="base.text">{lang.count}</StatNumber>
-        </Stat>
-      ))}
-    </SimpleGrid>
-  );
+  const LanguageStatistics = () => {
+    return (
+      <Box>
+        <SimpleGrid
+          columns={{ base: 2, md: 3 }}
+          spacingX={2}
+          spacingY={3}
+          px={{ base: 2, md: 3 }}
+          py={3}>
+          {props.langs!.slice(0, 6).map((lang: Language) => (
+            <Stat key={lang.language}>
+              <StatLabel
+                color="base.text"
+                fontSize={{ base: "10px", md: "xs" }}>
+                {lang.language}
+              </StatLabel>
+              <StatNumber color="base.text">{lang.count}</StatNumber>
+            </Stat>
+          ))}
+        </SimpleGrid>
+      </Box>
+    );
+  };
 
   return (
     <Box
@@ -62,7 +68,7 @@ const GitHubLanguageCard = (props: GitHubLanguageCardProps) => {
             <Icon as={GrGithub} color="base.primary" />
           </Box>
         </Box>
-        <Box>{langStats}</Box>
+        <LanguageStatistics />
       </Box>
     </Box>
   );

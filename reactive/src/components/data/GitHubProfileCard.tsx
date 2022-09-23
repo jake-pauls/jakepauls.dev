@@ -15,7 +15,7 @@ const GitHubProfileCard = (profile: GitHubProfile) => {
       _hover={{ boxShadow: "md" }}>
       <Box pl={2} pr={2} pb={2}>
         <Box
-          d="flex"
+          display="flex"
           justifyContent="space-between"
           alignItems="baseline"
           mx={1}
@@ -34,7 +34,7 @@ const GitHubProfileCard = (profile: GitHubProfile) => {
           </Box>
         </Box>
         <Box mt={1} mb={3}>
-          <Box d="flex" alignItems="center" m={4}>
+          <Box display="flex" alignItems="center" m={4}>
             <Image
               src={profile.avatarUrl}
               alt="Jake Pauls"
@@ -57,7 +57,11 @@ const GitHubProfileCard = (profile: GitHubProfile) => {
               </RobotoText>
             </Box>
           </Box>
-          <Box d="flex" justifyContent="space-between" m={2} alignSelf="left">
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            m={2}
+            alignSelf="left">
             <Stack spacing={1}>
               <Code
                 color="base.text"

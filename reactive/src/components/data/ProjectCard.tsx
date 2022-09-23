@@ -24,7 +24,7 @@ const createTechBadges = (tech: string[]) => {
       backgroundColor="base.primary"
       borderRadius="full"
       fontSize="xs"
-      px="2"
+      px={2}
       ml={1}
       mr={1}>
       {t}
@@ -42,7 +42,7 @@ const ProjectCard = (props: ProjectCardProps) => {
       _hover={{ boxShadow: "md" }}>
       <Box pl={2} pr={2} pb={2}>
         <Box
-          d="flex"
+          display="flex"
           justifyContent="space-between"
           alignItems="baseline"
           mt={3}>
@@ -91,7 +91,7 @@ const ProjectCard = (props: ProjectCardProps) => {
               {props.description}
             </RobotoText>
           </Box>
-          <Box d="flex" justifyContent="center">
+          <Box display="flex" justifyContent="center">
             <Box>
               {props.ghLink === "" ? (
                 ""

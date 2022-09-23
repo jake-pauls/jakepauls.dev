@@ -11,11 +11,9 @@ export const Links = {
   REACT: "https://reactjs.org/",
   GOLANG: "https://golang.org/",
   WEBSITE_REPO: "https://github.com/jake-pauls/jakepauls.dev",
-  DOTFILES_REPO: "https://github.com/jake-pauls/.dotfiles",
-  ARCH: "https://archlinux.org/",
-  NVIM: "https://neovim.io/",
   BCIT_PROGRAM:
     "https://www.bcit.ca/programs/computer-systems-games-development-option-bachelor-of-technology-full-time-862bbtech/#overview",
+  UBCEA: "https://ubcesports.ca",
 };
 
 /* API URL */
@@ -37,14 +35,47 @@ export const ERROR_MESSAGE =
 /* Projects */
 export const projects = [
   {
+    title: "Hamstars",
+    description:
+      "Winner, The Artisan Award @ Town One 2022 🎨 Multiplayer game where up to four players brawl amongst hamsters to collect the most nuts and squash the competition.",
+    date: "May 2022",
+    category: "Game",
+    tech: ["C#", "Unity"],
+    ghLink: "https://github.com/jake-pauls/Hamstars",
+    projLink: "",
+    video: "",
+  },
+  {
+    title: "QualityControl",
+    description:
+      "Endless iPhone game where players are dropped into a game test environment and must survive the onslaught of obstacles thrown at them.",
+    date: "April 2022",
+    category: "Game",
+    tech: ["C++", "OpenGL", "GLSL"],
+    ghLink: "https://github.com/jake-pauls/quality-control",
+    projLink: "",
+    video: "",
+  },
+  {
+    title: "Illume",
+    description:
+      "Single-player adventure platformer where you explore the Elder Forest in search of the earth stone that was stolen from the Woodsworth clan.",
+    date: "April 2022",
+    category: "Game",
+    tech: ["C#", "Unity", "HLSL"],
+    ghLink: "https://github.com/TM-Rocket/Illume",
+    projLink: "https://tmrocket.itch.io/illume",
+    video: "https://www.youtube.com/watch?v=e1dXPF0bLwg&feature=youtu.be",
+  },
+  {
     title: "FrostFire",
     description:
-      "Top-down multiplayer survival defense game where players work to defend and replenish a diminishing campfire from enraged snowmen. Contributed to Unity frontend including UI/UX, player management, and visual effects.",
+      "Top-down multiplayer survival defense game where players work to defend and replenish a diminishing campfire from enraged snowmen.",
     date: "December 2021",
     category: "Game",
     tech: ["C#", "Unity", "HLSL"],
     ghLink: "https://github.com/paulc100/FrostFire",
-    projLink: "",
+    projLink: "https://defending.itch.io/frostfire",
     video: "https://youtu.be/USLnmfNqFdk",
   },
   {

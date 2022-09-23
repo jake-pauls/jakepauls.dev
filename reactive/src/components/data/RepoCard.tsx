@@ -35,7 +35,7 @@ export const RepoCard = (repo: Repository) => {
       _hover={{ boxShadow: "md" }}>
       <Box pl={{ base: 1, md: 2 }} pb={{ base: 1, md: 2 }}>
         <Box
-          d={{ base: "block", md: "flex" }}
+          display={{ base: "block", md: "flex" }}
           justifyContent="space-between"
           alignItems="baseline"
           mt={3}>

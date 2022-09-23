@@ -14,7 +14,7 @@ const GitHubTotalReposCard = ({ count = 0, status = "" }) => {
       _hover={{ boxShadow: "md" }}>
       <Box pl={2} pr={2} pb={2}>
         <Box
-          d="flex"
+          display="flex"
           justifyContent="space-between"
           alignItems="baseline"
           mx={1}
@@ -34,12 +34,12 @@ const GitHubTotalReposCard = ({ count = 0, status = "" }) => {
         </Box>
         {status === "success" ? (
           <Box>
-            <Box d="flex" justifyContent="center" pt={2} px={2}>
+            <Box display="flex" justifyContent="center" pt={2} px={2}>
               <RobotoText color="base.text" fontSize="3xl" fontWeight="black">
                 {count}
               </RobotoText>
             </Box>
-            <Box d="flex" justifyContent="center">
+            <Box display="flex" justifyContent="center">
               <RobotoText
                 textAlign="center"
                 color="base.text"

@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  Icon,
-  Image,
-  Link,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
-import { GrArchlinux } from "react-icons/gr";
-import { SiNeovim } from "react-icons/si";
+import { Box, Flex, Image, Link, SimpleGrid, Text } from "@chakra-ui/react";
 
 import { Links } from "../Constants";
 import { PageHeader } from "../ui/BuildingBlocks";
@@ -40,21 +30,7 @@ const About = () => {
     </Link>
   );
 
-  const archLink = (
-    <Link href={Links.ARCH} m={1}>
-      ArchLinux <Icon as={GrArchlinux} />
-    </Link>
-  );
-
-  const neovimLink = (
-    <Link href={Links.NVIM} m={1}>
-      Neovim <Icon as={SiNeovim} />
-    </Link>
-  );
-
-  const dotfilesLink = <Link href={Links.DOTFILES_REPO}>dotfiles</Link>;
-
-  const mediumLink = <Link href={Links.MEDIUM}>Medium</Link>;
+  const ubceaLink = <Link href={Links.UBCEA}>UBC Esports Association</Link>;
 
   return (
     <FadeIn>
@@ -70,22 +46,20 @@ const About = () => {
               <br />
               <br />I love software. In particular, I'm fascinated with the
               development behind
-              <b> games, game engines, and graphics rendering</b>. I'm both
-              personally and professionally motivated to navigate the blur
-              between programming, visual effects, and art.
+              <b> graphics rendering, game engines, and games</b>. I'm both
+              personally and professionally motivated to navigate the blurs that
+              exist between programming, visual effects, art, and culture.
               <br />
               <br />
               Currently, I'm an undergraduate student at BCIT finishing a{" "}
               {bcitProgramLink} with an expected graduation date of
-              <b> Spring 2023</b>. At the moment, I'm currently looking for
-              internship opportunities for <b> Summer 2022</b>.
+              <b> Spring 2023</b>. At the moment, I'm currently on the lookout
+              for internship and (potentially!) full-time opportunities for{" "}
+              <b> Summer 2023</b>.
               <br />
               <br />
-              While I finish my degree, I'm making games, exploring graphics
-              APIs, and writing about game design/popular culture on{" "}
-              {mediumLink}. Recently, I've become a bit of a Linux ({archLink})
-              and vim ({neovimLink}) fanatic, so you'll often find my{" "}
-              {dotfilesLink} repo is up to date.
+              While I finish my degree I'm studying graphics, making games, and
+              volunteering as a Director at {ubceaLink}!
               <br />
               <br />
             </Text>
