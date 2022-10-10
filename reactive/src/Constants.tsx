@@ -7,7 +7,7 @@ export const Links = {
   ITCH: "https://jake-pauls.itch.io/",
   MEDIUM: "https://jake-pauls.medium.com/",
   RESUME:
-    "https://drive.google.com/file/d/1pihMXt1kvm6Jx1lGKGVx1Ks737PhKKzP/view?usp=sharing",
+    "https://drive.google.com/file/d/1u4kf6pPrfIlTmcCMNMnS_BjqBEkvZ7-X/view?usp=sharing",
   REACT: "https://reactjs.org/",
   GOLANG: "https://golang.org/",
   WEBSITE_REPO: "https://github.com/jake-pauls/jakepauls.dev",
@@ -41,7 +41,7 @@ export const projects = [
     date: "May 2022",
     category: "Game",
     tech: ["C#", "Unity"],
-    ghLink: "https://github.com/jake-pauls/Hamstars",
+    ghLink: "https://github.com/jake-pauls/Hamstars/tree/develop",
     projLink: "",
     video: "",
   },
@@ -54,7 +54,7 @@ export const projects = [
     tech: ["C++", "OpenGL", "GLSL"],
     ghLink: "https://github.com/jake-pauls/quality-control",
     projLink: "",
-    video: "",
+    video: "https://youtu.be/Z55qi4fPgq8",
   },
   {
     title: "Illume",
