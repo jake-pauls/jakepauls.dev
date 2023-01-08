@@ -3,7 +3,6 @@ WORKDIR /client
 
 COPY package.json .
 
-RUN npm rebuild node-sass
 RUN yarn install
 
 COPY . .

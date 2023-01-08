@@ -17,7 +17,6 @@ export default {
   ],
   plugins: [
     "@snowpack/plugin-dotenv",
-    "@snowpack/plugin-sass",
     "@snowpack/plugin-react-refresh",
     "@snowpack/plugin-typescript",
   ],
