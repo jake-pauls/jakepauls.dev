@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, Flex, Collapse, Stack } from "@chakra-ui/react";
 
 import NavToggle from "./NavToggle";

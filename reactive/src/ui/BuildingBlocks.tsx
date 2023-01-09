@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Box, Icon, IconProps } from "@chakra-ui/react";
 import { BsLightningChargeFill } from "react-icons/bs";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Badge, IconButton, Tooltip } from "@chakra-ui/react";
 import { GrGithub } from "react-icons/gr";
 import { FaPaperclip, FaPlay } from "react-icons/fa";

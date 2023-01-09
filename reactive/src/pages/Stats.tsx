@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Flex, Skeleton, SimpleGrid, Stack } from "@chakra-ui/react";
 
 import { PageHeader, DividerSubheading } from "../ui/BuildingBlocks";

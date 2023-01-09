@@ -1,23 +1,22 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "baseUrl": ".",
-    "outDir": "build/dist",
-    "module": "esnext",
-    "target": "es5",
-    "lib": ["es6", "dom", "esnext.asynciterable"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
-    "moduleResolution": "node",
-    "rootDir": "src",
-    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
-    "strictNullChecks": true,
     "noUnusedLocals": true,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true
+    "strictNullChecks": true,
+    "jsx": "react-jsx"
   },
   "exclude": [
     "node_modules",
@@ -28,5 +27,6 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "include": ["src", "types"]
+  "include": ["src", "types"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

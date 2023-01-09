@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Tooltip, IconButton, Box } from "@chakra-ui/react";
 import { RiMoonClearFill } from "react-icons/ri";
 import { WiDaySunny } from "react-icons/wi";

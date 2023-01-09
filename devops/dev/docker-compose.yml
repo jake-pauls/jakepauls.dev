@@ -1,41 +1,41 @@
 version: "3.8"
 
 services:
-    # NGINX
-    nginx:
-        build: ./nginx
-        image: rg-nginx:development
-        container_name: nginx
-        restart: always
-        links:
-            - reactive
-            - gopher
-        depends_on:
-            - reactive
-            - gopher
-        ports:
-            - "8000:80"
-        volumes:
-            - ./nginx:/etc/nginx/conf.d
+  # NGINX
+  nginx:
+    build: ./nginx
+    image: rg-nginx:development
+    container_name: nginx
+    restart: always
+    links:
+      - reactive
+      - gopher
+    depends_on:
+      - reactive
+      - gopher
+    ports:
+      - 8000:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
 
-    # React Client
-    reactive:
-        build: ../../reactive
-        image: rg-reactive:development
-        container_name: reactive
-        restart: always
-        ports:
-            - 8080:8080
-        volumes:
-            - ../../reactive:/client
+  # React Client
+  reactive:
+    build: ../../reactive
+    image: rg-reactive:development
+    container_name: reactive
+    restart: always
+    ports:
+      - 5173:5173
+    volumes:
+      - ../../reactive:/client
 
-    # Golang Server
-    gopher:
-        build: ../../gopher
-        image: rg-gopher:development
-        container_name: gopher
-        restart: always
-        ports:
-            - 4040:4040
-        volumes:
-            - ../../gopher:/server/src
+  # Golang Server
+  gopher:
+    build: ../../gopher
+    image: rg-gopher:development
+    container_name: gopher
+    restart: always
+    ports:
+      - 4040:4040
+    volumes:
+      - ../../gopher:/server/src

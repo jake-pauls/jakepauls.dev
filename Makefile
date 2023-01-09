@@ -48,12 +48,10 @@ gopher-deploy:
 reactive-build:
 	cd reactive && \
 		yarn build
-	cd reactive && \
-		cp env.js.prod build/_snowpack/env.js
 
 reactive-release:
 	cd reactive && \
-		netlify deploy --build=build --prod
+		netlify deploy --dir=reactive/build --prod
 
 reactive-deploy:
 	$(MAKE) reactive-build

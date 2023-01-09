@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Code, Icon, Image, Link, Stack } from "@chakra-ui/react";
 import { GrGithub } from "react-icons/gr";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { ButtonGroup, ButtonGroupProps, IconButton } from "@chakra-ui/react";
 import { GrGithub, GrLinkedinOption, GrMail, GrMedium } from "react-icons/gr";
 import { FaItchIo } from "react-icons/fa";

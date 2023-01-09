@@ -1,54 +1,54 @@
 name: CI/CD
 
 on:
-    push:
-        branches: [main]
+  push:
+    branches: [main]
 
 jobs:
-    reactive-build-deploy:
-        name: Reactive Build, Netlify Deploy
-        runs-on: ubuntu-latest
+  reactive-build-deploy:
+    name: Reactive Build, Netlify Deploy
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout Reactive
-              uses: actions/checkout@v2
+    steps:
+      - name: Checkout Reactive
+        uses: actions/checkout@v2
 
-            # Install Node.js
-            - name: Setup Node.js (v14)
-              uses: actions/setup-node@v1
-              with:
-                node-version: '14'
+      # Install Node.js
+      - name: Setup Node.js (v14)
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
 
-            # Install Deps
-            - run: cd reactive &&
-                   yarn install --frozen-lockfile
+      # Install Deps
+      - run: cd reactive &&
+          yarn install --frozen-lockfile
 
-            # Custom Snowpack Build
-            - name: Snowpack Build
-              run: make reactive-build
+      # Custom Frontend Build
+      - name: Build Frontend
+        run: make reactive-build
 
-            # Deploy Reactive
-            - name: Netlify Deploy
-              uses: netlify/actions/cli@master
-              env:
-                NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-                NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-              with:
-                args: deploy --dir=reactive/build --prod
+      # Deploy Reactive
+      - name: Netlify Deploy
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=reactive/build --prod
 
-    gopher-build-deploy:
-        name: Gopher Build, Heroku Deploy
-        runs-on: ubuntu-latest
+  gopher-build-deploy:
+    name: Gopher Build, Heroku Deploy
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout Gopher
-              uses: actions/checkout@v2
+    steps:
+      - name: Checkout Gopher
+        uses: actions/checkout@v2
 
-            # Setup Heroku Deploy
-            - name: Build, Push, and Release Gopher Container (Heroku)
-              uses: akhileshns/heroku-deploy@v3.12.12
-              with:
-                heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-                heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-                heroku_email: ${{ secrets.HEROKU_EMAIL }}
-                usedocker: true
+      # Setup Heroku Deploy
+      - name: Build, Push, and Release Gopher Container (Heroku)
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          usedocker: true

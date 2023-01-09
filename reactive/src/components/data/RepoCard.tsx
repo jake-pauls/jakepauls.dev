@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Badge, Icon, Link } from "@chakra-ui/react";
 import { GoRepoForked } from "react-icons/go";
 

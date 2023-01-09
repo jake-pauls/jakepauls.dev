@@ -7,16 +7,19 @@
 ![GitHub](https://img.shields.io/github/license/jake-pauls/jakepauls.dev?color=blue&style=flat-square)
 
 #### Reactive
+
 - React.js
-- Snowpack
+- Vite
 - chakra-ui
 
 #### Gopher
+
 - go
 - gin-gonic
 - uber-zap (logs)
 
 #### Deployment
+
 - GitHub Actions (CI)
 - Netlify (Reactive)
 - Heroku (Gopher)

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link as RouteLink } from "react-router-dom";
 import { Flex, Link } from "@chakra-ui/react";
 

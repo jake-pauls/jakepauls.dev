@@ -1,6 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
+@font-face {
+  font-family: Morganite;
+  src: url("@/assets/fonts/Morganite-Bold.ttf") format("truetype");
+  src: url("@/assets/fonts/Morganite-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Morganite;
+  src: url("@/assets/fonts/Morganite-BoldItalic.ttf") format("truetype");
+  src: url("@/assets/fonts/Morganite-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
 html {
   height: 100%;
 }

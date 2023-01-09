@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -21,7 +21,7 @@ const App = () => {
   const { mode } = useContext(ModeContext);
   const chakraTheme = getChakraTheme(mode);
   const queryClient = new QueryClient();
-  console.log("hi");
+
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={chakraTheme}>

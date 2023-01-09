@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Icon, Link, Stack, Text, Tooltip } from "@chakra-ui/react";
 import { FaReact } from "react-icons/fa";
 import { Golang } from "grommet-icons";

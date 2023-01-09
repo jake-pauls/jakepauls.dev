@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Flex, Image, Link, SimpleGrid, Text } from "@chakra-ui/react";
 
 import { Links } from "../Constants";

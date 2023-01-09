@@ -21,9 +21,7 @@ export const GOPHER_HEROKU_URL = "https://reactive-gopher.herokuapp.com";
 export const getGopherBaseUrl = (): string => {
   let baseUrl = "";
 
-  if (import.meta.env["NODE_ENV"] === "production") {
-    baseUrl = GOPHER_HEROKU_URL;
-  }
+  if (import.meta.env.PROD) baseUrl = GOPHER_HEROKU_URL;
 
   return baseUrl;
 };
