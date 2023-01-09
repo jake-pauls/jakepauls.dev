@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -25,27 +25,18 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={chakraTheme}>
-        <Router>
-          <PageContainer>
-            <NavBar />
-
-            <Switch>
-              <Route path={"/stats"}>
-                <Stats />
-              </Route>
-              <Route path={"/portfolio"}>
-                <Portfolio />
-              </Route>
-              <Route path={"/about"}>
-                <About />
-              </Route>
-              <Route path={"/"}>
-                <Home />
-              </Route>
-            </Switch>
-          </PageContainer>
-          <Footer showIcons={false} />
-        </Router>
+        <PageContainer>
+          <NavBar />
+          <Routes>
+            <Route path="/">
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="portfolio" element={<Portfolio />} />
+              <Route path="stats" element={<Stats />} />
+            </Route>
+          </Routes>
+        </PageContainer>
+        <Footer showIcons={false} />
       </ChakraProvider>
     </QueryClientProvider>
   );

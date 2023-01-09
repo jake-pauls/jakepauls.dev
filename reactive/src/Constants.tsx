@@ -1,3 +1,34 @@
+/* Project Images */
+import sadImgTitle from "./assets/images/projects/sadEngine/sadEngine_Title.png";
+import sadImgA from "./assets/images/projects/sadEngine/sadEngine_A.png";
+import sadImgB from "./assets/images/projects/sadEngine/sadEngine_B.png";
+import sadImgC from "./assets/images/projects/sadEngine/sadEngine_C.png";
+import sadImgD from "./assets/images/projects/sadEngine/sadEngine_D.png";
+
+import hamstarsImgTitle from "./assets/images/projects/hamstars/Hamstars_Title.png";
+import hamstarsImgA from "./assets/images/projects/hamstars/Hamstars_A.png";
+import hamstarsImgB from "./assets/images/projects/hamstars/Hamstars_B.png";
+
+import qcImgTitle from "./assets/images/projects/quality-control/QC_Title.png";
+import qcImgA from "./assets/images/projects/quality-control/QC_A.png";
+import qcImgB from "./assets/images/projects/quality-control/QC_B.png";
+
+import illumeImgTitle from "./assets/images/projects/illume/Illume_Title.png";
+import illumeImgA from "./assets/images/projects/illume/Illume_A.png";
+import illumeImgB from "./assets/images/projects/illume/Illume_B.png";
+import illumeImgC from "./assets/images/projects/illume/Illume_C.png";
+import illumeImgD from "./assets/images/projects/illume/Illume_D.png";
+
+import ffImgTitle from "./assets/images/projects/frost-fire/FF_Title.png";
+import ffImgA from "./assets/images/projects/frost-fire/FF_A.jpeg";
+import ffImgB from "./assets/images/projects/frost-fire/FF_B.jpeg";
+import ffImgC from "./assets/images/projects/frost-fire/FF_C.jpeg";
+
+import tpbImgTitle from "./assets/images/projects/the-phantom-blade/TPB_Title.png";
+import tpbImgA from "./assets/images/projects/the-phantom-blade/TPB_A.png";
+import tpbImgB from "./assets/images/projects/the-phantom-blade/TPB_B.png";
+import tpbImgC from "./assets/images/projects/the-phantom-blade/TPB_C.png";
+
 /* Links */
 export const Links = {
   GITHUB: "https://github.com/jake-pauls/",
@@ -17,13 +48,9 @@ export const Links = {
 };
 
 /* API URL */
-export const GOPHER_HEROKU_URL = "https://reactive-gopher.herokuapp.com";
+export const GopherHerokuURL = "https://reactive-gopher.herokuapp.com";
 export const getGopherBaseUrl = (): string => {
-  let baseUrl = "";
-
-  if (import.meta.env.PROD) baseUrl = GOPHER_HEROKU_URL;
-
-  return baseUrl;
+  return import.meta.env.PROD ? GopherHerokuURL : "";
 };
 
 /* Error Message */
@@ -31,28 +58,38 @@ export const ERROR_MESSAGE =
   "Well. This is awkward. Looks like we can't connect to the API. 🥺";
 
 /* Projects */
-export const projects = [
+export const HIGHLIGHTED_PROJECTS = [
+  {
+    title: "sadEngine",
+    description:
+      "Custom ECS-based game engine created with C++, OpenGL, imgui, and entt that runs a small FPS game scripted in C#.",
+    date: "December 2022",
+    category: "Engine",
+    tech: ["C++", "OpenGL", "GLSL", "C#", "Python"],
+    ghLink: "https://github.com/focus-fire/sad",
+    projLink: "https://focus-fire.github.io/sad/",
+    imageSrcs: [sadImgTitle, sadImgA, sadImgB, sadImgC, sadImgD],
+  },
   {
     title: "Hamstars",
     description:
-      "Winner, The Artisan Award @ Town One 2022 🎨 Multiplayer game where up to four players brawl amongst hamsters to collect the most nuts and squash the competition.",
+      "Winner, The Artisan Award @ Town One 2022 🎨 Multiplayer game created in Unity where up to four players brawl amongst hamsters to collect the most nuts and squash the competition.",
     date: "May 2022",
     category: "Game",
     tech: ["C#", "Unity"],
     ghLink: "https://github.com/jake-pauls/Hamstars/tree/develop",
-    projLink: "",
-    video: "",
+    imageSrcs: [hamstarsImgTitle, hamstarsImgA, hamstarsImgB],
   },
   {
     title: "QualityControl",
     description:
-      "Endless iPhone game where players are dropped into a game test environment and must survive the onslaught of obstacles thrown at them.",
+      "Endless iPhone game created in OpenGL where players are dropped into a game test environment and must survive the onslaught of obstacles thrown at them.",
     date: "April 2022",
     category: "Game",
     tech: ["C++", "OpenGL", "GLSL"],
     ghLink: "https://github.com/jake-pauls/quality-control",
-    projLink: "",
-    video: "https://youtu.be/Z55qi4fPgq8",
+    videoLink: "https://youtu.be/Z55qi4fPgq8",
+    imageSrcs: [qcImgTitle, qcImgA, qcImgB],
   },
   {
     title: "Illume",
@@ -63,7 +100,8 @@ export const projects = [
     tech: ["C#", "Unity", "HLSL"],
     ghLink: "https://github.com/TM-Rocket/Illume",
     projLink: "https://tmrocket.itch.io/illume",
-    video: "https://www.youtube.com/watch?v=e1dXPF0bLwg&feature=youtu.be",
+    videoLink: "https://www.youtube.com/watch?v=e1dXPF0bLwg&feature=youtu.be",
+    imageSrcs: [illumeImgTitle, illumeImgA, illumeImgB, illumeImgC, illumeImgD],
   },
   {
     title: "FrostFire",
@@ -74,8 +112,24 @@ export const projects = [
     tech: ["C#", "Unity", "HLSL"],
     ghLink: "https://github.com/paulc100/FrostFire",
     projLink: "https://defending.itch.io/frostfire",
-    video: "https://youtu.be/USLnmfNqFdk",
+    videoLink: "https://youtu.be/USLnmfNqFdk",
+    imageSrcs: [ffImgTitle, ffImgA, ffImgB, ffImgC],
   },
+  {
+    title: "The Phantom Blade",
+    description:
+      "Proof of concept for a Metroidvania-style game built in Unity. Follow Akiro, the zombie ninja, on his epic journey through the underworld alongside the demon companion that attempted to resurrect him.",
+    date: "March 2021",
+    category: "Game",
+    tech: ["C#", "Unity"],
+    ghLink: "https://github.com/jake-pauls/phantom-blade",
+    projLink: "https://tpbstudios.itch.io/the-phantom-blade",
+    videoLink: "https://youtu.be/C9kMpJgolaA",
+    imageSrcs: [tpbImgTitle, tpbImgA, tpbImgB, tpbImgC],
+  },
+];
+
+export const OTHER_PROJECTS = [
   {
     title: "Babble",
     description:
@@ -85,7 +139,6 @@ export const projects = [
     tech: ["Vue", "TailwindCSS", "PeerJS", "JavaScript", "Firebase"],
     ghLink: "https://github.com/jake-pauls/babble",
     projLink: "https://letsbabble.tech",
-    video: "",
   },
   {
     title: "PunkGauth",
@@ -95,19 +148,6 @@ export const projects = [
     category: "Hackathon",
     tech: ["Vue", "TypeScript", "Python", "Solidity"],
     ghLink: "https://github.com/jake-pauls/PunkGauth",
-    projLink: "",
-    video: "",
-  },
-  {
-    title: "The Phantom Blade",
-    description:
-      "Proof of concept for a Metroidvania-style game built in Unity. Contributed to the player and AI controllers, physics, and ability systems. Built a multi-phased final boss battle with custom abilities.",
-    date: "March 2021",
-    category: "Game",
-    tech: ["C#", "Unity"],
-    ghLink: "https://github.com/jake-pauls/phantom-blade",
-    projLink: "https://tpbstudios.itch.io/the-phantom-blade",
-    video: "https://youtu.be/C9kMpJgolaA",
   },
   {
     title: "InterviewBuddy.online",
@@ -117,8 +157,6 @@ export const projects = [
     category: "Hackathon",
     tech: ["React", "Python", "Flask", "Google Cloud"],
     ghLink: "https://github.com/siddg97/stormhacks2021",
-    projLink: "",
-    video: "",
   },
   {
     title: "EduGlobe",
@@ -129,7 +167,6 @@ export const projects = [
     tech: ["JavaScript", "three.js", "Netlify"],
     ghLink: "https://github.com/jake-pauls/EduGlobe",
     projLink: "https://eduglobe.space",
-    video: "",
   },
   {
     title: "UHDA",
@@ -139,8 +176,6 @@ export const projects = [
     category: "Project",
     tech: ["Java", "SpringBoot", "Python", "Heroku"],
     ghLink: "https://github.com/jake-pauls/Untitled_UHDA_Project",
-    projLink: "",
-    video: "",
   },
   {
     title: "gasTRAK",
@@ -150,7 +185,5 @@ export const projects = [
     category: "Project",
     tech: ["Java", "Google Cloud", "AWS", "Firebase", "MySQL"],
     ghLink: "https://github.com/jake-pauls/gasTRAK",
-    projLink: "",
-    video: "",
   },
 ];

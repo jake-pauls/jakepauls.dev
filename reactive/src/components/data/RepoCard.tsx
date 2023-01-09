@@ -1,23 +1,15 @@
-import { Box, Badge, Icon, Link } from "@chakra-ui/react";
+import { Box, Icon, Link } from "@chakra-ui/react";
 import { GoRepoForked } from "react-icons/go";
 
 import { Repository } from "../../types/repository";
+
+import { Badge } from "../../ui/BuildingBlocks";
 import { InconsolataText, RobotoText } from "../../ui/Styles";
 
 const createStatsBadges = (stats: (string | number)[]) => {
-  return stats.map((s, k) => (
-    <Badge
-      key={k}
-      color="base.black"
-      backgroundColor="base.primary"
-      borderRadius="full"
-      fontSize={{ base: "10px", md: "xs" }}
-      px={2}
-      ml={1}
-      mr={1}>
-      {s}
-    </Badge>
-  ));
+  let nonEmptyStats = stats.filter((stat) => stat !== "");
+
+  return nonEmptyStats.map((s, k) => <Badge key={k} content={s} />);
 };
 
 export const RepoCard = (repo: Repository) => {
@@ -28,7 +20,7 @@ export const RepoCard = (repo: Repository) => {
   return (
     <Box
       borderRadius="md"
-      boxShadow="sm"
+      boxShadow="md"
       overflow="hidden"
       mb="auto"
       _hover={{ boxShadow: "md" }}>
@@ -48,16 +40,7 @@ export const RepoCard = (repo: Repository) => {
             </InconsolataText>
           </Box>
           <Box my={{ base: 2, md: 0 }}>
-            <Badge
-              color="base.black"
-              backgroundColor="base.primary"
-              fontSize="xs"
-              borderRadius="full"
-              px={2}
-              ml={2}
-              mr={2}>
-              {repo.size} kB
-            </Badge>
+            <Badge content={repo.size + " kb"} />
           </Box>
         </Box>
         <Box alignItems="space-between" mt={1} mb={3}>
@@ -86,47 +69,17 @@ export const RepoCard = (repo: Repository) => {
             </RobotoText>
           </Box>
           <Box
-            d={{ base: "block", md: "flex" }}
+            display={{ base: "block", md: "flex" }}
             justifyContent="space-around"
             mx={{ base: 0, md: 4 }}
             my={4}>
-            {createStatsBadges(
-              statsArray.filter((stat) => {
-                return stat !== "";
-              })
-            )}
+            {createStatsBadges(statsArray)}
             {repo.isFork ? (
-              <Badge
-                color="base.black"
-                backgroundColor="base.primary"
-                fontSize="xs"
-                borderRadius="full"
-                px={2}
-                ml={2}
-                mr={2}>
-                <Icon as={GoRepoForked} />
-              </Badge>
+              <Badge content={<Icon as={GoRepoForked} w={2.5} h={2.5} />} />
             ) : (
-              ""
+              <></>
             )}
-            {repo.license !== "" ? (
-              <Badge
-                color="base.black"
-                backgroundColor="base.primary"
-                borderRadius="full"
-                fontSize={{ base: "10px", md: "xs" }}
-                whiteSpace="nowrap"
-                overflow="hidden"
-                textOverflow="ellipsis"
-                width="90px"
-                px={2}
-                ml={1}
-                mr={1}>
-                {repo.license}
-              </Badge>
-            ) : (
-              ""
-            )}
+            {repo.license !== "" ? <Badge content={repo.license} /> : <></>}
           </Box>
         </Box>
       </Box>

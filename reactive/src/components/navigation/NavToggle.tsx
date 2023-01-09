@@ -14,9 +14,9 @@ const NavToggle = ({ toggleNav, isNavOpen }: NavToggleProps) => {
       display={{ base: "flex", md: "none" }}
       onClick={toggleNav}>
       {isNavOpen ? (
-        <CloseIcon color="base.text" size={28} />
+        <CloseIcon color="base.text" w={6} h={6} />
       ) : (
-        <HamburgerIcon color="base.text" size={28} />
+        <HamburgerIcon color="base.text" w={6} h={6} />
       )}
     </Flex>
   );

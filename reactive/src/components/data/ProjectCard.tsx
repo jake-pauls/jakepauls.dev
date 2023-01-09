@@ -1,7 +1,9 @@
-import { Box, Badge, IconButton, Tooltip } from "@chakra-ui/react";
+import { Box, IconButton, Tooltip, useMediaQuery } from "@chakra-ui/react";
 import { GrGithub } from "react-icons/gr";
 import { FaPaperclip, FaPlay } from "react-icons/fa";
 
+import { ImageCarousel } from "./ImageCarousel";
+import { Badge } from "../../ui/BuildingBlocks";
 import { InconsolataText, RobotoText } from "../../ui/Styles";
 
 type ProjectCardProps = {
@@ -10,35 +12,88 @@ type ProjectCardProps = {
   date: string;
   category: string;
   tech: string[];
-  ghLink: string;
-  projLink: string;
-  video: string;
+  ghLink?: string;
+  projLink?: string;
+  videoLink?: string;
+  imageSrcs?: string[];
+};
+
+type ProjectLink = {
+  link?: string;
 };
 
 const createTechBadges = (tech: string[]) => {
-  return tech.map((t, k) => (
-    <Badge
-      key={k}
-      color="base.black"
-      backgroundColor="base.primary"
-      borderRadius="full"
-      fontSize="xs"
-      px={2}
-      ml={1}
-      mr={1}>
-      {t}
-    </Badge>
-  ));
+  return tech.map((t, k) => <Badge key={k} content={t} />);
+};
+
+const GitHubLink = ({ link }: ProjectLink) => {
+  if (!link) return <></>;
+
+  return (
+    <Tooltip label="GitHub URL" aria-label="repo-tooltip">
+      <IconButton
+        as="a"
+        href={link}
+        _hover={{ bg: "base.background" }}
+        background="base.background"
+        px={2}
+        isRound={true}
+        aria-label="GitHub"
+        icon={<GrGithub size={24} />}
+      />
+    </Tooltip>
+  );
+};
+
+const ProjectLink = ({ link }: ProjectLink) => {
+  if (!link) return <></>;
+
+  return (
+    <Tooltip label="Project URL" aria-label="project-tooltip">
+      <IconButton
+        as="a"
+        href={link}
+        _hover={{ bg: "base.background" }}
+        background="base.background"
+        px={2}
+        isRound={true}
+        aria-label="Play"
+        icon={<FaPaperclip size={24} />}
+      />
+    </Tooltip>
+  );
+};
+
+const VideoLink = ({ link }: ProjectLink) => {
+  if (!link) return <></>;
+
+  return (
+    <Tooltip label="Video" aria-label="video-tooltip">
+      <IconButton
+        as="a"
+        href={link}
+        _hover={{ bg: "base.background" }}
+        background="base.background"
+        px={2}
+        isRound={true}
+        aria-label="Video"
+        icon={<FaPlay size={18} />}
+      />
+    </Tooltip>
+  );
 };
 
 const ProjectCard = (props: ProjectCardProps) => {
+  // TODO: Make image gallery responsive for mobile
+  const [isMobile] = useMediaQuery("(max-width: 1350px)");
+
   return (
     <Box
       borderRadius="md"
-      boxShadow="sm"
+      boxShadow="md"
       overflow="hidden"
       mb="auto"
-      _hover={{ boxShadow: "md" }}>
+      maxWidth={{ base: "250px", lg: "3xl", md: "xl" }}>
       <Box pl={2} pr={2} pb={2}>
         <Box
           display="flex"
@@ -55,18 +110,10 @@ const ProjectCard = (props: ProjectCardProps) => {
             </InconsolataText>
           </Box>
           <Box>
-            <Badge
-              color="base.black"
-              backgroundColor="base.primary"
-              fontSize="xs"
-              borderRadius="full"
-              px={2}
-              ml={2}
-              mr={2}>
-              {props.category}
-            </Badge>
+            <Badge content={props.category} />
           </Box>
         </Box>
+        {!isMobile ? <ImageCarousel images={props.imageSrcs} /> : <></>}
         <Box alignItems="space-between" mt={1} mb={3}>
           <Box>
             <RobotoText
@@ -92,54 +139,9 @@ const ProjectCard = (props: ProjectCardProps) => {
           </Box>
           <Box display="flex" justifyContent="center">
             <Box>
-              {props.ghLink === "" ? (
-                ""
-              ) : (
-                <Tooltip label="GitHub URL" aria-label="repo-tooltip">
-                  <IconButton
-                    as="a"
-                    href={props.ghLink}
-                    _hover={{ bg: "base.background" }}
-                    background="base.background"
-                    px={2}
-                    isRound={true}
-                    aria-label="GitHub"
-                    icon={<GrGithub size={24} />}
-                  />
-                </Tooltip>
-              )}
-              {props.projLink === "" ? (
-                ""
-              ) : (
-                <Tooltip label="Project URL" aria-label="project-tooltip">
-                  <IconButton
-                    as="a"
-                    href={props.projLink}
-                    _hover={{ bg: "base.background" }}
-                    background="base.background"
-                    px={2}
-                    isRound={true}
-                    aria-label="Play"
-                    icon={<FaPaperclip size={24} />}
-                  />
-                </Tooltip>
-              )}
-              {props.video === "" ? (
-                ""
-              ) : (
-                <Tooltip label="Video" aria-label="video-tooltip">
-                  <IconButton
-                    as="a"
-                    href={props.video}
-                    _hover={{ bg: "base.background" }}
-                    background="base.background"
-                    px={2}
-                    isRound={true}
-                    aria-label="Video"
-                    icon={<FaPlay size={18} />}
-                  />
-                </Tooltip>
-              )}
+              <GitHubLink link={props.ghLink} />
+              <ProjectLink link={props.projLink} />
+              <VideoLink link={props.videoLink} />
             </Box>
           </Box>
           <Box mt={2}>{createTechBadges(props.tech)}</Box>

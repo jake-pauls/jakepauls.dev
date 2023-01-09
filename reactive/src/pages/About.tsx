@@ -25,7 +25,7 @@ const AboutImage = () => {
 const About = () => {
   const bcitProgramLink = (
     <Link href={Links.BCIT_PROGRAM}>
-      Bachelor of Technology in Games Development&nbsp;
+      Bachelor of Technology in Games Development
     </Link>
   );
 
