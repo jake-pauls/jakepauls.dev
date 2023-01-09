@@ -49,13 +49,16 @@ reactive-build:
 	cd reactive && \
 		yarn build
 
-reactive-release:
+reactive-deploy:
+	$(MAKE) reactive-build
 	cd reactive && \
 		netlify deploy --dir=reactive/build --prod
 
-reactive-deploy:
+# Publishes a draft version of the website
+reactive-draft:
 	$(MAKE) reactive-build
-	$(MAKE) reactive-release
+	cd reactive && \
+		netlify deploy --dir=reactive/build
 
 
 # Comprehensive deploy
