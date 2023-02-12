@@ -65,7 +65,7 @@ const Stats = () => {
         <Box width="100%">
           <PageHeader
             heading="Stats"
-            subheading="Making my statistics instructor proud"
+            subheading='"For science, you monster." - Glados, Portal 2'
           />
           <Box p={4}>
             <DividerSubheading subheading="Profile Metrics" />

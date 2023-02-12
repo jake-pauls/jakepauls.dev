@@ -44,12 +44,12 @@ const GitHubLanguageCard = (props: GitHubLanguageCardProps) => {
     <Box
       borderRadius="md"
       boxShadow="sm"
-      mb="auto"
       overflow="hidden"
+      mb="auto"
       _hover={{ boxShadow: "md" }}>
       <Box pl={2} pr={2} pb={2}>
         <Box
-          d="flex"
+          display="flex"
           justifyContent="space-between"
           alignItems="baseline"
           mx={1}
@@ -59,7 +59,7 @@ const GitHubLanguageCard = (props: GitHubLanguageCardProps) => {
               color="base.grey"
               fontSize={{ base: "xs", lg: "sm" }}
               ml={2}
-              mr={2}>
+              mr={4}>
               Language Count (by repository)
             </InconsolataText>
           </Box>

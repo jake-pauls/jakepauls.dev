@@ -62,12 +62,13 @@ export const HIGHLIGHTED_PROJECTS = [
   {
     title: "sadEngine",
     description:
-      "Custom ECS-based game engine created with C++, OpenGL, imgui, and entt that runs a small FPS game scripted in C#.",
+      "Custom ECS-based game engine created with C++, OpenGL, ImGui, and entt that runs a small FPS game scripted in C#.",
     date: "December 2022",
     category: "Engine",
     tech: ["C++", "OpenGL", "GLSL", "C#", "Python"],
     ghLink: "https://github.com/focus-fire/sad",
     projLink: "https://focus-fire.github.io/sad/",
+    videoLink: "https://youtu.be/bUrmJdq05go",
     imageSrcs: [sadImgTitle, sadImgA, sadImgB, sadImgC, sadImgD],
   },
   {

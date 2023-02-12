@@ -32,8 +32,8 @@ const NavBar = () => {
             <DesktopNavItem route="/portfolio" text="portfolio" />
             <DividerLightningIcon />
             <DesktopNavItem route="/stats" text="stats" />
-            <DividerLightningIcon />
-            <DesktopNavItem url={Links.RESUME} text="resume" />
+            {/*<DividerLightningIcon />*/}
+            {/*<DesktopNavItem url={Links.RESUME} text="resume" />*/}
           </Stack>
         </Flex>
         <NavToggle toggleNav={toggleNavBar} isNavOpen={isOpen} />
@@ -47,11 +47,11 @@ const NavBar = () => {
             toggleNav={toggleNavBar}
           />
           <MobileNavItem route="/stats" text="stats" toggleNav={toggleNavBar} />
-          <MobileNavItem
+          {/*<MobileNavItem
             url={Links.RESUME}
             text="resume"
             toggleNav={toggleNavBar}
-          />
+          />*/}
         </Stack>
       </Collapse>
       <ModeToggle />

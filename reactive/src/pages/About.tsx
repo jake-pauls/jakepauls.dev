@@ -38,27 +38,29 @@ const About = () => {
           <Box pb={{ base: 0, lg: 16 }}>
             <PageHeader
               heading="About"
-              subheading='"For science." - Glados, Portal 2'
+              subheading='"It always starts with a lighthouse." - Elizabeth, Bioshock Infinite'
             />
             <Text color="base.text" fontSize="lg">
               Hey! My name is <b>Jake. &nbsp; 👋</b>
               <br />
               <br />I love software. In particular, I'm fascinated with the
               development behind
-              <b> graphics rendering, game engines, and games</b>. I'm both
-              personally and professionally motivated to navigate the blurs that
-              exist between programming, visual effects, art, and culture.
+              <b> game engines, graphics, and games</b>. I'm both personally and
+              professionally motivated to navigate the blurs that exist between
+              programming, art, and culture. I love empowering creative
+              workflows as much as I love understanding what makes things work.
               <br />
               <br />
               Currently, I'm an undergraduate student at BCIT finishing a{" "}
               {bcitProgramLink} with an expected graduation date of
-              <b> Spring 2023</b>. At the moment, I'm currently on the lookout
-              for internship and (potentially!) full-time opportunities for{" "}
-              <b> Summer 2023</b>.
+              <b> April 2023</b>. At the moment, I'm currently on the lookout
+              for internship and (potentially!) full-time opportunities starting{" "}
+              <b> May 2023</b>.
               <br />
               <br />
-              While I finish my degree I'm studying graphics, making games, and
-              volunteering as a Director at {ubceaLink}!
+              While I finish my degree I'm studying engines, learning about
+              graphics, making games, and volunteering as a Director at{" "}
+              {ubceaLink}!
               <br />
               <br />
             </Text>
