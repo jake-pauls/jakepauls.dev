@@ -1,4 +1,10 @@
 /* Project Images */
+import surfImgTitle from "./assets/images/projects/surf/surf_Title.png"
+import surfImgA from "./assets/images/projects/surf/surf_A.png"
+import surfImgB from "./assets/images/projects/surf/surf_B.png"
+import surfImgC from "./assets/images/projects/surf/surf_C.png"
+import surfImgD from "./assets/images/projects/surf/surf_D.png"
+
 import sadImgTitle from "./assets/images/projects/sadEngine/sadEngine_Title.png";
 import sadImgA from "./assets/images/projects/sadEngine/sadEngine_A.png";
 import sadImgB from "./assets/images/projects/sadEngine/sadEngine_B.png";
@@ -45,6 +51,9 @@ export const Links = {
   BCIT_PROGRAM:
     "https://www.bcit.ca/programs/computer-systems-games-development-option-bachelor-of-technology-full-time-862bbtech/#overview",
   UBCEA: "https://ubcesports.ca",
+  // Job-related
+  FLX: "https://inflexion.io",
+  NIGHTINGALE: "https://www.playnightingale.com/",
 };
 
 /* API URL */
@@ -59,6 +68,16 @@ export const ERROR_MESSAGE =
 
 /* Projects */
 export const HIGHLIGHTED_PROJECTS = [
+  {
+    title: "surf",
+    description: "Physically-based renderer created in Vulkan alongside a strongly typed language for scripting PBR materials at runtime.",
+    date: "April 2023",
+    category: "Renderer",
+    tech: ["C++", "C", "Vulkan", "HLSL", "CMake", "OCaml"],
+    ghLink: "https://github.com/jake-pauls/surf",
+    videoLink: "https://youtu.be/lyINvBnGbyw",
+    imageSrcs: [surfImgTitle, surfImgA, surfImgB, surfImgC, surfImgD],
+  },
   {
     title: "sadEngine",
     description:

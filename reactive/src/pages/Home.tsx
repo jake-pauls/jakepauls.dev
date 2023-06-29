@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Typewriter from "typewriter-effect";
 import { Box, Flex, Stack } from "@chakra-ui/react";
 
 import SocialIcons from "../components/SocialIcons";
@@ -39,7 +40,13 @@ const Home = () => {
             <SubtitleText
               fontSize={{ base: "1.3em", md: "2em" }}
               color="base.text">
-              Software Developer
+              <Typewriter
+                options={{
+                  strings: ["Game Programmer", "Engine Programmer", "Graphics Programmer"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
             </SubtitleText>
           </Box>
           <SocialIcons color="base.primary" />

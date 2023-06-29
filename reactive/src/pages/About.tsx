@@ -29,7 +29,8 @@ const About = () => {
     </Link>
   );
 
-  const ubceaLink = <Link href={Links.UBCEA}>UBC Esports Association</Link>;
+  const flxLink = <Link href={Links.FLX}>Inflexion Games</Link>;
+  const nightingaleLink = <Link href={Links.NIGHTINGALE}>Nightingale</Link>;
 
   return (
     <FadeIn>
@@ -41,26 +42,24 @@ const About = () => {
               subheading='"It always starts with a lighthouse." - Elizabeth, Bioshock Infinite'
             />
             <Text color="base.text" fontSize="lg">
-              Hey! My name is <b>Jake. &nbsp; 👋</b>
+              Hi! My name is <b>Jake. &nbsp; 👋</b>
               <br />
-              <br />I love software. In particular, I'm fascinated with the
-              development behind
-              <b> game engines, graphics, and games</b>. I'm both personally and
-              professionally motivated to navigate the blurs that exist between
-              programming, art, and culture. I love empowering creative
-              workflows as much as I love understanding what makes things work.
-              <br />
-              <br />
-              Currently, I'm an undergraduate student at BCIT finishing a{" "}
-              {bcitProgramLink} with an expected graduation date of
-              <b> April 2023</b>. At the moment, I'm currently on the lookout
-              for internship and (potentially!) full-time opportunities starting{" "}
-              <b> May 2023</b>.
+              <br />I specialize in the development of
+              <b> game engines, graphics, and creative workflows</b>. I'm
+              personally and professionally motivated to navigate the blurs that
+              exist between programming, art, and culture. I love exploring
+              creative processes as much as I enjoy understanding what makes
+              things work.
               <br />
               <br />
-              While I finish my degree I'm studying engines, learning about
-              graphics, making games, and volunteering as a Director at{" "}
-              {ubceaLink}!
+              I'm currently an intern at {flxLink} working on {nightingaleLink} and
+              I'm also a recent graduate from BCIT with a {bcitProgramLink}. I'm
+              currently on the lookout for full-time opportunities starting{" "}
+              <b> January 2024</b>.
+              <br />
+              <br />
+              In my free time I'm studying engines, learning more about graphics, and
+              making games!
               <br />
               <br />
             </Text>
