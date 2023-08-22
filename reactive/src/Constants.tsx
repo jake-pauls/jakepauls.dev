@@ -1,4 +1,9 @@
 /* Project Images */
+import catjamImgTitle from "./assets/images/projects/catjam/catjam_Title.png"
+import catjamImgA from "./assets/images/projects/catjam/catjam_A.png"
+import catjamImgB from "./assets/images/projects/catjam/catjam_B.png"
+import catjamImgC from "./assets/images/projects/catjam/catjam_C.png"
+
 import surfImgTitle from "./assets/images/projects/surf/surf_Title.png"
 import surfImgA from "./assets/images/projects/surf/surf_A.png"
 import surfImgB from "./assets/images/projects/surf/surf_B.png"
@@ -68,6 +73,15 @@ export const ERROR_MESSAGE =
 
 /* Projects */
 export const HIGHLIGHTED_PROJECTS = [
+  {
+    title: "Cat out of Hell",
+    description: "Created @ Alberta Game Jam 2023 🦕 Bullet-hell inspired game where Steve the cat tries to dodge sprays of water! Can Steve dodge them for a whole whole minute?",
+    date: "August 2023",
+    category: "Game",
+    tech: ["C++", "Blueprints", "Unreal Engine 5", "Perforce"],
+    videoLink: "https://youtu.be/QJd8-a_p1M0",
+    imageSrcs: [catjamImgTitle, catjamImgA, catjamImgB, catjamImgC],
+  },
   {
     title: "surf",
     description: "Physically-based renderer created in Vulkan alongside a strongly typed language for scripting PBR materials at runtime.",
