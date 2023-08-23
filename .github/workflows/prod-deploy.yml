@@ -28,13 +28,14 @@ jobs:
         run: make reactive-build
 
       # Deploy Reactive
-      - name: Netlify Deploy
-        uses: netlify/actions/cli@master
+      - name: Netlify Deploy 
+        uses: South-Paw/action-netlify-cli@1.0.1
+        id: netlify
+        with:
+          args: 'deploy --json --prod --dir \"./reactive/build\" --message \"production [${{ github.sha }}]\"'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        with:
-          args: deploy --dir=reactive/build --prod
 
   gopher-build-deploy:
     name: Gopher Build, Heroku Deploy
