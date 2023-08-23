@@ -52,13 +52,13 @@ reactive-build:
 reactive-deploy:
 	$(MAKE) reactive-build
 	cd reactive && \
-		netlify deploy --dir=reactive/build --prod
+		netlify deploy --dir=build --prod
 
 # Publishes a draft version of the website
 reactive-draft:
 	$(MAKE) reactive-build
 	cd reactive && \
-		netlify deploy --dir=reactive/build
+		netlify deploy --dir=build
 
 
 # Comprehensive deploy

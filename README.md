@@ -3,7 +3,6 @@
   <b>aka: reactive-gopher</b>
 </p>
 
-![deploy](https://github.com/jake-pauls/jakepauls.dev/actions/workflows/prod-deploy.yml/badge.svg)
 ![GitHub](https://img.shields.io/github/license/jake-pauls/jakepauls.dev?color=blue&style=flat-square)
 
 #### Reactive
